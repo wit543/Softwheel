@@ -1,0 +1,49 @@
+{
+  "name": "softwheel",
+  "version": "0.0.1",
+  "description": "Software representation of ปฏิทิล้นเกวียน",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwrk/softwheel.git"
+  },
+  "keywords": [
+    "expert",
+    "system"
+  ],
+  "author": "SKE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwrk/softwheel/issues"
+  },
+  "homepage": "https://github.com/benwrk/softwheel#readme",
+  "dependencies": {
+        "declare.js": "~0.0.3",
+        "extended": "~0.0.3",
+        "is-extended": "~0.0.4",
+        "string-extended": "~0.0.3",
+        "array-extended": "~0.0.4",
+        "date-extended": "~0.0.3",
+        "function-extended": "~0.0.3",
+        "object-extended": "~0.0.3",
+        "promise-extended": "~0.0.3",
+        "arguments-extended": "~0.0.3",
+        "leafy": "~0.0.3",
+        "ht": "~0.0.2",
+        "commander": "~1.1.1",
+        "uglify-js": "~2.3.6"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "it": "~0.2.0",
+        "jison": ">=0.3.2",
+        "grunt-it": "~0.3.0",
+        "grunt-contrib-uglify": "~0.2.0",
+        "grunt-contrib-jshint": "~0.5.3",
+        "grunt-browserify": "1.2.4",
+        "grunt-exec": "^0.4.5"
+    }
+}
