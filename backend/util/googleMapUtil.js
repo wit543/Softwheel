@@ -1,6 +1,7 @@
 /**
  * Created by wit on 10/31/2016.
  */
+(function () {
 var http = require('http');
 var options = {
     host: 'maps.googleapis.com',
@@ -12,6 +13,7 @@ var options = {
 http.request(options, function(res) {
     console.log(res)
 
-}).end();
+}
+)();
 
 
