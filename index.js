@@ -9,6 +9,7 @@
     const bodyParser = require("body-parser");
     const morgan = require("morgan");
     const port = process.env.PORT || 8888;
+    app.use(express.static(__dirname));
     app.use(bodyParser.urlencoded({extended:false}));
     app.use(bodyParser.json());
     app.use(function (req,res,next) {

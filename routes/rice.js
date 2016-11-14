@@ -10,9 +10,17 @@
                     console.log(res)
                 }
             );
-            // console.log(connector);z`
+            // console.log(connector);z
+            if(req.query.name){
+                return res.json({
+                    name:"good"
+                });
+            }
             return res.json({
-                message:"hello"
+                rices:[
+                    {"name":"rd15"},
+                    {"name":"rd1"},
+                ]
             });
         })
     });
