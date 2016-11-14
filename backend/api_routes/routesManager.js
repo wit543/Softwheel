@@ -15,7 +15,6 @@
         require("./sub-district")(router,connector);
         require("./Method")(router,connector);
         require(__dirname+"/../util/googleMapUtil");
-        require("./view")(router);
         app.use("/api",router);
 
     }

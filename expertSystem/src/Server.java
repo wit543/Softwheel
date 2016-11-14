@@ -8,7 +8,7 @@ import java.net.Socket;
 public class Server {
 	public static String clp;
     public static void main(String[] args) throws Exception {
-    	clp = args[0];
+//    	clp = args[0];
         System.out.println("The Expert System server is running.");
         int clientNumber = 0;
         ServerSocket listener = new ServerSocket(5000);
@@ -57,7 +57,7 @@ public class Server {
         }
         
         private String cal(String waterLevel) {
-        	return App.checkRiceVarieties(Integer.parseInt(waterLevel));
+        	return waterLevel+"...";
         }
 
         private void log(String message) {

@@ -1,0 +1,9 @@
+(function () {
+    'use strict';
+    module.exports = function (app,express) {
+        const router  =express.Router();
+        require("./home")(router);
+        app.use("/",router);
+
+    }
+})();
