@@ -4,8 +4,9 @@
   "description": "Software representation of ปฏิทิล้นเกวียน",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js --exec babel-node --presets es2015,stage-0",
-    "start": "node index.js"
+//    "test": "nodemon index.js --exec babel-node --presets es2015,stage-0",
+    "start": "node index.js",
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
