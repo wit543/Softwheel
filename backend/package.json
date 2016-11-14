@@ -4,7 +4,6 @@
   "description": "Software representation of ปฏิทิล้นเกวียน",
   "main": "index.js",
   "scripts": {
-//    "test": "nodemon index.js --exec babel-node --presets es2015,stage-0",
     "start": "node index.js",
     "test": "node index.js"
   },
@@ -56,6 +55,7 @@
     "grunt-exec": "^0.4.5",
     "grunt-it": "~0.3.0",
     "it": "~0.2.0",
-    "jison": ">=0.3.2"
+    "jison": ">=0.3.2",
+    "vows":"*"
   }
 }
