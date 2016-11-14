@@ -25,5 +25,5 @@
     app.listen(8888, function () {
         console.log('Example app listening on port 8888!');
     });
-    require('./routes/routesManager')(app,express);
+    require('./backend/routes/routesManager')(app,express);
 })();

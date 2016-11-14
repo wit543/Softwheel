@@ -4,6 +4,7 @@
 (function () {
     'use strict';
     const net = require("net");
+    var path = require('path');
     module.exports = function (app,express) {
         const router  =express.Router();
         var connector = require("../util/connectorJava")(net);
@@ -12,12 +13,10 @@
         require("./province")(router,connector);
         require("./district")(router,connector);
         require("./sub-district")(router,connector);
-        require("./method")(router,connector);
-        require("../util/googleMapUtil");
+        require("./Method")(router,connector);
+        require(__dirname+"/../util/googleMapUtil");
+        require("./view")(router);
         app.use("/api",router);
 
-        app.get("/",function (req,res) {
-            res.sendFile("public/expert.html");
-        })
     }
 })();
