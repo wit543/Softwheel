@@ -50,7 +50,7 @@ public class Server {
                 try {
                     socket.close();
                 } catch (IOException e) {
-                    log("Couldn't close a socket, what's going on?");
+                    log("Couldn't close a socket, what's go ing on?");
                 }
                 log("Connection with client# " + clientNumber + " closed");
             }

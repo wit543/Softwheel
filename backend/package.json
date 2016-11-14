@@ -4,7 +4,8 @@
   "description": "Software representation of ปฏิทิล้นเกวียน",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "nodemon index.js --exec babel-node --presets es2015,stage-0"
   },
   "repository": {
     "type": "git",
@@ -21,29 +22,39 @@
   },
   "homepage": "https://github.com/benwrk/softwheel#readme",
   "dependencies": {
-        "declare.js": "~0.0.3",
-        "extended": "~0.0.3",
-        "is-extended": "~0.0.4",
-        "string-extended": "~0.0.3",
-        "array-extended": "~0.0.4",
-        "date-extended": "~0.0.3",
-        "function-extended": "~0.0.3",
-        "object-extended": "~0.0.3",
-        "promise-extended": "~0.0.3",
-        "arguments-extended": "~0.0.3",
-        "leafy": "~0.0.3",
-        "ht": "~0.0.2",
-        "commander": "~1.1.1",
-        "uglify-js": "~2.3.6"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "it": "~0.2.0",
-        "jison": ">=0.3.2",
-        "grunt-it": "~0.3.0",
-        "grunt-contrib-uglify": "~0.2.0",
-        "grunt-contrib-jshint": "~0.5.3",
-        "grunt-browserify": "1.2.4",
-        "grunt-exec": "^0.4.5"
-    }
+    "declare.js": "~0.0.3",
+    "extended": "~0.0.3",
+    "is-extended": "~0.0.4",
+    "string-extended": "~0.0.3",
+    "array-extended": "~0.0.4",
+    "date-extended": "~0.0.3",
+    "function-extended": "~0.0.3",
+    "object-extended": "~0.0.3",
+    "promise-extended": "~0.0.3",
+    "arguments-extended": "~0.0.3",
+    "leafy": "~0.0.3",
+    "ht": "~0.0.2",
+    "commander": "~1.1.1",
+    "uglify-js": "~2.3.6",
+    "express": "4.14.0",
+    "body-parser": "^1.15.2",
+    "morgan": "1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-2": "^6.17.0",
+    "grunt": "~0.4.1",
+    "grunt-browserify": "1.2.4",
+    "grunt-contrib-jshint": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-exec": "^0.4.5",
+    "grunt-it": "~0.3.0",
+    "it": "~0.2.0",
+    "jison": ">=0.3.2"
+  }
 }
