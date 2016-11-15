@@ -17,15 +17,5 @@
                 ]
             });
         });
-
-        router.get("/province/:provinceName",function (req,res){
-            // req.params.id
-            return res.json({
-                rices:[
-                    {name:"rd15"},
-                    {name:"rd1"}
-                ]
-            })
-        });
     });
 })();

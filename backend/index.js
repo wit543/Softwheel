@@ -19,7 +19,7 @@
         res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, project_id, Authorization, o-Requested-With");
         next();
     });
-
+//    "test": "nodemon index.js --exec babel-node --presets es2015,stage-0",
 
 
     app.use(morgan('dev'));
