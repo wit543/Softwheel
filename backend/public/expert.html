@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/expert.css">
+
+  </head>
+  <body>
+
+      <div class="body-container">
+        <div class="transparent">
+          <div class= "nav-container">
+            <div>
+              <button class="-mode">Expert</button>
+              <button class="-mode">Beginner</button>
+            </div>
+
+          </div>
+          <div class = "group-container">
+            <div class ="group">
+              <div class="label col-md-4">Rice Varaity</div>
+              <select onchange=setVaraity() id="rice-varaity" class="selector">
+                <option value="">Select Rice Varaity</option>
+              </select>
+            </div>
+            <div class ="group">
+
+              <div class="label col-md-4">Place</div>
+              <select id="provinces" class="selector">
+                <option value="">Select Provice</option>
+              </select>
+            </div>
+            <div class ="group">
+              <div class="label col-md-4">Growing Method</div>
+              <select class="selector">
+                <option value="0">Select Growing Method</option>
+                <option value="1">Indirect Seeding</option>
+                <option value="2">Broadcast Sowing</option>
+                <option value="3">Winter Period</option>
+
+              </select>
+            </div>
+            <div class ="group">
+              <div class="label col-md-4">Rice Species</div>
+              <select class="selector">
+                <option value="">Select Rice spicies</option>
+              </select>
+            </div>
+            <div class ="group">
+              <div class="col-md-4"></div>
+              <label class="radio-inline -radio-input"><input type="radio" name="optradio">Planing</label>
+              <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio">Harvest</label>
+            </div>
+
+            <div class ="group -text-aligh-center">
+              <button class = "submit-button">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/expert.js"></script>
+  </body>
+  <!-- END BODY -->
+</html>
