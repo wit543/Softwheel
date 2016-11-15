@@ -16,6 +16,36 @@
                     }
                 );
             }
+            else if(req.query.province && req.query.district && req.query.sub-district){
+                return res.json({
+                   rices:[
+                       {"name":"rd1"},
+                       {"name":"rd15"},
+                       {"name":"rd1"},{"name":"rd15"},
+                       {"name":"rd1"},{"name":"rd15"},
+                   ]
+                });
+            }
+            else if(req.query.province && req.query.district){
+                return res.json({
+                    rices:[
+                        {"name":"rd41"},
+                        {"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                    ]
+                });
+            }
+            else if(req.query.province){
+                return res.json({
+                    rices:[
+                        {"name":"rd144"},
+                        {"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                    ]
+                });
+            }
             else
                 return res.json({
                     rices:[
