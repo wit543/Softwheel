@@ -10,20 +10,19 @@
    |-/api/sub-district/
    |-/api/sub
  ```
-```
- 128.199.192.241
- |-api/
- |-[rices](##Rices)/
- |-provinces/
- |-districts/
- |-sub-districts/
- |-mehthods/
- |-locations/
- |-photo-sensitivitys/
- |-havesting-date/
- |-planting-date/
- |-season/
-```
+  128.199.192.241 <br>
+  |-api/ <br>
+  |-[rices](##Rices)/ <br>
+  |-provinces/ <br>
+  |-districts/ <br>
+  |-sub-districts/ <br>
+  |-mehthods/ <br>
+  |-locations/ <br>
+  |-photo-sensitivitys/ <br>
+  |-havesting-date/ <br>
+  |-planting-date/ <br>
+  |-season/ <br>
+
 
 ## Rices
   ```
