@@ -40,28 +40,28 @@
     }
   ```
   
-  - /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
-  
-  ```JSON
-    {
-      rices:[
-        {name:"rd15"},
-        {name:"rd15"},
-      ]
-    }
-  ```
-  
-  - /api/rices/?provinces=bangkok&provinces=chatuchak
-  
-  ```JSON
-    {
-      rices:[
-        {name:"rd15"},
-        {name:"rd15"},
-        {name:"rd15"},
-        {name:"rd15"},
-      ]
-    }
+- /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+
+```JSON
+  {
+    rices:[
+      {name:"rd15"},
+      {name:"rd15"},
+    ]
+  }
+```
+
+- /api/rices/?provinces=bangkok&provinces=chatuchak
+
+```JSON
+  {
+    rices:[
+      {name:"rd15"},
+      {name:"rd15"},
+      {name:"rd15"},
+      {name:"rd15"},
+    ]
+  }
 ## Provinces
 ## Districts
 ## Sub Districts
