@@ -13,15 +13,15 @@
   128.199.192.241 <br>
   |-api/ <br>
   |-[rices](#rices)/ <br>
-  |-provinces/ <br>
-  |-districts/ <br>
-  |-sub-districts/ <br>
-  |-mehthods/ <br>
-  |-locations/ <br>
-  |-photo-sensitivitys/ <br>
-  |-havesting-date/ <br>
-  |-planting-date/ <br>
-  |-season/ <br>
+  |-[provinces](#provinces)/ <br>
+  |-[districts](#districts)/ <br>
+  |-[sub-districts](#sub-districts)/ <br>
+  |-[mehthods](#methods)/ <br>
+  |-[locations](locations)/ <br>
+  |-[photo-sensitivitys](#photo-sensitivitys)/ <br>
+  |-[havesting-date](#havesting-date)/ <br>
+  |-[planting-date][#planting-date]/ <br>
+  |-[season](#season)/ <br>
 
 
 ## Rices
@@ -33,5 +33,8 @@
 ## Districts
 ## Sub Districts
 ## Methods
-## Havesting
-##Planting
+## Locations
+## Photo Sensitivitys
+## Havesting Date
+## Planting Date
+## Season
