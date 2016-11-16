@@ -177,33 +177,33 @@
 ```
 ## Methods
 - /api/methods/
-```
+````
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
-```
+````
 - /api/methods/?rice=rd15
-``
+```
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
-``
+```
 - /api/methods/?province=bangkok
-``
+```
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
-``
+```
 - /api/methods/?province=bangkok&district=chatucak
-``
+```
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
-``
+```
 ## Locations
 ## Photo Sensitivitys
 ## Havesting Date
