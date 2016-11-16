@@ -139,12 +139,39 @@
 ## Sub Districts
 - /api/sub-district/
 ```JSON
-  sub-district:[
-    {name:Commit
-    }
-  ]
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
 ```
-- /api/
+- /api/sub-district/?province=bangkok
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-district/?province=bangkok&district=chatcuckat
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-district/?province=bangkok&district=chatcukat&rice=rd15
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-district/?rice=rd15
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
 ## Methods
 ## Locations
 ## Photo Sensitivitys
