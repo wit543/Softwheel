@@ -40,15 +40,18 @@
     </pre></div>
     </td>
     </tr>
-    </table>
- - /api/rices/?name=rd1
- 
-  ```JSON
+    
+    <tr><td>
+/api/rices/?name=rd1
+ </td>
+ <td>
     {
       name="rd1"
       detail="good for consumming"
     }
-  ```
+ </td>
+ </tr>
+</table>
   
 - /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
 
