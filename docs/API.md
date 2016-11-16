@@ -64,7 +64,57 @@
   }
 ```  
 ## Provinces
+- /api/provinces
+```JSON
+  provinces:[
+    {name:"bangkok"},
+    {name:"bangkok"},
+    {name:"bangkok"},
+    {name:"bangkok"},
+    {name:"bangkok"},
+  ]
+```
+- /api/province?rice=rd1
+```JSON
+  provinces:[
+    {name:"bangkok"},
+    {name:"bangkok"},
+    {name:"bangkok"},
+  ]
+```
 ## Districts
+- /api/districts
+```JSON
+  districts:[
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+  ]
+```
+- /api/districts?province=bangkok
+```JSON
+  districts:[
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+  ]
+```
+- /api/districts?rice=rd1
+```JSON
+  districts:[
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+  ]
+```
+- /api/districts?province=bangkok&rice=rd1
+```JSON
+  districts:[
+    {name:"chatuchak"},
+    {name:"chatuchak"},
+  ]
+```
 ## Sub Districts
 ## Methods
 ## Locations
