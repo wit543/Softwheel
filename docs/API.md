@@ -4,7 +4,7 @@
 
   128.199.192.241 <br>
   |-api/ <br>
-  <tab>|-[rices](#rices)/ <br>
+  <t>|-[rices](#rices)/ <br>
     |-[provinces](#provinces)/ <br>
     |-[districts](#districts)/ <br>
     |-[sub-districts](#sub-districts)/ <br>
