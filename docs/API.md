@@ -13,16 +13,16 @@
 ```
  128.199.192.241
  |-api/
-   |-rices/
-     +name: name of the rice
+   |-[rices](##Rices)/
    |-provinces/
    |-districts/
    |-sub-districts/
    |-mehthods/
    |-locations/
-   |-photo-sensitivitys
-   |-havesting-date
-   |-planting-date
+   |-photo-sensitivitys/
+   |-havesting-date/
+   |-planting-date/
+   |-season/
 ```
 
 ## Rices
