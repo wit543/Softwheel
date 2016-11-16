@@ -12,7 +12,7 @@
  ```
   128.199.192.241 <br>
   |-api/ <br>
-  |-[rices](## Rices)/ <br>
+  |-[rices](##Rices)/ <br>
   |-provinces/ <br>
   |-districts/ <br>
   |-sub-districts/ <br>
@@ -24,12 +24,12 @@
   |-season/ <br>
 
 
-## Rices
+##Rices
   ```
     rices
     |=
   ```
-## Provinces
+##Provinces
 ## Districts
 ## Sub Districts
 ## Methods
