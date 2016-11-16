@@ -18,23 +18,27 @@
 
 ## Rices
  - /api/rice/
-  - return
-  
-      ```JSON
-        {
-                    rices:[
-                        {"name":"rd15"},
-                        {"name":"rd1"},
-                        {"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},
-                    ]
-                }
-      ```
+    ```JSON
+      {
+          rices:[
+              {"name":"rd15"},
+              {"name":"rd1"},
+              {"name":"rd15"},
+              {"name":"rd1"},{"name":"rd15"},
+              {"name":"rd1"},{"name":"rd15"},
+              {"name":"rd1"},{"name":"rd15"},
+              {"name":"rd1"},{"name":"rd15"},
+              {"name":"rd1"},{"name":"rd15"},
+              {"name":"rd1"},
+          ]
+      }
+    ```
+ - /api/rice/name=rd1
+  ```JSON
+    {
+      
+    }
+  ```
 ## Provinces
 ## Districts
 ## Sub Districts
