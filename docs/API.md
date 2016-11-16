@@ -1,4 +1,7 @@
 # :fire::fire::fire: API documentation :fire::fire::fire:
+:closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book:<br>
+:closed_book: Document for frontend:closed_book:<br>
+:closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book::closed_book:
 
 ## Big picture
 
@@ -14,12 +17,20 @@
   |&nbsp;&nbsp;|-[havesting-date](#havesting-date)/ <br>
   |&nbsp;&nbsp;|-[planting-date](#planting-date)/ <br>
   |&nbsp;&nbsp;|-[season](#season)/ <br>
-  |-home
+  |-[home](#home)
 
-## Rices
- - /api/rice/
- 
-    ```JSON
+## Rice
+<table>
+  <tr>
+    <th>Path</th>
+    <th>JSON</th>
+  </tr>
+  <tr>
+  <td>
+/api/rice/
+ </td>
+ <td>
+      <div class="highlight highlight-json"><pre>
       {
           rices:[
             {name:"rd15"},
@@ -29,31 +40,41 @@
             {name:"rd15"},
           ]
       }
-    ```
+    </pre></div>
+    </td>
+    </tr>
     
- - /api/rices/?name=rd1
- 
-  ```JSON
+    <tr><td>
+/api/rices/?name=rd1
+ </td>
+ <td>
+ <div class="highlight highlight-json"><pre>
     {
       name="rd1"
       detail="good for consumming"
     }
-  ```
+     </pre></div>
+ </td>
+ </tr>
+
+  <tr><td>
   
-- /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
-
-```JSON
+  /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+</td><td>
+ <div class="highlight highlight-json"><pre>
   {
     rices:[
       {name:"rd15"},
       {name:"rd15"},
     ]
   }
-```
-
-- /api/rices/?provinces=bangkok&provinces=chatuchak
-
-```JSON
+  </pre></div>
+</td>
+</tr>
+<tr><td>
+/api/rices/?provinces=bangkok&provinces=chatuchak
+</td><td>
+ <div class="highlight highlight-json"><pre>
   {
     rices:[
       {name:"rd15"},
@@ -62,7 +83,10 @@
       {name:"rd15"},
     ]
   }
-```  
+    </pre></div>
+</td>
+</tr>
+</table>
 ## Provinces
 - /api/provinces
 ```JSON
@@ -96,8 +120,7 @@
 ```JSON
   districts:[
     {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
+    {name:"chatuchakhatuchak"},
     {name:"chatuchak"},
   ]
 ```
@@ -113,12 +136,78 @@
   districts:[
     {name:"chatuchak"},
     {name:"chatuchak"},
+    ]
+```
+  
+## Sub Districts
+- /api/sub-districts/
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-districts/?province=bangkok
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-districts/?province=bangkok&district=chatcuckat
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-districts/?province=bangkok&district=chatcukat&rice=rd15
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+- /api/sub-districts/?rice=rd15
+```JSON
+   sub_districts:[
+    {name:"แก้งเหนือ"},
+    {name:"เขมราฐ"}
+   ]
+```
+## Methods
+- /api/methods/
+````JSON
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+````
+- /api/methods/?rice=rd15
+```JSON
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
   ]
 ```
-## Sub Districts
-## Methods
+- /api/methods/?province=bangkok
+```JSON
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+```
+- /api/methods/?province=bangkok&district=chatucak
+```JSON
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+```
 ## Locations
 ## Photo Sensitivitys
 ## Havesting Date
 ## Planting Date
 ## Season
+## home
+  ![home](./images/home.png)
