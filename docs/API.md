@@ -20,7 +20,7 @@
   |-[locations](locations)/ <br>
   |-[photo-sensitivitys](#photo-sensitivitys)/ <br>
   |-[havesting-date](#havesting-date)/ <br>
-  |-[planting-date][#planting-date]/ <br>
+  |-[planting-date](#planting-date)/ <br>
   |-[season](#season)/ <br>
 
 
