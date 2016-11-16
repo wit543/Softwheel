@@ -27,7 +27,7 @@
 /api/rice/
  </td>
  <td>
-      ```
+      <div class="highlight highlight-html"><pre>
       {
           rices:[
             {name:"rd15"},
@@ -37,7 +37,7 @@
             {name:"rd15"},
           ]
       }
-    ``
+    </pre></div>
     </td>
     </tr>
     </table>
