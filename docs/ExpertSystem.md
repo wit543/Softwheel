@@ -1,7 +1,17 @@
 # Expert System
 
 # Requirment
- - jess
+ - flask
+  - install
+   
+   ```
+    pip install Flask
+   ```
+  - run
+  
+   ```
+    python flask.py
+   ```
  - java jdk 1.7
 # Get started
   import jess into project directory
