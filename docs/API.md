@@ -205,6 +205,25 @@
   ]
 ```
 ## Locations
+- /api/locations/
+```JSON
+  locations:[
+    {
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_province:"bangkain",
+      lad:4.45,
+      lng:14.45
+    },
+    {
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_province:"bangkain",
+      lad:4.45,
+      lng:14.45
+    }
+  ]
+```
 ## Photo Sensitivitys
 ## Havesting Date
 ## Planting Date
