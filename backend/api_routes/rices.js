@@ -4,7 +4,7 @@
 (function () {
     'use static';
     module.exports = (function (router,connector) {
-        router.get("/rice",function (req,res) {
+        router.get("/rices",function (req,res) {
 
             // console.log(connector);z
             if(req.query.name){
