@@ -51,22 +51,25 @@
     }
  </td>
  </tr>
-</table>
+
+  <tr><td>
   
-- /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
-
-```JSON
+  /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+</td><td>
+ <div class="highlight highlight-html"><pre>
   {
     rices:[
       {name:"rd15"},
       {name:"rd15"},
     ]
   }
-```
-
-- /api/rices/?provinces=bangkok&provinces=chatuchak
-
-```JSON
+  </pre></div>
+</td>
+</tr>
+<tr><td>
+/api/rices/?provinces=bangkok&provinces=chatuchak
+</td><td>
+ <div class="highlight highlight-html"><pre>
   {
     rices:[
       {name:"rd15"},
@@ -75,7 +78,10 @@
       {name:"rd15"},
     ]
   }
-```  
+    </pre></div>
+</td>
+</tr>
+</table>
 ## Provinces
 - /api/provinces
 ```JSON
