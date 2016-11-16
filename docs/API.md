@@ -27,7 +27,7 @@
 /api/rice/
  </td>
  <td>
-      <div class="highlight highlight-html"><pre>
+      <div class="highlight highlight-json"><pre>
       {
           rices:[
             {name:"rd15"},
@@ -56,7 +56,7 @@
   
   /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
 </td><td>
- <div class="highlight highlight-html"><pre>
+ <div class="highlight highlight-json"><pre>
   {
     rices:[
       {name:"rd15"},
@@ -69,7 +69,7 @@
 <tr><td>
 /api/rices/?provinces=bangkok&provinces=chatuchak
 </td><td>
- <div class="highlight highlight-html"><pre>
+ <div class="highlight highlight-json"><pre>
   {
     rices:[
       {name:"rd15"},
