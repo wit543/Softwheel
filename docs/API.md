@@ -51,7 +51,7 @@
   detail="good for consumming",
   photo_sensitive:false
 ```
-- /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+- /api/rices/?provinces=bangkok&provinces=chatuchak&sub_districts=bangken
 ```JSON
     rices:[
       {
@@ -231,6 +231,14 @@
       lng:14.45
 ```
 ## Havesting Date
+- /api/havesting-date/
+```JSON
+  error:"not input"
+```
+- /api/havesting-date/?planting_date=15/5/16&province=Bangkok&district=chatuchak&sub_district=bangkern&growing_method=dry&rice=rd15
+```JSON
+  date:15/6/15
+```
 ## Planting Date
 ## Season
 ## home
