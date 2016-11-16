@@ -1,7 +1,8 @@
 # Expert System
 
 # Requirment
- - flask
+ - [python](https://www.python.org/)
+ - [flask](http://flask.pocoo.org/)
   - install
    
    ```
@@ -12,7 +13,8 @@
    ```
     python flask.py
    ```
- - java jdk 1.7
+ - [prolog](http://www.swi-prolog.org/)
+  
 # Get started
   import jess into project directory
 ```
