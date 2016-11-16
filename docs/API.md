@@ -1,4 +1,4 @@
-#API documentation
+# :fire::fire::fire: API documentation :fire::fire::fire:
 
 ## Big picture
 
