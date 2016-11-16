@@ -240,6 +240,14 @@
   date:15/6/15
 ```
 ## Planting Date
+- /api/planting-date/
+```JSON
+  error:"not input"
+```
+- /api/planting-date/?havesting_date=15/5/16&province=Bangkok&district=chatuchak&sub_district=bangkern&growing_method=dry&rice=rd15
+```JSON
+  date:15/6/15
+```
 ## Season
 ## home
   ![home](./images/home.png)
