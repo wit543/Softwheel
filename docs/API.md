@@ -140,35 +140,35 @@
 ```
   
 ## Sub Districts
-- /api/sub-district/
+- /api/sub-districts/
 ```JSON
    sub_districts:[
     {name:"แก้งเหนือ"},
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-district/?province=bangkok
+- /api/sub-districts/?province=bangkok
 ```JSON
    sub_districts:[
     {name:"แก้งเหนือ"},
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-district/?province=bangkok&district=chatcuckat
+- /api/sub-districts/?province=bangkok&district=chatcuckat
 ```JSON
    sub_districts:[
     {name:"แก้งเหนือ"},
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-district/?province=bangkok&district=chatcukat&rice=rd15
+- /api/sub-districts/?province=bangkok&district=chatcukat&rice=rd15
 ```JSON
    sub_districts:[
     {name:"แก้งเหนือ"},
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-district/?rice=rd15
+- /api/sub-districts/?rice=rd15
 ```JSON
    sub_districts:[
     {name:"แก้งเหนือ"},
@@ -176,6 +176,34 @@
    ]
 ```
 ## Methods
+- /api/methods/
+```
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+```
+- /api/methods/?rice=rd15
+``
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+``
+- /api/methods/?province=bangkok
+``
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+``
+- /api/methods/?province=bangkok&district=chatucak
+``
+  methods:[
+    {name:"wet"},
+    {name:"dry"}
+  ]
+``
 ## Locations
 ## Photo Sensitivitys
 ## Havesting Date
