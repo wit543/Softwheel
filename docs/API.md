@@ -23,33 +23,67 @@
 - /api/rice/
 ```JSON
   rices:[
-    {name:"rd15"},
-    {name:"rd15"},
-    {name:"rd15"},
-    {name:"rd15"},
-    {name:"rd15"},
+    {
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:false
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
+    }
   ]
 ```
 - /api/rices/?name=rd1
 ```JSON
-  name="rd1"
-  detail="good for consumming"
+  name="rd1",
+  detail="good for consumming",
+  photo_sensitive:false
 ```
 - /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
 ```JSON
     rices:[
-      {name:"rd15"},
-      {name:"rd15"},
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      }
     ]
   }
 ```
 - /api/rices/?provinces=bangkok&provinces=chatuchak
 ```json
     rices:[
-      {name:"rd15"},
-      {name:"rd15"},
-      {name:"rd15"},
-      {name:"rd15"},
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd17",
+        photo_sensitive:false
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
     ]
 ```
 ## Provinces
@@ -196,18 +230,6 @@
       sub_district:"bangkain",
       lad:4.45,
       lng:14.45
-```
-## Photo Sensitivitys
-- /api/photo-sensitivities/
-```JSON
-  photo_sensitivities:[
-    {name:"dry"},
-    {name:"wett"}
-  ]
-```
-- /api/photo-sensitivities/?rice=rd15
-```JSON
-  photo_sensitivities:
 ```
 ## Havesting Date
 ## Planting Date
