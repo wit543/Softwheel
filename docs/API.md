@@ -4,7 +4,7 @@
 
   128.199.192.241 <br>
   |-api/ <br>
-  <span style="margin-left:2em">Margin of 2em</span>|-[rices](#rices)/ <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;|-[rices](#rices)/ <br>
     |-[provinces](#provinces)/ <br>
     |-[districts](#districts)/ <br>
     |-[sub-districts](#sub-districts)/ <br>
