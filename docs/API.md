@@ -4,16 +4,16 @@
 
   128.199.192.241 <br>
   |-api/ <br>
-  |&nbsp;|- [rices](#rices)/ <br>
-  |&nbsp;|-[provinces](#provinces)/ <br>
-  |&nbsp;|-[districts](#districts)/ <br>
-  |&nbsp;|-[sub-districts](#sub-districts)/ <br>
-  |&nbsp;|-[mehthods](#methods)/ <br>
-  |&nbsp;|-[locations](locations)/ <br>
-  |&nbsp;|-[photo-sensitivitys](#photo-sensitivitys)/ <br>
-  |&nbsp;|-[havesting-date](#havesting-date)/ <br>
-  |&nbsp;|-[planting-date](#planting-date)/ <br>
-  |&nbsp;|-[season](#season)/ <br>
+  |&nbsp;&nbsp;|- [rices](#rices)/ <br>
+  |&nbsp;&nbsp;|-[provinces](#provinces)/ <br>
+  |&nbsp;&nbsp;|-[districts](#districts)/ <br>
+  |&nbsp;&nbsp;|-[sub-districts](#sub-districts)/ <br>
+  |&nbsp;&nbsp;|-[mehthods](#methods)/ <br>
+  |&nbsp;&nbsp;|-[locations](locations)/ <br>
+  |&nbsp;&nbsp;|-[photo-sensitivitys](#photo-sensitivitys)/ <br>
+  |&nbsp;&nbsp;|-[havesting-date](#havesting-date)/ <br>
+  |&nbsp;&nbsp;|-[planting-date](#planting-date)/ <br>
+  |&nbsp;&nbsp;|-[season](#season)/ <br>
   |-home
 
 ## Rices
