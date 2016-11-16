@@ -133,8 +133,9 @@
   districts:[
     {name:"chatuchak"},
     {name:"chatuchak"},
+    ]
 ```
-  ]
+  
 ## Sub Districts
 - /api/sub-district/
 ```JSON
@@ -143,6 +144,7 @@
     }
   ]
 ```
+- /api/
 ## Methods
 ## Locations
 ## Photo Sensitivitys
