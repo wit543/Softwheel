@@ -12,7 +12,7 @@
  ```
   128.199.192.241 <br>
   |-api/ <br>
-  |-[rices](##Rices)/ <br>
+  |-[rices](## Rices)/ <br>
   |-provinces/ <br>
   |-districts/ <br>
   |-sub-districts/ <br>
