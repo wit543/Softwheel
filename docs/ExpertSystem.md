@@ -19,7 +19,11 @@
     ```
      pip install pyswip
     ```
-    
+   -[flask-cors](https://flask-cors.readthedocs.io/en/latest/)
+    - install
+     ```
+      pip install -U flask-cors
+     ```
  - [prolog](http://www.swi-prolog.org/)
   
 # Get started
