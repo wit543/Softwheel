@@ -222,7 +222,7 @@
     }
   ]
 ```
-- /api/locations/?provincr=Bangkok&district=chatuchak&sub_district=bangkain
+- /api/locations/?province=Bangkok&district=chatuchak&sub_district=bangkain
 ```JSON
       province:"bangkok",
       distrcit:"chatuchak",
