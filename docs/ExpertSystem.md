@@ -1,7 +1,7 @@
 # Expert System
 
 # Requirment
- - [python](https://www.python.org/)
+ - [python 2.7](https://www.python.org/)
   - [flask](http://flask.pocoo.org/)
     
      install
