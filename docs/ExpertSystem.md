@@ -2,17 +2,24 @@
 
 # Requirment
  - [python](https://www.python.org/)
- - [flask](http://flask.pocoo.org/)
-  - install
-   
+  - [flask](http://flask.pocoo.org/)
+   - install
+
+    ```
+     pip install Flask
+    ```
+   - run
+
+    ```
+     python flask.py
    ```
-    pip install Flask
-   ```
-  - run
-  
-   ```
-    python flask.py
-   ```
+  - [pyswip](https://pypi.python.org/pypi/pyswip)
+   - install
+
+    ```
+     pip install pyswip
+    ```
+    
  - [prolog](http://www.swi-prolog.org/)
   
 # Get started
