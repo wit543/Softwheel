@@ -96,8 +96,7 @@
 ```JSON
   districts:[
     {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
+    {name:"chatuchakhatuchak"},
     {name:"chatuchak"},
   ]
 ```
@@ -113,9 +112,16 @@
   districts:[
     {name:"chatuchak"},
     {name:"chatuchak"},
+```
+  ]
+## Sub Districts
+- /api/sub-district/
+```JSON
+  sub-district:[
+    {name:Commit
+    }
   ]
 ```
-## Sub Districts
 ## Methods
 ## Locations
 ## Photo Sensitivitys
