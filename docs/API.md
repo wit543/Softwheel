@@ -22,27 +22,34 @@
     ```JSON
       {
           rices:[
-              {"name":"rd15"},
-              {"name":"rd1"},
-              {"name":"rd15"},
-              {"name":"rd1"},{"name":"rd15"},
-              {"name":"rd1"},{"name":"rd15"},
-              {"name":"rd1"},{"name":"rd15"},
-              {"name":"rd1"},{"name":"rd15"},
-              {"name":"rd1"},{"name":"rd15"},
-              {"name":"rd1"},
+            {name:"rd15"},
+            {name:"rd15"},
+            {name:"rd15"},
+            {name:"rd15"},
+            {name:"rd15"},
           ]
       }
     ```
     
- - /api/rice/name=rd1
+ - /api/rices/?name=rd1
  
   ```JSON
     {
-      
+      name="rd1"
+      detail="good for consumming"
     }
   ```
   
+  - /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+  
+  ```JSON
+    {
+      rices:[
+        {name:"rd15"},
+        {name:"rd15"},
+      ]
+    }
+  ```
 ## Provinces
 ## Districts
 ## Sub Districts
