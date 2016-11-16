@@ -9,10 +9,10 @@
         const router  =express.Router();
         var connector = require("../util/connectorJava")(net);
         console.log(connector.connect);
-        require("./rice")(router,connector);
-        require("./province")(router,connector);
-        require("./district")(router,connector);
-        require("./sub-district")(router,connector);
+        require("./rices")(router,connector);
+        require("./provinces")(router,connector);
+        require("./districts")(router,connector);
+        require("./sub-districts")(router,connector);
         require("./Method")(router,connector);
         require(__dirname+"/../util/googleMapUtil");
         app.use("/api",router);

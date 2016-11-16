@@ -21,7 +21,7 @@
                 })
             }
             return res.json({
-                districts:[
+                sub_districts:[
                     {name:"แก้งเหนือ"},
                     {name:"เขมราฐ"}
                 ]

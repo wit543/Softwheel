@@ -4,7 +4,7 @@
 (function () {
     'use static';
     module.exports = (function (router,connector) {
-        router.get("/province",function (req,res) {
+        router.get("/districts",function (req,res) {
             if (req.query.province != undeclared){
                 return res.json({
                     name:"rd15"
