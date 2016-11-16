@@ -21,6 +21,7 @@
     ```
    -[flask-cors](https://flask-cors.readthedocs.io/en/latest/)
     - install
+    
      ```
       pip install -U flask-cors
      ```
