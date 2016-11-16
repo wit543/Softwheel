@@ -14,6 +14,7 @@
  128.199.192.241
  |-api/
    |-rices/
+     +name: name of the rice
    |-provinces/
    |-districts/
    |-sub-districts/
