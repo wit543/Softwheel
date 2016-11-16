@@ -13,80 +13,45 @@
   |&nbsp;&nbsp;|-[sub-districts](#sub-districts)/ <br>
   |&nbsp;&nbsp;|-[mehthods](#methods)/ <br>
   |&nbsp;&nbsp;|-[locations](locations)/ <br>
-  |&nbsp;&nbsp;|-[photo-sensitivitys](#photo-sensitivitys)/ <br>
+  |&nbsp;&nbsp;|-[photo-sensitivities](#photo-sensitivitys)/ <br>
   |&nbsp;&nbsp;|-[havesting-date](#havesting-date)/ <br>
   |&nbsp;&nbsp;|-[planting-date](#planting-date)/ <br>
   |&nbsp;&nbsp;|-[season](#season)/ <br>
   |-[home](#home)
 
 ## Rice
-<table>
-  <tr>
-    <th>Path</th>
-    <th>JSON</th>
-  </tr>
-  <tr>
-  <td>
-/api/rice/
- </td>
- <td>
-      <div class="highlight highlight-json"><pre>
-      {
-          rices:[
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-          ]
-      }
-    </pre></div>
-    </td>
-    </tr>
-    
-    <tr><td>
-/api/rices/?name=rd1
- </td>
- <td>
- <div class="highlight highlight-json"><pre>
-    {
-      name="rd1"
-      detail="good for consumming"
-    }
-     </pre></div>
- </td>
- </tr>
-
-  <tr><td>
-  
-  /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
-</td><td>
- <div class="highlight highlight-json"><pre>
-  {
+- /api/rice/
+```JSON
+  rices:[
+    {name:"rd15"},
+    {name:"rd15"},
+    {name:"rd15"},
+    {name:"rd15"},
+    {name:"rd15"},
+  ]
+```
+- /api/rices/?name=rd1
+```JSON
+  name="rd1"
+  detail="good for consumming"
+```
+- /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
+```JSON
     rices:[
       {name:"rd15"},
       {name:"rd15"},
     ]
   }
-  </pre></div>
-</td>
-</tr>
-<tr><td>
-/api/rices/?provinces=bangkok&provinces=chatuchak
-</td><td>
- <div class="highlight highlight-json"><pre>
-  {
+```
+- /api/rices/?provinces=bangkok&provinces=chatuchak
+```json
     rices:[
       {name:"rd15"},
       {name:"rd15"},
       {name:"rd15"},
       {name:"rd15"},
     ]
-  }
-    </pre></div>
-</td>
-</tr>
-</table>
+```
 ## Provinces
 - /api/provinces
 ```JSON
@@ -211,20 +176,39 @@
     {
       province:"bangkok",
       distrcit:"chatuchak",
-      sub_province:"bangkain",
+      sub_district:"bangkain",
       lad:4.45,
       lng:14.45
     },
     {
       province:"bangkok",
       distrcit:"chatuchak",
-      sub_province:"bangkain",
+      sub_district:"bangkain",
       lad:4.45,
       lng:14.45
     }
   ]
 ```
+- /api/locations/?provincr=Bangkok&district=chatuchak&sub_district=bangkain
+```JSON
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_district:"bangkain",
+      lad:4.45,
+      lng:14.45
+```
 ## Photo Sensitivitys
+- /api/photo-sensitivities/
+```JSON
+  photo_sensitivities:[
+    {name:"dry"},
+    {name:"wett"}
+  ]
+```
+- /api/photo-sensitivities/?rice=rd15
+```JSON
+  photo_sensitivities:
+```
 ## Havesting Date
 ## Planting Date
 ## Season
