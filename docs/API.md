@@ -17,10 +17,24 @@
   |-home
 
 ## Rices
-  ```
-    rices
-    |=
-  ```
+ - /api/rice/
+  - return
+  
+      ```JSON
+        {
+                    rices:[
+                        {"name":"rd15"},
+                        {"name":"rd1"},
+                        {"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},{"name":"rd15"},
+                        {"name":"rd1"},
+                    ]
+                }
+      ```
 ## Provinces
 ## Districts
 ## Sub Districts
