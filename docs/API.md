@@ -16,10 +16,18 @@
   |&nbsp;&nbsp;|-[season](#season)/ <br>
   |-[home](#home)
 
-## Rices
- - /api/rice/
- 
-    ```JSON
+## Rice
+<table>
+  <tr>
+    <th>Path</th>
+    <th>JSON</th>
+  </tr>
+  <tr>
+  <td>
+/api/rice/
+ </td>
+ <td>
+    <div class="highlight highlight-html"><pre>
       {
           rices:[
             {name:"rd15"},
@@ -29,8 +37,10 @@
             {name:"rd15"},
           ]
       }
-    ```
-    
+    </pre></div>
+    </td>
+    </tr>
+    </table>
  - /api/rices/?name=rd1
  
   ```JSON
