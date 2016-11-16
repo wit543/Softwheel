@@ -14,7 +14,7 @@
   |&nbsp;&nbsp;|-[havesting-date](#havesting-date)/ <br>
   |&nbsp;&nbsp;|-[planting-date](#planting-date)/ <br>
   |&nbsp;&nbsp;|-[season](#season)/ <br>
-  |-home
+  |-[home](#home)
 
 ## Rices
  - /api/rice/
@@ -122,3 +122,5 @@
 ## Havesting Date
 ## Planting Date
 ## Season
+## home
+  ![home](./images/home.png)
