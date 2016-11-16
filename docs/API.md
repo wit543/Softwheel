@@ -18,6 +18,7 @@
 
 ## Rices
  - /api/rice/
+ 
     ```JSON
       {
           rices:[
@@ -33,12 +34,15 @@
           ]
       }
     ```
+    
  - /api/rice/name=rd1
+ 
   ```JSON
     {
       
     }
   ```
+  
 ## Provinces
 ## Districts
 ## Sub Districts
