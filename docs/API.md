@@ -63,10 +63,9 @@
         photo_sensitive:true
       }
     ]
-  }
 ```
 - /api/rices/?provinces=bangkok&provinces=chatuchak
-```json
+```JSON
     rices:[
       {
         name:"rd15",
