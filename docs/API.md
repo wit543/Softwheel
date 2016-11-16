@@ -177,28 +177,28 @@
 ```
 ## Methods
 - /api/methods/
-````
+````JSON
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
 ````
 - /api/methods/?rice=rd15
-```
+```JSON
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
 ```
 - /api/methods/?province=bangkok
-```
+```JSON
   methods:[
     {name:"wet"},
     {name:"dry"}
   ]
 ```
 - /api/methods/?province=bangkok&district=chatucak
-```
+```JSON
   methods:[
     {name:"wet"},
     {name:"dry"}
