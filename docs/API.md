@@ -45,10 +45,12 @@
 /api/rices/?name=rd1
  </td>
  <td>
+ <div class="highlight highlight-json"><pre>
     {
       name="rd1"
       detail="good for consumming"
     }
+     </pre></div>
  </td>
  </tr>
 
