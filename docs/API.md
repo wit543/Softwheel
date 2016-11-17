@@ -13,80 +13,78 @@
   |&nbsp;&nbsp;|-[sub-districts](#sub-districts)/ <br>
   |&nbsp;&nbsp;|-[mehthods](#methods)/ <br>
   |&nbsp;&nbsp;|-[locations](locations)/ <br>
-  |&nbsp;&nbsp;|-[photo-sensitivitys](#photo-sensitivitys)/ <br>
+  |&nbsp;&nbsp;|-[photo-sensitivities](#photo-sensitivitys)/ <br>
   |&nbsp;&nbsp;|-[havesting-date](#havesting-date)/ <br>
   |&nbsp;&nbsp;|-[planting-date](#planting-date)/ <br>
   |&nbsp;&nbsp;|-[season](#season)/ <br>
   |-[home](#home)
 
 ## Rice
-<table>
-  <tr>
-    <th>Path</th>
-    <th>JSON</th>
-  </tr>
-  <tr>
-  <td>
-/api/rice/
- </td>
- <td>
-      <div class="highlight highlight-json"><pre>
-      {
-          rices:[
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-            {name:"rd15"},
-          ]
-      }
-    </pre></div>
-    </td>
-    </tr>
-    
-    <tr><td>
-/api/rices/?name=rd1
- </td>
- <td>
- <div class="highlight highlight-json"><pre>
+- /api/rice/
+```JSON
+  rices:[
     {
-      name="rd1"
-      detail="good for consumming"
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
+    },
+    {
+      name:"rd15",
+      photo_sensitive:false
+    },
+    {
+      name:"rd15",
+      photo_sensitive:true
     }
-     </pre></div>
- </td>
- </tr>
-
-  <tr><td>
-  
-  /api/rices/?provinces=bangkok&provinces=chatuchak&sub-districts=bangken
-</td><td>
- <div class="highlight highlight-json"><pre>
-  {
+  ]
+```
+- /api/rices/?name=rd1
+```JSON
+  name="rd1",
+  detail="good for consumming",
+  photo_sensitive:false
+```
+- /api/rices/?provinces=bangkok&provinces=chatuchak&sub_districts=bangken
+```JSON
     rices:[
-      {name:"rd15"},
-      {name:"rd15"},
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      }
     ]
-  }
-  </pre></div>
-</td>
-</tr>
-<tr><td>
-/api/rices/?provinces=bangkok&provinces=chatuchak
-</td><td>
- <div class="highlight highlight-json"><pre>
-  {
+```
+- /api/rices/?provinces=bangkok&provinces=chatuchak
+```JSON
     rices:[
-      {name:"rd15"},
-      {name:"rd15"},
-      {name:"rd15"},
-      {name:"rd15"},
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
+      {
+        name:"rd17",
+        photo_sensitive:false
+      },
+      {
+        name:"rd15",
+        photo_sensitive:true
+      },
     ]
-  }
-    </pre></div>
-</td>
-</tr>
-</table>
+```
 ## Provinces
 - /api/provinces
 ```JSON
@@ -205,9 +203,51 @@
   ]
 ```
 ## Locations
-## Photo Sensitivitys
+- /api/locations/
+```JSON
+  locations:[
+    {
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_district:"bangkain",
+      lad:4.45,
+      lng:14.45
+    },
+    {
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_district:"bangkain",
+      lad:4.45,
+      lng:14.45
+    }
+  ]
+```
+- /api/locations/?province=Bangkok&district=chatuchak&sub_district=bangkain
+```JSON
+      province:"bangkok",
+      distrcit:"chatuchak",
+      sub_district:"bangkain",
+      lad:4.45,
+      lng:14.45
+```
 ## Havesting Date
+- /api/havesting-date/
+```JSON
+  error:"not input"
+```
+- /api/havesting-date/?planting_date=15/5/16&province=Bangkok&district=chatuchak&sub_district=bangkern&growing_method=dry&rice=rd15
+```JSON
+  date:15/6/15
+```
 ## Planting Date
+- /api/planting-date/
+```JSON
+  error:"not input"
+```
+- /api/planting-date/?havesting_date=15/5/16&province=Bangkok&district=chatuchak&sub_district=bangkern&growing_method=dry&rice=rd15
+```JSON
+  date:15/6/15
+```
 ## Season
 ## home
   ![home](./images/home.png)
