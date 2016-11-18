@@ -23,32 +23,47 @@
 - /api/rice/
 ```JSON
   rices:[
-    {
-      name:"rd15",
-      photo_sensitive:true
+        {
+      "name_th":"กข-แม่โจ้2",
+      "name_en":"rd_maejo2",
+      "photo_sensitive":true
     },
     {
-      name:"rd15",
-      photo_sensitive:true
+      "name_th":"กข1",
+      "name_en":"rd1",
+      "photo_sensitive":true
     },
     {
-      name:"rd15",
-      photo_sensitive:true
+      "name_th":"กข10",
+      "name_en":"rd10",
+      "photo_sensitive":true
     },
     {
-      name:"rd15",
-      photo_sensitive:false
+      "name_th":"กข11",
+      "name_en":"rd11",
+      "photo_sensitive":true
     },
     {
-      name:"rd15",
-      photo_sensitive:true
+      "name_th":"กข12(หนองคาย80)",
+      "name_en":"nongkai80",
+      "photo_sensitive":true
+    },
+    {
+      "name_th":"กข13",
+      "name_en":"rd13",
+      "photo_sensitive":true
+    },
+    {
+      "name_th":"กข14",
+      "name_en":"rd14",
+      "photo_sensitive":true
     }
   ]
 ```
 - /api/rices/?name=rd1
 ```JSON
-  name="rd1",
-  detail="good for consumming",
+  "name_th":"กข-แม่โจ้2",
+  "name_en":"rd_maejo2",
   photo_sensitive:false
 ```
 - /api/rices/?name=argarewgfare (doesn't exist)
@@ -58,35 +73,81 @@
 - /api/rices/?provinces=bangkok&provinces=chatuchak&sub_districts=bangken
 ```JSON
     rices:[
-      {
-        name:"rd15",
-        photo_sensitive:true
+       {
+        "name_th":"กข-แม่โจ้2",
+        "name_en":"rd_maejo2",
+        "photo_sensitive":true
       },
       {
-        name:"rd15",
-        photo_sensitive:true
+        "name_th":"กข1",
+        "name_en":"rd1",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข10",
+        "name_en":"rd10",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข11",
+        "name_en":"rd11",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข12(หนองคาย80)",
+        "name_en":"nongkai80",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข13",
+        "name_en":"rd13",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข14",
+        "name_en":"rd14",
+        "photo_sensitive":true
       }
     ]
 ```
 - /api/rices/?provinces=bangkok&provinces=chatuchak
 ```JSON
-    rices:[
+      rices:[
       {
-        name:"rd15",
-        photo_sensitive:true
+        "name_th":"กข-แม่โจ้2",
+        "name_en":"rd_maejo2",
+        "photo_sensitive":true
       },
       {
-        name:"rd15",
-        photo_sensitive:true
+        "name_th":"กข1",
+        "name_en":"rd1",
+        "photo_sensitive":true
       },
       {
-        name:"rd17",
-        photo_sensitive:false
+        "name_th":"กข10",
+        "name_en":"rd10",
+        "photo_sensitive":true
       },
       {
-        name:"rd15",
-        photo_sensitive:true
+        "name_th":"กข11",
+        "name_en":"rd11",
+        "photo_sensitive":true
       },
+      {
+        "name_th":"กข12(หนองคาย80)",
+        "name_en":"nongkai80",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข13",
+        "name_en":"rd13",
+        "photo_sensitive":true
+      },
+      {
+        "name_th":"กข14",
+        "name_en":"rd14",
+        "photo_sensitive":true
+      }
     ]
 ```
 ## Provinces
