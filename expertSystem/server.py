@@ -20,6 +20,18 @@ def get_schema():
     # return "hello"
     return jsonify(re_list)
 
+@app.route('/api/', methods=['GET'])
+@cross_origin()
+def get_schema():
+    prolog = Prolog()
+    assertz = Functor("assertz", 2)
+    prolog.consult('engine.pl')
+    prolog.assertz('raining("Bangkok")')
+    rule = "can_growing(P1, 'GROW1')."
+    re_list = list(prolog.query(rule))
+    # return "hello"
+    return jsonify(re_list)
+
 @app.route('/engine/', methods=['GET'])
 @cross_origin()
 def get_engine():
