@@ -42,3 +42,9 @@
  ```
   npm start
  ```
+
+## Database
+ table
+ - rices
+ - rices_by_location_napun 
+ - rices_by_location_napee
