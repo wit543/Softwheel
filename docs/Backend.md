@@ -9,7 +9,11 @@
  ```javascript
   npm install
  ```
- 
+  run projet
+  
+  ```
+   npm start
+  ```
  setup local variable
  windows(cmd)
  ```

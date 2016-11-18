@@ -2,3 +2,9 @@ node_modules
 .idea/
 out
 .class
+backend/public/assets/.DS_Store
+backend/public/assets/css/bootstrap/.DS_Store
+backend/public/assets/fonts/.DS_Store
+backend/public/assets/images/.DS_Store
+expertSystem/__pycache__/
+backend/config.json
