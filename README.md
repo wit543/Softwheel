@@ -13,5 +13,6 @@
 ### [Expert System](/docs/ExpertSystem.md)
 
 ## [WEBSITE](http://128.199.192.241:8888/)
-
+## Architecture
+![architecture](docs/images/architecture.png)
 # :ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice:
