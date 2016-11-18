@@ -1,7 +1,7 @@
 ##Backend
 
 # Requirment
- - node 7.1.0
+ - node 6.x up
  - internet
 # get started
  clone the project
@@ -21,7 +21,7 @@
  ```javascript
   npm install
  ```
- contract @wit543 for config.json
+ contract [@wit543]() for config.json
  move json file to backend directory
  ```
  Softwheel
@@ -37,17 +37,6 @@
   |-expertSystem
 ```
  run projet
-  
-  ```
-   npm start
-  ```
- setup local variable
- windows(cmd)
  ```
-  set SoftWheelPsqlPASSWORD=SOMEKEY
-  set SoftWheelPsqlUSERNAME=SOMEKEY
-  set SoftWheelPsqlHOST=SOMEKEY
-  set SoftWHeelPsqlDATABASE=SOMEKEY
-  set SoftWheelFirebaseAPIKEY=SOMEKEY
-  set SoftWheelFirebaseDATABASEURL=SOMEKEY
-```
+  npm start
+ ```
