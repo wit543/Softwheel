@@ -36,7 +36,7 @@
   - windows
     copy a file and rename it 
    ```
-    // copy file
+    // copy a file
     C:\Program Files\swipl\bin\libwsipl.dll
     // rename to
     C:\Program Files\swipl\bin\libpl.dll 
@@ -44,7 +44,7 @@
   - unbuntu
     copy a file and rename it 
    ```
-    // copy file
+    // copy a file
     /usr/lib/libswipl.so
     // rename to
     /usr/lib/libpl.so
