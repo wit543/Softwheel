@@ -51,6 +51,10 @@
   detail="good for consumming",
   photo_sensitive:false
 ```
+- /api/rices/?name=argarewgfare (doesn't exist)
+```JSON
+  "error": "doesn't exist"
+```
 - /api/rices/?provinces=bangkok&provinces=chatuchak&sub_districts=bangken
 ```JSON
     rices:[
