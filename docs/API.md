@@ -20,7 +20,7 @@
   |-[home](#home)
 
 ## Rice
-- /api/rice/
+- :white_check_mark: /api/rice/
 ```JSON
   rices:[
         {
@@ -60,13 +60,13 @@
     }
   ]
 ```
-- /api/rices/?name=rd1
+- :white_check_mark: /api/rices/?name=rd1
 ```JSON
   "name_th":"กข-แม่โจ้2",
   "name_en":"rd_maejo2",
   photo_sensitive:false
 ```
-- /api/rices/?name=argarewgfare (doesn't exist)
+- :white_check_mark: /api/rices/?name=argarewgfare (doesn't exist)
 ```JSON
   "error": "doesn't exist"
 ```
