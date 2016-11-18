@@ -22,23 +22,26 @@
   },
   "homepage": "https://github.com/benwrk/softwheel#readme",
   "dependencies": {
-    "declare.js": "~0.0.3",
-    "extended": "~0.0.3",
-    "is-extended": "~0.0.4",
-    "string-extended": "~0.0.3",
-    "array-extended": "~0.0.4",
-    "date-extended": "~0.0.3",
-    "function-extended": "~0.0.3",
-    "object-extended": "~0.0.3",
-    "promise-extended": "~0.0.3",
     "arguments-extended": "~0.0.3",
-    "leafy": "~0.0.3",
-    "ht": "~0.0.2",
-    "commander": "~1.1.1",
-    "uglify-js": "~2.3.6",
-    "express": "4.14.0",
+    "array-extended": "~0.0.4",
     "body-parser": "^1.15.2",
-    "morgan": "1.7.0"
+    "commander": "~1.1.1",
+    "date-extended": "~0.0.3",
+    "declare.js": "~0.0.3",
+    "express": "4.14.0",
+    "extended": "~0.0.3",
+    "firebase": "^3.6.1",
+    "firebase-admin": "^4.0.2",
+    "function-extended": "~0.0.3",
+    "ht": "~0.0.2",
+    "is-extended": "~0.0.4",
+    "leafy": "~0.0.3",
+    "morgan": "1.7.0",
+    "object-extended": "~0.0.3",
+    "pg": "^6.1.0",
+    "promise-extended": "~0.0.3",
+    "string-extended": "~0.0.3",
+    "uglify-js": "~2.3.6"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -56,6 +59,6 @@
     "grunt-it": "~0.3.0",
     "it": "~0.2.0",
     "jison": ">=0.3.2",
-    "vows":"*"
+    "vows": "*"
   }
 }

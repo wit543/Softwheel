@@ -4,16 +4,23 @@
 (function () {
     'use strict';
     const net = require("net");
-    var path = require('path');
+    const postgres = require("pg");
+    const path = require('path');
+    const firebase = require('firebase');
     module.exports = function (app,express) {
         const router  =express.Router();
-        var connector = require("../util/connectorJava")(net);
+        let connector = require("../util/connectorJava")(net);
+        let config = require("../config.json");
+        let pg_config = config['pg'];
+        let fb_config = config['firebase'];
+        let pg = require("../util/postgres")(postgres,pg_config);
+        let fb  = require("../util/connectorFirebase")(firebase,fb_config);
         console.log(connector.connect);
-        require("./rices")(router,connector);
-        require("./provinces")(router,connector);
-        require("./districts")(router,connector);
-        require("./sub-districts")(router,connector);
-        require("./Method")(router,connector);
+        require("./rices")(router,connector,pg);
+        require("./provinces")(router,connector,fb);
+        require("./districts")(router,connector,fb);
+        require("./sub-districts")(router,connector,fb);
+        require("./Method")(router,connector,fb);
         require(__dirname+"/../util/googleMapUtil");
         app.use("/api",router);
 
