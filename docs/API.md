@@ -70,7 +70,7 @@
 ```JSON
   "error": "doesn't exist"
 ```
-- /api/rices/?provinces=bangkok&provinces=chatuchak&sub_districts=bangken
+- /api/rices/?provinces=bangkok&district=chatuchak&sub_districts=bangken
 ```JSON
     rices:[
        {
@@ -110,7 +110,7 @@
       }
     ]
 ```
-- /api/rices/?provinces=bangkok&provinces=chatuchak
+- /api/rices/?provinces=bangkok&district=chatuchak
 ```JSON
       rices:[
       {
