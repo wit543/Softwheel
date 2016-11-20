@@ -41,6 +41,16 @@
     // rename to
     C:\Program Files\swipl\bin\libpl.dll 
    ```
+   add path to environment
+   ```
+    start -> edit environment variables -> user virable for ... -> Path -> edit -> new
+    
+    type this in "C:\Program Files\swipl\bin"
+    
+    Control Panel\All Control Panel Items\System -> advance system settings  -> environment variables -> System virable -> Path -> edit -> new
+    
+    type this in "C:\Program Files\swipl\bin"
+   ```
   - unbuntu
     copy a file and rename it 
    ```
@@ -50,10 +60,11 @@
     /usr/lib/libpl.so
    ```
 # Get started
-  import jess into project directory
-```
-  src/
-  |- Server.java
-  |- kb.clp
-  |- jess.jar
+ - install dependencies
+ ```
+  pip install -r requiremnet.txt
+ ```
+ - run
+ ```
+  python server.py
 ```
