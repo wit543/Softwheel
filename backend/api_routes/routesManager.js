@@ -17,6 +17,7 @@
         let fb_config = config['firebase'];
         let pg = require("../util/postgres")(postgres,pg_config);
         let fb  = require("../util/connectorFirebase")(firebase,fb_config);
+        let util = require("../util/utilWrapper")(pg,ep);
         console.log(connector.connect);
         require("./rices")(router,ep,pg);
         require("./provinces")(router,ep,pg);
