@@ -62,10 +62,12 @@
    
 # Get started
  - install dependencies
+ 
  ```
   pip install -r requiremnet.txt
  ```
  - run
+ 
  ```
   python server.py
 ```
