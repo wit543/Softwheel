@@ -9,7 +9,8 @@
         // @todo  complete all the parameter handling for getting a method      //
         //////////////////////////////////////////////////////////////////////////
         router.get("/smart",function (req,res) {
-            if (req.query.method != undefined){
+            if (req.query.method ){
+                console.log("recommend('"+req.query.province+"','"+req.query.rice+"','"+req.query.method+"',"+req.query.date+","+req.query.month+",DAY,MONTH,YEAR).");
                 return util.expert_system.query("recommend('"+req.query.province+"','"+req.query.rice+"','"+req.query.method+"',"+req.query.date+","+req.query.month+",DAY,MONTH,YEAR).",function (result) {
                     console.log(result.length)
                     return res.json(result);
