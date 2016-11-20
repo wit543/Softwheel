@@ -4,11 +4,19 @@
 (function () {
     'use static';
     module.exports = (function (router,connector) {
+        //////////////////////////////////////////////////////////////////////////
+        // @todo  complete all the parameter handling for getting a sub-district//
+        //////////////////////////////////////////////////////////////////////////
         router.get("/sub-district",function (req,res) {
             if (req.query.province != undeclared && req.query.district){
+                //////////////////////////////////////////////////////////////////////////
+                // @todo  The code below is not finish, it just an example for front end//
+                //////////////////////////////////////////////////////////////////////////
+               //CODE//CODE//CODE//CODE//CODE//CODE//CODE//CODE
                 return res.json({
                     name:"rd15"
                 })
+                //CODE//CODE//CODE//CODE//CODE//CODE//CODE//CODE
             }
             if (req.query.province != undeclared){
                 return res.json({
