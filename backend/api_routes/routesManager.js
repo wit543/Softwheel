@@ -19,7 +19,7 @@
         let fb  = require("../util/connectorFirebase")(firebase,fb_config);
         let util = require("../util/utilWrapper")(pg,ep);
         console.log(connector.connect);
-        require("./rices")(router,ep,pg);
+        require("./rices")(router,util);
         require("./provinces")(router,ep,pg);
         require("./districts")(router,ep,pg);
         require("./sub-districts")(router,ep,pg);

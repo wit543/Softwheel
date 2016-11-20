@@ -3,7 +3,7 @@
  */
 (function () {
     'use static';
-    module.exports = (function (router,es,pg) {
+    module.exports = (function (router,util) {
         router.get("/rices",function (req,res) {
             //////////////////////////////////////////////////////////////////////////
             // @todo  complete all the parameter handling for getting a rice        //
@@ -16,7 +16,7 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                pg.query("select * from rices where name_en='"+req.query.name+"'",function (data) {
+                util.database.query("select * from rices where name_en='"+req.query.name+"'",function (data) {
                     rices = {};
                     rices['rices']=data.rows;
                     if(data.length==0){
@@ -57,7 +57,7 @@
                 //////////////////////////////////////////////////////////////////////////
                 // @Example of using ex[ert system                                      //
                 //////////////////////////////////////////////////////////////////////////
-                return es.query("can_growing(P1,+'GROW1').",function (result) {
+                return util.expert_system.query("can_growing(P1,+'GROW1').",function (result) {
                     return res.json(result);
                 });
             }
@@ -71,7 +71,7 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                pg.query("select * from rices",function (data) {
+                util.database.query("select * from rices",function (data) {
                     rices = {};
                     rices['rices']=data;
                     return res.json(rices);
