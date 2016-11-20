@@ -24,9 +24,9 @@ recommend(P1, R1, G1, PDATE, PMONTH, HDAY, HMONTH, HYEAR):-
   add_date(DATE,DURATION, HDATE),
   print(HDATE),
   green(P1,HDATE),
-  date_time_value("day",HDATE, HDAY),
-  date_time_value("month",HDATE, HMONTH),
-  date_time_value("year",HDATE, HYEAR).
+  date_time_value(day,HDATE, HDAY),
+  date_time_value(month,HDATE, HMONTH),
+  date_time_value(year,HDATE, HYEAR).
 
 recommend_place_rice(P1,R1):-
   grow_well(P1,R1).
