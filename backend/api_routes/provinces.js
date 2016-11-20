@@ -15,7 +15,7 @@
                     "(select rices_by_location_napun.province_th from rices_by_location_napun UNION ALL " +
                     "select rices_by_location_napee.province_th from rices_by_location_napee) as foo"
                     , function (data) {
-                        return res.json(data);
+                        return res.json({provinces:data});
                     });
             }
         });

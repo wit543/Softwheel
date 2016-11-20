@@ -8,7 +8,7 @@
             if (req.query.province){
                 util.database.query("select count(distinct(district_th)) from (select district_th from rices_by_location_napun where province_th = '"+req.query.province+"' UNION ALL select district_th from rices_by_location_napee where province_th = '"+req.query.province+"') as foo"
                     , function (data) {
-                        return res.json(data);
+                        return res.json({distrocts:data});
                     });
             }
             else
@@ -16,7 +16,7 @@
                     "(select district_th from rices_by_location_napun UNION ALL " +
                     "select district_th from rices_by_location_napee) as foo"
                     , function (data) {
-                        return res.json(data);
+                        return res.json({distrocts:data});
                     });
                 // util.google_map.get_location_latlng(13.845402,100.568695,function (data) {
                 //     return res.json(data);
