@@ -4,25 +4,19 @@
 (function () {
     'use static';
     module.exports = (function (router,util) {
-        //////////////////////////////////////////////////////////////////////////
-        // @todo  complete all the parameter handling for getting a province    //
-        //////////////////////////////////////////////////////////////////////////
         router.get("/provinces",function (req,res) {
-            if (req.query.province != undeclared){
+            if (req.query.province){
                 return res.json({
                     name:"rd15"
                 })
             }
-            else if (req.query.fields!= undeclared){
-                return
-            }
             else{
-                return res.json({
-                    districts:[
-                        {name:"แก้งเหนือ"},
-                        {name:"เขมราฐ"}
-                    ]
-                });
+                util.database.query("select distinct(province_th) from " +
+                    "(select rices_by_location_napun.province_th from rices_by_location_napun UNION ALL " +
+                    "select rices_by_location_napee.province_th from rices_by_location_napee) as foo"
+                    , function (data) {
+                        return res.json(data);
+                    });
             }
         });
     });
