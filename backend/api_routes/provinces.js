@@ -3,7 +3,7 @@
  */
 (function () {
     'use static';
-    module.exports = (function (router,connector) {
+    module.exports = (function (router,util) {
         //////////////////////////////////////////////////////////////////////////
         // @todo  complete all the parameter handling for getting a province    //
         //////////////////////////////////////////////////////////////////////////

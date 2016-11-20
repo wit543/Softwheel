@@ -20,10 +20,10 @@
         let util = require("../util/utilWrapper")(pg,ep);
         console.log(connector.connect);
         require("./rices")(router,util);
-        require("./provinces")(router,ep,pg);
-        require("./districts")(router,ep,pg);
-        require("./sub-districts")(router,ep,pg);
-        require("./Method")(router,ep,pg);
+        require("./provinces")(router,util);
+        require("./districts")(router,util);
+        require("./sub-districts")(router,util);
+        require("./Method")(router,util);
         require(__dirname+"/../util/googleMapUtil");
         app.use("/api",router);
 
