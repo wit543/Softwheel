@@ -1,16 +1,16 @@
-irrigation('Ranong').
-irrigation('Bangkok').
-photo_sensitive('RD1').
-grow_well('Bangkok', 'RD1').
-grow_well('Bangkok', 'RD2').
-growing_duration('RD1','GROW1',100).
-growing_duration('RD2','GROW1',90).
+irrigation("Ranong").
+irrigation("Bangkok").
+photo_sensitive("RD1").
+grow_well("Bangkok", "RD1").
+grow_well("Bangkok", "RD2").
+growing_duration("RD1","GROW1",100).
+growing_duration("RD2","GROW1",90).
 
 
-can_growing(P1,PDATE,PMONTH,'indirect_seeding'):-
+can_growing(P1,PDATE,PMONTH,"indirect_seeding"):-
   in_season(P1,PDATE,PMONTH).
   
-in_season('Bangkok',_, PMONTH):-
+in_season("Bangkok",_, PMONTH):-
  PMONTH >= 5,
  PMONTH =< 10.
 
@@ -24,9 +24,9 @@ recommend(P1, R1, G1, PDATE, PMONTH, HDAY, HMONTH, HYEAR):-
   add_date(DATE,DURATION, HDATE),
   print(HDATE),
   green(P1,HDATE),
-  date_time_value('day',HDATE, HDAY),
-  date_time_value('month',HDATE, HMONTH),
-  date_time_value('year',HDATE, HYEAR).
+  date_time_value("day",HDATE, HDAY),
+  date_time_value("month",HDATE, HMONTH),
+  date_time_value("year",HDATE, HYEAR).
 
 recommend_place_rice(P1,R1):-
   grow_well(P1,R1).
@@ -40,7 +40,7 @@ recommend_rice_season(R1,P1,PDATE,PMONTH):-
   not(photo_sensitive(R1)),
   in_season(P1, PDATE, PMONTH).
 
-green('Bangkok', DATE):-
+green("Bangkok", DATE):-
     STARTGREEN=date(2016,5,1),
     ENDGREEN=date(2016,10,15),
     between_date(STARTGREEN,ENDGREEN,DATE).
