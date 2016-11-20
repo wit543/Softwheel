@@ -19,16 +19,18 @@
     // let gm = require("../util/googleMapUtil")(http);
     // let fb  = require("../util/connectorFirebase")(firebase,fb_config);
     // let util = require("../util/utilWrapper")(pg,ep);
-    class utilWrapper{
+    class utilWrapper {
 
-        constructor(){
+        constructor() {
             let config = require("../config.json");
             const http = require("http");
             const pg_config = config['pg'];
             const postgres = require("pg");
-            this.database = require('./postgres')(postgres,pg_config);
+            const geojson_utils = require('geojson-utils');
+            this.database = require('./postgres')(postgres, pg_config);
             this.expert_system = require('./expert_system')(http);
             this.google_map = require('./googleMapUtil')(http);
+            this.reservoirUtil = require('./reservoirUtil')(geojson_utils);
         }
     }
 
