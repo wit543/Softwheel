@@ -11,9 +11,7 @@
             console.log("constructor")
         }
         get_location_latlng(lat,lng,callback){
-            this.lat = lat;
-            this.lng = lng;
-            this.options["path"]=this.path;
+            this.options["path"]='/maps/api/geocode/json?latlng='+lat+','+lng+'&sensor=false';
             console.log(this.options);
             this.http.request(this.options, function(res) {
                 var str = '';
