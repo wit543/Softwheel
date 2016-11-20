@@ -1,4 +1,4 @@
-raining('Bangkok').
+#raining('Bangkok').
 irrigation('Ranong').
 photo_sensitive('RD1').
 grow_well('Bangkok', 'RD1').

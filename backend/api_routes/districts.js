@@ -4,6 +4,9 @@
 (function () {
     'use static';
     module.exports = (function (router,connector) {
+        //////////////////////////////////////////////////////////////////////////
+        // @todo  complete all the parameter handling for getting a district    //
+        //////////////////////////////////////////////////////////////////////////
         router.get("/districts",function (req,res) {
             if (req.query.province != undeclared){
                 return res.json({

@@ -7,18 +7,25 @@
     class expert_system{
         constructor(http){
             this.http=http;
-            this.path="?query=";
+            this.path="api/?query=";
             this.options= {
                 host: 'localhost',
-                port: 80,
+                port: 5555,
                 method: 'GET'
             };
         }
         query(query,callback){
             this.options["path"]=this.path+query;
-            this.http.request(options, function(res) {
-                console.log(res);
-                callback(res)
+            console.log(this.options);
+            this.http.request(this.options, function(res) {
+                var str = '';
+                res.on('data',function (chunk) {
+                    console.log(chunk);
+                    str+=chunk;
+                });
+                res.on('end',function () {
+                    callback(JSON.parse(str));
+                })
             }).end();
         }
     }

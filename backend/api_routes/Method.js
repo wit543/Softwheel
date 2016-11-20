@@ -4,6 +4,9 @@
 (function () {
     'use static';
     module.exports = (function (router,connector) {
+        //////////////////////////////////////////////////////////////////////////
+        // @todo  complete all the parameter handling for getting a method      //
+        //////////////////////////////////////////////////////////////////////////
         router.get("/method",function (req,res) {
             if (req.query.method != undeclared){
                 return res.json({

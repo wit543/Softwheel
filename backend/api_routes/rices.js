@@ -3,10 +3,11 @@
  */
 (function () {
     'use static';
-    module.exports = (function (router,connector,pg) {
+    module.exports = (function (router,es,pg) {
         router.get("/rices",function (req,res) {
-
-            // console.log(connector);z
+            //////////////////////////////////////////////////////////////////////////
+            // @todo  complete all the parameter handling for getting a rice        //
+            //////////////////////////////////////////////////////////////////////////
             if(req.query.name){
                 // pg.query("rices",function (ref) {
                 //     ref.orderByChild("name_th").equalTo(req.query.province).on('value',function (snapshot) {
@@ -26,6 +27,9 @@
                 });
             }
             else if(req.query.province && req.query.district && req.query.sub_district){
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+                // @todo query the rice by province, district, and sub-district and return it in json object        //
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
                 return res.json({
                     rices:[
                         {"name":"rd1"},
@@ -36,6 +40,10 @@
                 });
             }
             else if(req.query.province && req.query.district){
+
+                //////////////////////////////////////////////////////////////////////////
+                // @todo query the rice by province and return it in json object        //
+                //////////////////////////////////////////////////////////////////////////
                 return res.json({
                     rices:[
                         {"name":"rd41"},
@@ -46,13 +54,11 @@
                 });
             }
             else if(req.query.province){
-                return res.json({
-                    rices:[
-                        {"name":"rd41"},
-                        {"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                    ]
+                //////////////////////////////////////////////////////////////////////////
+                // @Example of using ex[ert system                                      //
+                //////////////////////////////////////////////////////////////////////////
+                return es.query("can_growing(P1,+'GROW1').",function (result) {
+                    return res.json(result);
                 });
             }
             else
