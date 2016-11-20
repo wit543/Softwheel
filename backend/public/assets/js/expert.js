@@ -16,10 +16,11 @@ $.getJSON( "http://128.199.192.241:8888/api/rices/", function( data ) {
 
 function district_update() {
     $.getJSON( "http://128.199.192.241:8888/api/districts/?province="+$('#provinces').val(), function( data ) {
+        console.log("http://128.199.192.241:8888/api/districts/?province="+$('#provinces').val());
         for(var i = 0; i<data.districts.length;i++){
             $('#districts').append('<option value="'+
-                data.districts[i].districts_th+
-                '">'+data.districts[i].districts_th+'</option>')
+                data.districts[i].district_th+
+                '">'+data.districts[i].district_th+'</option>')
         }
     });
 }

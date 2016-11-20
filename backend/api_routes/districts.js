@@ -6,7 +6,7 @@
     module.exports = (function (router,util) {
         router.get("/districts",function (req,res) {
             if (req.query.province){
-                util.database.query("select count(distinct(district_th)) from (select district_th from rices_by_location_napun where province_th = '"+req.query.province+"' UNION ALL select district_th from rices_by_location_napee where province_th = '"+req.query.province+"') as foo"
+                util.database.query("select distinct(district_th) from (select district_th from rices_by_location_napun where province_th = '"+req.query.province+"' UNION ALL select district_th from rices_by_location_napee where province_th = '"+req.query.province+"') as foo"
                     , function (data) {
                         return res.json({districts:data});
                     });
