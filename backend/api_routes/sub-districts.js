@@ -8,7 +8,7 @@
             if (req.query.province && req.query.district) {
                 util.database.query("select distinct(sub_district_th) from (select sub_district_th from rices_by_location_napun where province_th = '"+req.query.province+"' and district_th = '"+req.query.district+"' UNION ALL select sub_district_th from rices_by_location_napee where province_th = '"+req.query.province+"' and district_th = '"+req.query.district+"') as foo"
                     , function (data) {
-                        return res.json({sub_distrocts:data});
+                        return res.json({sub_districts:data});
                     });
             }
             else
@@ -16,7 +16,7 @@
                     "(select rices_by_location_napun.sub_district_th from rices_by_location_napun UNION ALL " +
                     "select rices_by_location_napee.sub_district_th from rices_by_location_napee) as foo"
                     , function (data) {
-                        return res.json({sub_distrocts:data});
+                        return res.json({sub_districts:data});
                     });
 
         });

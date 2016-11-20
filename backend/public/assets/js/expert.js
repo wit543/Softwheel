@@ -1,16 +1,16 @@
 $.getJSON( "http://128.199.192.241:8888/api/provinces/", function( data ) {
       for(var i = 0; i<data.provinces.length;i++){
      $('#provinces').append('<option value="'+
-                                data.provinces[i].province_th+
-                                '">'+data.provinces[i].province_th+'</option>')
+                                data.provinces[i].province_th.trim()+
+                                '">'+data.provinces[i].province_th.trim()+'</option>')
   }
 });
 
 $.getJSON( "http://128.199.192.241:8888/api/rices/", function( data ) {
   for(var i = 0; i<data.rices.length;i++){
      $('#rice-varaity').append('<option onclick=setVaraity('+data.rices[i].name_th+') value="'+
-                                data.rices[i].name_th+
-                                '">'+data.rices[i].name_th+'</option>')
+                                data.rices[i].name_th.trim()+
+                                '">'+data.rices[i].name_th.trim()+'</option>')
   }
 });
 
@@ -19,8 +19,19 @@ function district_update() {
         console.log("http://128.199.192.241:8888/api/districts/?province="+$('#provinces').val());
         for(var i = 0; i<data.districts.length;i++){
             $('#districts').append('<option value="'+
-                data.districts[i].district_th+
-                '">'+data.districts[i].district_th+'</option>')
+                data.districts[i].district_th.trim()+
+                '">'+data.districts[i].district_th.trim()+'</option>')
+        }
+    });
+}
+
+function sub_district_update() {
+    $.getJSON( "http://128.199.192.241:8888/api/sub-districts/?province="+($('#provinces').val())+"&district="+$('#districts').val(), function( data ) {
+        console.log("http://128.199.192.241:8888/api/sub-districts/?province="+($('#provinces').val())+"&district="+($('#districts').val()));
+        for(var i = 0; i<data.sub_districts.length;i++){
+            $('#sub-districts').append('<option value="'+
+                data.sub_districts[i].sub_district_th.trim()+
+                '">'+data.sub_districts[i].sub_district_th.trim()+'</option>')
         }
     });
 }
