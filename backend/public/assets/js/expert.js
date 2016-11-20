@@ -1,17 +1,17 @@
 var varaityName = ""
-$.getJSON( "128.199.192.241:8888/provinces/", function( data ) {
+$.getJSON( "http://128.199.192.241:8888/api/provinces/", function( data ) {
       for(var i = 0; i<data.provinces.length;i++){
      $('#provinces').append('<option value="'+
-                                data.provinces[i].name+
-                                '">'+data.provinces[i].name+'</option>')
+                                data.provinces[i].name_th+
+                                '">'+data.provinces[i].name_th+'</option>')
   }
 });
 
-$.getJSON( "128.199.192.241:8888/rices/", function( data ) {
+$.getJSON( "http://128.199.192.241:8888/api/rices/", function( data ) {
   for(var i = 0; i<data.rices.length;i++){
      $('#rice-varaity').append('<option onclick=setVaraity('+data.rices[i].name+') value="'+
-                                data.rices[i].name+
-                                '">'+data.rices[i].name+'</option>')
+                                data.rices[i].name_th+
+                                '">'+data.rices[i].name_th+'</option>')
   }
 });
 
@@ -20,7 +20,7 @@ function provicesList(){
   console.log(varaityName);
   var provinces = $('#provinces');
 
-  $.getJSON( "http://private-e268a-softwheel.apiary-mock.com/rice"+varaityName, function( data ) {
+  $.getJSON("128.199.192.241:8888/api/provinces/", function( data ) {
     provinces.empty()
     provinces.append('<option value="">Select Provice</option>')
     for(var i = 0; i<data.provinces.length;i++){
