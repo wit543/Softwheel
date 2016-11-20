@@ -9,7 +9,7 @@
 
         constructor(database,expertSystem){
             this.database = database;
-            this.expertSystem = expertSystem;
+            this.expert_system = expertSystem;
         }
     }
 
