@@ -27,8 +27,10 @@ def get_api():
     prolog.consult('engine.pl')
     prolog.assertz('raining("Bangkok")')
     rule = "can_growing(P1, 'GROW1')."
-    re_list = list(prolog.query(query))
+    print query
+    re_list = list(prolog.query(query,catcherrors=False))
     # return "hello"
+    print re_list
     return jsonify(re_list)
 
 @app.route('/engine/', methods=['GET'])

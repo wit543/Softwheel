@@ -12,6 +12,7 @@
         require("./districts")(router,util);
         require("./sub-districts")(router,util);
         require("./Method")(router,util);
+        require("./smart")(router,util);
         require(__dirname+"/../util/googleMapUtil");
         app.use("/api",router);
 
