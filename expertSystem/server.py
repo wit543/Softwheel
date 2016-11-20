@@ -28,7 +28,8 @@ def get_api():
     #prolog.assertz('raining("Bangkok")')
     rule = "can_growing(P1, 'GROW1')."
     print query
-    re_list = list(prolog.query(query,catcherrors=False))
+    # re_list = list(prolog.query(query,catcherrors=False))
+    re_list = list(prolog.query(query))
     # return "hello"
     print re_list
     return jsonify(re_list)
