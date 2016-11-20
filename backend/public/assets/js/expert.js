@@ -1,13 +1,13 @@
 var varaityName = ""
-$.getJSON( "https://private-anon-069a979b73-softwheel.apiary-mock.com/province", function( data ) {
-  for(var i = 0; i<data.provinces.length;i++){
+$.getJSON( "128.199.192.241:8888/provinces/", function( data ) {
+      for(var i = 0; i<data.provinces.length;i++){
      $('#provinces').append('<option value="'+
                                 data.provinces[i].name+
                                 '">'+data.provinces[i].name+'</option>')
   }
 });
 
-$.getJSON( "http://private-e268a-softwheel.apiary-mock.com/rice", function( data ) {
+$.getJSON( "128.199.192.241:8888/rices/", function( data ) {
   for(var i = 0; i<data.rices.length;i++){
      $('#rice-varaity').append('<option onclick=setVaraity('+data.rices[i].name+') value="'+
                                 data.rices[i].name+

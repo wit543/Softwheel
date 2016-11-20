@@ -57,7 +57,8 @@
                 //////////////////////////////////////////////////////////////////////////
                 // @Example of using ex[ert system                                      //
                 //////////////////////////////////////////////////////////////////////////
-                return util.expert_system.query("can_growing(P1,+'GROW1').",function (result) {
+                return util.expert_system.query("recommend('Bangkok','RD1','GROW1',10,6).",function (result) {
+                    console.log(result.length)
                     return res.json(result);
                 });
             }

@@ -24,6 +24,7 @@
                     str+=chunk;
                 });
                 res.on('end',function () {
+                    console.log(str);
                     callback(JSON.parse(str));
                 })
             }).end();
