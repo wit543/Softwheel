@@ -16,3 +16,13 @@
 ## Architecture
 ![architecture](docs/images/architecture.png)
 # :ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice::ear_of_rice:
+
+
+## TODO
+  you can also see it in the project 
+
+- [ ] a task list item
+- [ ] complete the path for the backend
+- [ ] comolete the rule for the prolog
+- [ ] combine the util for easier for use
+- [x] completed
