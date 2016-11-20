@@ -56,28 +56,28 @@
    
  - rices_by_location_napun 
    
-                           Table "public.rices_by_location_napee"
-        Column      |      Type      | Modifiers | Storage  | Stats target | Description
-   -----------------|----------------|-----------|----------|--------------|-------------
-    province_th     | character(100) |           | extended |              |
-    province_en     | character(100) |           | extended |              |
-    district_th     | character(100) |           | extended |              |
-    district_en     | character(100) |           | extended |              |
-    sub_district_th | character(100) |           | extended |              |
-    sub_district_en | character(100) |           | extended |              |
-    rice_species_th | character(100) |           | extended |              |
-    rice_species_en | character(100) |           | extended |              |
+                          Table "public.rices_by_location_napee"
+       Column      |      Type      | Modifiers | Storage  | Stats target | Description
+  -----------------|----------------|-----------|----------|--------------|-------------
+   province_th     | character(100) |           | extended |              |
+   province_en     | character(100) |           | extended |              |
+   district_th     | character(100) |           | extended |              |
+   district_en     | character(100) |           | extended |              |
+   sub_district_th | character(100) |           | extended |              |
+   sub_district_en | character(100) |           | extended |              |
+   rice_species_th | character(100) |           | extended |              |
+   rice_species_en | character(100) |           | extended |              |
 
  - rices_by_location_napee
  
-                           Table "public.rices_by_location_napun"
-        Column      |      Type      | Modifiers | Storage  | Stats target | Description
-   -----------------|----------------|-----------|----------|--------------|-------------
-    province_th     | character(100) |           | extended |              |
-    province_en     | character(100) |           | extended |              |
-    district_th     | character(100) |           | extended |              |
-    district_en     | character(100) |           | extended |              |
-    sub_district_th | character(100) |           | extended |              |
-    sub_district_en | character(100) |           | extended |              |
-    rice_species_th | character(100) |           | extended |              |
-    rice_species_en | character(100) |           | extended |              |
+                          Table "public.rices_by_location_napun"
+       Column      |      Type      | Modifiers | Storage  | Stats target | Description
+  -----------------|----------------|-----------|----------|--------------|-------------
+   province_th     | character(100) |           | extended |              |
+   province_en     | character(100) |           | extended |              |
+   district_th     | character(100) |           | extended |              |
+   district_en     | character(100) |           | extended |              |
+   sub_district_th | character(100) |           | extended |              |
+   sub_district_en | character(100) |           | extended |              |
+   rice_species_th | character(100) |           | extended |              |
+   rice_species_en | character(100) |           | extended |              |
