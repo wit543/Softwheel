@@ -17,6 +17,7 @@ $.getJSON( "http://128.199.192.241:8888/api/rices/", function( data ) {
 function district_update() {
     $.getJSON( "http://128.199.192.241:8888/api/districts/?province="+$('#provinces').val(), function( data ) {
         console.log("http://128.199.192.241:8888/api/districts/?province="+$('#provinces').val());
+        $('#districts').empty()
         for(var i = 0; i<data.districts.length;i++){
             $('#districts').append('<option value="'+
                 data.districts[i].district_th.trim()+
@@ -28,6 +29,7 @@ function district_update() {
 function sub_district_update() {
     $.getJSON( "http://128.199.192.241:8888/api/sub-districts/?province="+($('#provinces').val())+"&district="+$('#districts').val(), function( data ) {
         console.log("http://128.199.192.241:8888/api/sub-districts/?province="+($('#provinces').val())+"&district="+($('#districts').val()));
+        $('#sub-districts').empty()
         for(var i = 0; i<data.sub_districts.length;i++){
             $('#sub-districts').append('<option value="'+
                 data.sub_districts[i].sub_district_th.trim()+
