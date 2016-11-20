@@ -25,7 +25,7 @@ def get_api():
     query = request.args.get('query')
     prolog = Prolog()
     prolog.consult('engine.pl')
-    prolog.assertz('raining("Bangkok")')
+    #prolog.assertz('raining("Bangkok")')
     rule = "can_growing(P1, 'GROW1')."
     print query
     re_list = list(prolog.query(query,catcherrors=False))
