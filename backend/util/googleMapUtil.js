@@ -1,5 +1,4 @@
 (function () {
-
     class google_map{
         constructor(http){
             this.http=http;
@@ -9,10 +8,11 @@
                 port: 80,
                 method: 'GET'
             };
+            console.log("constructor")
         }
         get_location_latlng(lat,lng,callback){
             this.lat = lat;
-            this.lng = lng
+            this.lng = lng;
             this.options["path"]=this.path;
             console.log(this.options);
             this.http.request(this.options, function(res) {
