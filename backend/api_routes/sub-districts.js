@@ -4,39 +4,24 @@
 (function () {
     'use static';
     module.exports = (function (router,util) {
-        //////////////////////////////////////////////////////////////////////////
-        // @todo  complete all the parameter handling for getting a sub-district//
-        //////////////////////////////////////////////////////////////////////////
-        router.get("/sub-district",function (req,res) {
-            if (req.query.province != undeclared && req.query.district){
-                //////////////////////////////////////////////////////////////////////////
-                // @todo  The code below is not finish, it just an example for front end//
-                //////////////////////////////////////////////////////////////////////////
-               //CODE//CODE//CODE//CODE//CODE//CODE//CODE//CODE
-                return res.json({
-                    name:"rd15"
-                })
-                //CODE//CODE//CODE//CODE//CODE//CODE//CODE//CODE
+        router.get("/sub-districts",function (req,res) {
+            if (req.query.province && req.query.district) {
+                util.database.query("select distinct(sub_district_th) from (select sub_district_th from rices_by_location_napun where province_th = '"+req.query.province+"' and district_th = '"+req.query.district+"' UNION ALL select sub_district_th from rices_by_location_napee where province_th = '"+req.query.province+"' and district_th = '"+req.query.district+"') as foo"
+                    , function (data) {
+                        return res.json(data);
+                    });
             }
-            if (req.query.province != undeclared){
-                return res.json({
-                    name:"rd15"
-                })
-            }
-            if (req.query.district != undeclared){
-                return res.json({
-                    name:"rd15"
-                })
-            }
-            return res.json({
-                sub_districts:[
-                    {name:"แก้งเหนือ"},
-                    {name:"เขมราฐ"}
-                ]
-            });
+            else
+                util.database.query("select distinct(sub_district_th) from " +
+                    "(select rices_by_location_napun.sub_district_th from rices_by_location_napun UNION ALL " +
+                    "select rices_by_location_napee.sub_district_th from rices_by_location_napee) as foo"
+                    , function (data) {
+                        return res.json(data);
+                    });
+
         });
 
-        router.get("/sub-district/:provinceName",function (req,res){
+        router.get("/sub-districts/:provinceName",function (req,res){
             // req.params.id
             return res.json({
                 sub_district:[
