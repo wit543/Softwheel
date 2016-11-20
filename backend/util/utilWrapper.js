@@ -28,6 +28,7 @@
             const postgres = require("pg");
             this.database = require('./postgres')(postgres,pg_config);
             this.expert_system = require('./expert_system')(http);
+            this.google_map = require('./googleMapUtil')(http);
         }
     }
 
