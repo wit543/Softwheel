@@ -28,19 +28,11 @@
             console.log(this.gju.pointInPolygon({"type":"Point","coordinates":[18.3220,98.2415]},
                 this.reservoir_geojson[0]["features"][0]["geometry"]));
         }
-        query(query,callback){
-            this.options["path"]=this.path+query;
-            console.log(this.options);
-            this.http.request(this.options, function(res) {
-                var str = '';
-                res.on('data',function (chunk) {
-                    console.log(chunk);
-                    str+=chunk;
-                });
-                res.on('end',function () {
-                    callback(JSON.parse(str));
-                })
-            }).end();
+        query(lat,long,callback){
+           for(let geojson in this.reservoir_geojson)
+               if(this.gju.pointInPolygon({"type":"Point","coordinates":[lat,long]},
+                       this.geojson[0]["features"][0]["geometry"]))
+                   callback(this.geojson[0]['properties'])
         }
     }
     module.exports = function (geojsonUtil) {
