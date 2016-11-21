@@ -4,8 +4,8 @@
 (function () {
 
     class reservoir{
-        constructor(http){
-            this.http = http;
+        constructor(geojsonUtil){
+            this.gju = geojsonUtil;
             this.list = [
                 "โครงการอ่างเก็บน้ำสันหนอง",
                 "โครงการอ่างเก็บน้ำห้วยมะนาว",
@@ -19,6 +19,14 @@
                 "โครงการอ่างเก็บน้ำแม่ทะลบหลวง",
                 "โครงการอ่างเก็บน้ำห้วยเดื่อ"
             ];
+            let reservoir_geojson = [];
+            this.list.forEach(function (data) {
+                reservoir_geojson.push(require('../public/reservoir/'+data))
+            })
+            this.reservoir_geojson = reservoir_geojson;
+            console.log(this.reservoir_geojson[0]["features"][0]["geometry"]);
+            console.log(this.gju.pointInPolygon({"type":"Point","coordinates":[18.3220,98.2415]},
+                this.reservoir_geojson[0]["features"][0]["geometry"]));
         }
         query(query,callback){
             this.options["path"]=this.path+query;
@@ -35,7 +43,7 @@
             }).end();
         }
     }
-    module.exports = function (http) {
-        return new reservoir(http)
+    module.exports = function (geojsonUtil) {
+        return new reservoir(geojsonUtil)
     };
 })();
