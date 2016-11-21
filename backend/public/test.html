@@ -25,7 +25,7 @@
   // America.
 
   // First, create an object containing LatLng and population for each city.
-  var location ={
+  var locations ={
     "โครงการอ่างเก็บน้ำสันหนอง":"โครงการอ่างเก็บน้ำสันหนอง",
     "โครงการอ่างเก็บน้ำห้วยมะนาว":"โครงการอ่างเก็บน้ำห้วยมะนาว",
     "โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้":"โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้",
@@ -81,9 +81,9 @@
       position: {lat: 98.2415, lng: 18.3220},
       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     });
-    for(var loc in location)
+    for(var loc in locations)
       map.data.loadGeoJson(
-              'http://128.199.192.241:8888/reservoir/'+loc+'.json');
+              'http://128.199.192.241:8888/reservoir/โครงการอ่างเก็บน้ำห้วยมะนาว.json');
   }
 </script>
 <script async defer
