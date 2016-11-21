@@ -25,11 +25,24 @@
       // America.
 
       // First, create an object containing LatLng and population for each city.
+      var location ={
+      "โครงการอ่างเก็บน้ำสันหนอง":"โครงการอ่างเก็บน้ำสันหนอง",
+              "โครงการอ่างเก็บน้ำห้วยมะนาว":"โครงการอ่างเก็บน้ำห้วยมะนาว",
+              "โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้":"โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้",
+
+              "โครงการอ่างเก็บน้ำห้วยแม่ออน":"โครงการอ่างเก็บน้ำห้วยแม่ออน",
+              "โครงการอ่างเก็บน้ำห้วยฮัก":"โครงการอ่างเก็บน้ำห้วยฮัก",
+              "โครงการอ่างเก็บน้ำห้วยเกี๋ยง":"โครงการอ่างเก็บน้ำห้วยเกี๋ยง",
+              "โครงการอ่างเก็บน้ำแม่โก๋น":"โครงการอ่างเก็บน้ำแม่โก๋น",
+              "โครงการอ่างเก็บน้ำแม่ข้อน":"โครงการอ่างเก็บน้ำแม่ข้อน",
+              "โครงการอ่างเก็บน้ำแม่ทะลบหลวง":"โครงการอ่างเก็บน้ำแม่ทะลบหลวง",
+              "โครงการอ่างเก็บน้ำห้วยเดื่อ":"โครงการอ่างเก็บน้ำห้วยเดื่อ"
+      }
       var citymap = {
         chicago: {
           center: {lat: 18.4717, lng: 98.5658},
           population: 2714856
-        }
+        }.
       };
 
       function initMap() {
@@ -68,9 +81,10 @@
           position: {lat: 98.2415, lng: 18.3220},
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
         });
-         map.data.loadGeoJson(
-      'http://128.199.192.241:8888/reservoir/โครงการอ่างเก็บน้ำสันหนอง.json');
-      }
+        for(var loc in location)
+           map.data.loadGeoJson(
+            'http://128.199.192.241:8888/reservoir/'+loc+'.json');
+        }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYulX8Im1iGpwrRTGBAbMSPyzC_qRzrK8&callback=initMap">
