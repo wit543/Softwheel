@@ -1,12 +1,20 @@
+# coding=utf-8
 from flask import Flask,request,jsonify,send_from_directory
 from pyswip import Prolog,Functor
 from flask.ext.cors import CORS, cross_origin
+from markupsafe import Markup, escape
+import regex
+import sys
 import os
 import json
 app = Flask(__name__,static_url_path='')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-APP_ROOT = os.path.dirname(os.path.abspath(__file__)) 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+def trace(frame, event, arg):
+    print "%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno)
+    return trace
 
 @app.route('/', methods=['GET'])
 @cross_origin()
@@ -29,6 +37,7 @@ def get_api():
     rule = "can_growing(P1, 'GROW1')."
     print query
     # re_list = list(prolog.query(query,catcherrors=False))
+    #query='recommend("ห","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
     re_list = list(prolog.query(query))
     # return "hello"
     print re_list
@@ -60,4 +69,7 @@ def create_rice_rule():
     return "success"
 
 if __name__ == "__main__":
-    app.run("0.0.0.0",port=5555)	 
+    #sys.settrace(trace)
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    app.run("0.0.0.0",port=5555)
