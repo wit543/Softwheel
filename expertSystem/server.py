@@ -1,8 +1,14 @@
+import sys
 from flask import Flask,request,jsonify,send_from_directory
 from pyswip import Prolog,Functor
 from flask.ext.cors import CORS, cross_origin
 import os
 import json
+
+def trace(frame, event, arg):
+    print "%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno)
+    return trace
+
 app = Flask(__name__,static_url_path='')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -25,11 +31,12 @@ def get_api():
     query = request.args.get('query')
     prolog = Prolog()
     prolog.consult('engine.pl')
-    #prolog.assertz('raining("Bangkok")')
+    prolog.assertz('raining("Bangkok")')
     rule = "can_growing(P1, 'GROW1')."
+    query = 'trace, recommend("Bangkok","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
     print query
-    # re_list = list(prolog.query(query,catcherrors=False))
-    re_list = list(prolog.query(query))
+    re_list = list(prolog.query(query,catcherrors=False))
+    # re_list = list(prolog.query(query))
     # return "hello"
     print re_list
     return jsonify(re_list)
@@ -60,4 +67,5 @@ def create_rice_rule():
     return "success"
 
 if __name__ == "__main__":
+    sys.settrace(trace)
     app.run("0.0.0.0",port=5555)	 
