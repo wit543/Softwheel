@@ -3,9 +3,22 @@
  */
 (function () {
 
-    class expert_system{
+    class reservoir{
         constructor(http){
+            this.http = http;
+            this.list = [
+                "โครงการอ่างเก็บน้ำสันหนอง",
+                "โครงการอ่างเก็บน้ำห้วยมะนาว",
+                "โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้",
 
+                "โครงการอ่างเก็บน้ำห้วยแม่ออน",
+                "โครงการอ่างเก็บน้ำห้วยฮัก",
+                "โครงการอ่างเก็บน้ำห้วยเกี๋ยง",
+                "โครงการอ่างเก็บน้ำแม่โก๋น",
+                "โครงการอ่างเก็บน้ำแม่ข้อน",
+                "โครงการอ่างเก็บน้ำแม่ทะลบหลวง",
+                "โครงการอ่างเก็บน้ำห้วยเดื่อ"
+            ];
         }
         query(query,callback){
             this.options["path"]=this.path+query;
@@ -23,6 +36,6 @@
         }
     }
     module.exports = function (http) {
-        return new expert_system(http)
+        return new reservoir(http)
     };
 })();
