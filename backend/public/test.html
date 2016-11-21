@@ -55,6 +55,19 @@
             radius: 1000
           });
         }
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: 18.3220, lng: 98.2415},
+        });
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: 98.2415, lng: 18.3220},
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+        });
          map.data.loadGeoJson(
       'http://128.199.192.241:8888/reservoir/โครงการอ่างเก็บน้ำสันหนอง.json');
       }
