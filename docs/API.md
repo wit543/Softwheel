@@ -20,7 +20,7 @@
   |-[home](#home)
 
 ## Rice
-- :white_check_mark: /api/rice/
+- :white_check_mark: [/api/rice/](http://128.199.192.241:8888/api/rices/)
 ```JSON
   rices:[
         {
@@ -70,7 +70,7 @@
 ```JSON
   "error": "doesn't exist"
 ```
-- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง&sub_district=ขี้เหล็ก](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87&sub_district=%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81)
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง&sub_district=ขี้เหล็ก](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87&sub_district=%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81)
 ```JSON
     "rices": [
         {
@@ -90,7 +90,7 @@
         }
     ]
 ```
-- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87)
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87)
 ```JSON
     "rices": [
         {
@@ -120,7 +120,7 @@
     ]
 
 ```
-- :white_check_mark: [/api/rices/?province=เชียงใหม่](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88)
+- :white_check_mark: [/api/rices/?province=เชียงใหม่](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88)
 
 ```JSON
   {
