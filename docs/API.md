@@ -151,7 +151,7 @@
     ]
 ```
 ## Provinces
-- /api/provinces
+- :white_check_mark: /api/provinces
 ```JSON
 {
 "provinces": [
