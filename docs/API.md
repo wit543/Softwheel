@@ -153,22 +153,20 @@
 ## Provinces
 - :white_check_mark: /api/provinces
 ```JSON
-{
-"provinces": [
-{
-"province_th": "สุพรรณบุรี                                                                                          "
-},
-{
-"province_th": "เชียงใหม่                                                                                           "
-},
-{
-"province_th": "สุรินทร์                                                                                            "
-},
-{
-"province_th": "อุบลราชธานี                                                                                         "
-}
-]
-}
+  "provinces": [
+    {
+      "province_th": "สุพรรณบุรี                                                                                          "
+    },
+    {
+      "province_th": "เชียงใหม่                                                                                           "
+    },
+    {
+      "province_th": "สุรินทร์                                                                                            "
+    },
+    {
+    "province_th": "อุบลราชธานี                                                                                         "
+    }
+  ]
 ```
 - /api/province?rice=rd1
 ```JSON
@@ -182,54 +180,54 @@
 - :white_check_mark: /api/districts
 ```JSON
 
-"districts": [
-{
-"district_th": "สิรินธร                                                                                             "
-},
-{
-"district_th": "ขอนแตก                                                                                              "
-},
-{
-"district_th": "ม่วงสามสิบ                                                                                          "
-},
-{
-"district_th": "บางพลับ                                                                                             "
-},
-{
-"district_th": "ศรีเมืองใหม่                                                                                        "
-},
-{
-"district_th": "ทมอ                                                                                                 "
-},
-{
-"district_th": "ระแงง                                                                                               "
-}
-]
+  "districts": [
+    {
+      "district_th": "สิรินธร                                                                                             "
+    },
+    {
+      "district_th": "ขอนแตก                                                                                              "
+    },
+    {
+      "district_th": "ม่วงสามสิบ                                                                                          "
+    },
+    {
+      "district_th": "บางพลับ                                                                                             "
+    },
+    {
+      "district_th": "ศรีเมืองใหม่                                                                                        "
+    },
+    {
+      "district_th": "ทมอ                                                                                                 "
+    },
+    {
+      "district_th": "ระแงง                                                                                               "
+    }
+  ]
 
-```
-- :white_check_mark: /api/districts?province=bangkok
-```JSON
- 
-"districts": [
-{
-"district_th": "ท่าพี่เลี้ยง                                                                                        "
-},
-{
-"district_th": "เขาพระ                                                                                              "
-},
-{
-"district_th": "บางพลับ                                                                                             "
-},
-{
-"district_th": "ทัพหลวง                                                                                             "
-},
-{
-"district_th": "วังน้ำซับ                                                                                           "
-},
-{
-"district_th": "ดอนมะเกลือ                                                                                          "
-}
-]
+    ```
+ - :white_check_mark: /api/districts?province=bangkok
+    ```JSON
+
+  "districts": [
+    {
+    "district_th": "ท่าพี่เลี้ยง                                                                                        "
+    },
+    {
+    "district_th": "เขาพระ                                                                                              "
+    },
+    {
+    "district_th": "บางพลับ                                                                                             "
+    },
+    {
+    "district_th": "ทัพหลวง                                                                                             "
+    },
+    {
+    "district_th": "วังน้ำซับ                                                                                           "
+    },
+    {
+    "district_th": "ดอนมะเกลือ                                                                                          "
+    }
+  ]
 ```
 - /api/districts?rice=rd1
 ```JSON
