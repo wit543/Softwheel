@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
@@ -12,72 +12,77 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   </head>
-  <body>
-  <script>
-    $( function() {
-      $( "#datepicker" ).datepicker();
-    } );
-  </script>
-      <div class="body-container">
-        <div class="transparent">
-          <div class= "nav-container">
-            <div>
-              <button class="-mode">Expert</button>
-              <button class="-mode">Beginner</button>
-            </div>
-
-          </div>
-          <div class = "group-container">
-            <div class ="group">
-              <div class="label col-md-4">Rice Varaity</div>
-              <select id="rice-varaity" class="selector">
-                <option value="">Select Rice Varaity</option>
-              </select>
-            </div>
-            <div class ="group">
-
-              <div class="label col-md-4">Place</div>
-              <select id="provinces" class="selector" onchange="district_update()">
-                <option value="">Select Provice</option>
-              </select>
-              <select id="districts" class="selector" onchange="sub_district_update()">
-                <option value="">Select District</option>
-              </select>
-              <select id="sub-districts" class="selector">
-                <option value="">Select Sub District</option>
-              </select>
-            </div>
-            <div class ="group">
-              <div class="label col-md-4">Growing Method</div>
-              <select id="methods" class="selector">
-                <option value="0">Select Growing Method</option>
-                <option value="1">Indirect Seeding</option>
-                <option value="2">Broadcast Sowing</option>
-                <option value="3">Winter Period</option>
-
-              </select>
-            </div>
-            <div class ="group">
-              <div class="label col-md-4">Date</div>
-              <input type="text" id="datepicker">
-            </div>
-            <div class ="group">
-              <div class="col-md-4"></div>
-              <label class="radio-inline -radio-input"><input type="radio" name="optradio" id="planting">Panting</label>
-              <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio" id="harvesting">Harvesting</label>
-            </div>
-
-            <div class ="group -text-aligh-center">
-              <button class = "submit-button" onclick="go()">Submit</button>
-            </div>
-          </div>
-        </div>
+<body>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
+<div class="body-container">
+  <div class="pattern">
+    <div class= "nav-container">
+      <div>
+        <button class="-mode">Expert</button>
+        <button class="-mode">Beginner</button>
       </div>
 
-    <!--<script src="assets/js/jquery.min.js"></script>-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/expert.js"></script>
+    </div>
+    <div class = "group-container">
+      <div class ="group">
+        <div class="label col-md-4">Rice Varaity</div>
+        <select id="rice-varaity" class="selector">
+          <option value="">Select Rice Varaity</option>
+        </select>
+      </div>
+      <div class ="group">
+        <div class="label col-md-4">Place</div>
+        <select id="provinces" class="selector" onchange="district_update()">
+          <option value="">Select Provice</option>
+        </select>
+      </div>
+      <div class ="group">
+        <div class="col-md-4"></div>
+        <select id="districts" class="selector" onchange="sub_district_update()">
+          <option value="">Select District</option>
+        </select>
+      </div>
+      <div class ="group">
+        <div class="col-md-4"></div>
+        <select id="sub-districts" class="selector">
+          <option value="">Select Sub District</option>
+        </select>
+      </div>
+      <div class ="group">
+        <div class="label col-md-4">Growing Method</div>
+        <select id="methods" class="selector">
+          <option value="0">Select Growing Method</option>
+          <option value="1">Indirect Seeding</option>
+          <option value="2">Broadcast Sowing</option>
+          <option value="3">Winter Period</option>
 
-  </body>
-  <!-- END BODY -->
+        </select>
+      </div>
+      <div class ="group">
+        <div class="label col-md-4">Date</div>
+        <input type="text" id="datepicker">
+      </div>
+      <div class ="group">
+        <div class="col-md-4"></div>
+        <label class="radio-inline -radio-input"><input type="radio" name="optradio" id="planting">Panting</label>
+        <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio" id="harvesting">Harvesting</label>
+      </div>
+
+      <div class ="group -text-aligh-center">
+        <button class = "submit-button" onclick="go()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<script src="assets/js/jquery.min.js"></script>-->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/expert.js"></script>
+
+</body>
+<!-- END BODY -->
 </html>
