@@ -27,10 +27,11 @@
             const pg_config = config['pg'];
             const postgres = require("pg");
             const geojson_utils = require('geojson-utils');
+            const xml2js = require('xml2js');
             this.database = require('./postgres')(postgres, pg_config);
             this.expert_system = require('./expert_system')(http);
             this.google_map = require('./googleMapUtil')(http);
-            this.reservoirUtil = require('./reservoirUtil')(geojson_utils);
+            this.reservoirUtil = require('./reservoirUtil')(geojson_utils,xml2js,http);
         }
     }
 

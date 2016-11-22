@@ -59,3 +59,6 @@ add_date(DATE, NUMDAYS, RES):-
 	STAMP2 is (STAMP1 + NUMDAYS*86400),
     stamp_date_time(STAMP2, DATE2, 0),
     RES = DATE2.
+
+hello():-
+    write("hello").

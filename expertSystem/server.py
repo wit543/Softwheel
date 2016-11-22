@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import sys
-=======
 # coding=utf-8
->>>>>>> 271715e129b1e4ea8675edd02ed8197254850ca2
+import sys
 from flask import Flask,request,jsonify,send_from_directory
 from pyswip import Prolog,Functor
 from flask.ext.cors import CORS, cross_origin
@@ -78,12 +75,7 @@ def create_rice_rule():
     return "success"
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    sys.settrace(trace)
-    app.run("0.0.0.0",port=5555)	 
-=======
     #sys.settrace(trace)
     reload(sys)
     sys.setdefaultencoding('utf-8')
     app.run("0.0.0.0",port=5555)
->>>>>>> 271715e129b1e4ea8675edd02ed8197254850ca2
