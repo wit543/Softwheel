@@ -27,40 +27,41 @@
                 });
             }
             else if(req.query.province && req.query.district && req.query.sub_district){
-                //////////////////////////////////////////////////////////////////////////////////////////////////////
-                // @todo query the rice by province, district, and sub-district and return it in json object        //
-                //////////////////////////////////////////////////////////////////////////////////////////////////////
-                return res.json({
-                    rices:[
-                        {"name":"rd1"},
-                        {"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                    ]
-                });
+                util.database.query("select distinct(rice_species_th) from (select * from rices_by_location_napun UNION ALL select * from rices_by_location_napee) as foo where district_th='"+req.query.district+"' and sub_district_th='"+req.query.sub_district+"' and province_th='"+req.query.province+"'",function (data) {
+                    rices = {};
+                    rices['rices']=data;
+                    if(data.length==0){
+                        return res.json({error:"doesn't exist"});
+                    }
+                    else
+                        return res.json(rices);
+                })
             }
             else if(req.query.province && req.query.district){
-
-                //////////////////////////////////////////////////////////////////////////
-                // @todo query the rice by province and return it in json object        //
-                //////////////////////////////////////////////////////////////////////////
-                return res.json({
-                    rices:[
-                        {"name":"rd41"},
-                        {"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                        {"name":"rd1"},{"name":"rd15"},
-                    ]
-                });
+                util.database.query("select distinct(rice_species_th) from (select * from rices_by_location_napun UNION ALL select * from rices_by_location_napee) as foo where district_th='"+req.query.district+"' and province_th='"+req.query.province+"'",function (data) {
+                    rices = {};
+                    rices['rices']=data;
+                    if(data.length==0){
+                        return res.json({error:"doesn't exist"});
+                    }
+                    else
+                        return res.json(rices);
+                })
             }
             else if(req.query.province){
-                //////////////////////////////////////////////////////////////////////////
-                // @Example of using ex[ert system                                      //
-                //////////////////////////////////////////////////////////////////////////
-                return util.expert_system.query("recommend('Bangkok','RD1','GROW1',10,6).",function (result) {
-                    console.log(result.length)
-                    return res.json(result);
-                });
+                util.database.query("select distinct(rice_species_th) from (select * from rices_by_location_napun UNION ALL select * from rices_by_location_napee) as foo where province_th='"+req.query.province+"'",function (data) {
+                    rices = {};
+                    rices['rices']=data;
+                    if(data.length==0){
+                        return res.json({error:"doesn't exist"});
+                    }
+                    else
+                        return res.json(rices);
+                })
+                // return util.expert_system.query("recommend('Bangkok','RD1','GROW1',10,6).",function (result) {
+                //     console.log(result.length)
+                //     return res.json(result);
+                // });
             }
             else
                 // fb.query("rices",function (ref) {
