@@ -20,7 +20,7 @@
   |-[home](#home)
 
 ## Rice
-- :white_check_mark: /api/rice/
+- :white_check_mark: [/api/rice/](http://128.199.192.241:8888/api/rices/)
 ```JSON
   rices:[
         {
@@ -70,95 +70,98 @@
 ```JSON
   "error": "doesn't exist"
 ```
-- /api/rices/?provinces=bangkok&district=chatuchak&sub_districts=bangken
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง&sub_district=ขี้เหล็ก](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87&sub_district=%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81)
 ```JSON
-    rices:[
-       {
-        "name_th":"กข-แม่โจ้2",
-        "name_en":"rd_maejo2",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข1",
-        "name_en":"rd1",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข10",
-        "name_en":"rd10",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข11",
-        "name_en":"rd11",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข12(หนองคาย80)",
-        "name_en":"nongkai80",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข13",
-        "name_en":"rd13",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข14",
-        "name_en":"rd14",
-        "photo_sensitive":true
-      }
+    "rices": [
+        {
+            "rice_species_th": "เหนียวสันป่าตอง                                                                                     "
+        },
+        {
+            "rice_species_th": "ปทุมธานี1                                                                                           "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        },
+        {
+            "rice_species_th": "กข6                                                                                                 "
+        }
     ]
 ```
-- /api/rices/?provinces=bangkok&district=chatuchak
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87)
 ```JSON
-      rices:[
-      {
-        "name_th":"กข-แม่โจ้2",
-        "name_en":"rd_maejo2",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข1",
-        "name_en":"rd1",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข10",
-        "name_en":"rd10",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข11",
-        "name_en":"rd11",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข12(หนองคาย80)",
-        "name_en":"nongkai80",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข13",
-        "name_en":"rd13",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข14",
-        "name_en":"rd14",
-        "photo_sensitive":true
-      }
+    "rices": [
+        {
+            "rice_species_th": "เหนียวสันป่าตอง                                                                                     "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ปทุมธานี1                                                                                           "
+        },
+        {
+            "rice_species_th": "กข4                                                                                                 "
+        },
+        {
+            "rice_species_th": "ข้าวหอมแดง                                                                                          "
+        },
+        {
+            "rice_species_th": "เจ้าฮ่อ                                                                                             "
+        },
+        {
+            "rice_species_th": "กข6                                                                                                 "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        }
+    ]
+
+```
+- :white_check_mark: [/api/rices/?province=เชียงใหม่](http://128.199.192.241:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88)
+
+```JSON
+  {
+    "rices": [
+        {
+            "rice_species_th": "ข้าวหลวงสันป่าตอง                                                                                   "
+        },
+        {
+            "rice_species_th": "ชัยนาท2                                                                                             "
+        },
+        {
+            "rice_species_th": "กข21                                                                                                "
+        },
+        {
+            "rice_species_th": "ปทุมธานี60                                                                                          "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        }
+        ...
     ]
 ```
 ## Provinces
-- /api/provinces
+- :white_check_mark: /api/provinces
 ```JSON
-  provinces:[
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
+  "provinces": [
+    {
+      "province_th": "สุพรรณบุรี                                                                                          "
+    },
+    {
+      "province_th": "เชียงใหม่                                                                                           "
+    },
+    {
+      "province_th": "สุรินทร์                                                                                            "
+    },
+    {
+    "province_th": "อุบลราชธานี                                                                                         "
+    }
   ]
 ```
 - /api/province?rice=rd1
@@ -170,21 +173,56 @@
   ]
 ```
 ## Districts
-- /api/districts
+- :white_check_mark: /api/districts
 ```JSON
-  districts:[
-    {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
+
+  "districts": [
+    {
+      "district_th": "สิรินธร                                                                                             "
+    },
+    {
+      "district_th": "ขอนแตก                                                                                              "
+    },
+    {
+      "district_th": "ม่วงสามสิบ                                                                                          "
+    },
+    {
+      "district_th": "บางพลับ                                                                                             "
+    },
+    {
+      "district_th": "ศรีเมืองใหม่                                                                                        "
+    },
+    {
+      "district_th": "ทมอ                                                                                                 "
+    },
+    {
+      "district_th": "ระแงง                                                                                               "
+    }
   ]
-```
-- /api/districts?province=bangkok
-```JSON
-  districts:[
-    {name:"chatuchak"},
-    {name:"chatuchakhatuchak"},
-    {name:"chatuchak"},
+
+    ```
+ - :white_check_mark: /api/districts?province=bangkok
+    ```JSON
+
+  "districts": [
+    {
+    "district_th": "ท่าพี่เลี้ยง                                                                                        "
+    },
+    {
+    "district_th": "เขาพระ                                                                                              "
+    },
+    {
+    "district_th": "บางพลับ                                                                                             "
+    },
+    {
+    "district_th": "ทัพหลวง                                                                                             "
+    },
+    {
+    "district_th": "วังน้ำซับ                                                                                           "
+    },
+    {
+    "district_th": "ดอนมะเกลือ                                                                                          "
+    }
   ]
 ```
 - /api/districts?rice=rd1
@@ -203,12 +241,19 @@
 ```
   
 ## Sub Districts
-- /api/sub-districts/
+- :white_check_mark: /api/sub-districts/
 ```JSON
-   sub_districts:[
-    {name:"แก้งเหนือ"},
-    {name:"เขมราฐ"}
-   ]
+"sub_districts": [
+{
+"sub_district_th": "Kap Choeng                                                                                          "
+},
+{
+"sub_district_th": "ขามใหญ่                                                                                             "
+},
+{
+"sub_district_th": "ม่วงสามสิบ                                                                                          "
+}
+]
 ```
 - /api/sub-districts/?province=bangkok
 ```JSON
@@ -217,12 +262,13 @@
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-districts/?province=bangkok&district=chatcuckat
+- :white_check_mark: /api/sub-districts/?province=สุพรรณบุรี&district=โพธิ์พระยา
 ```JSON
-   sub_districts:[
-    {name:"แก้งเหนือ"},
-    {name:"เขมราฐ"}
-   ]
+   "sub_districts": [
+      {
+        "sub_district_th": "Mueang Saphan Buri                                                                                  "
+      }
+    ]
 ```
 - /api/sub-districts/?province=bangkok&district=chatcukat&rice=rd15
 ```JSON
