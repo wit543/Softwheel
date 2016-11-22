@@ -261,12 +261,13 @@
     {name:"เขมราฐ"}
    ]
 ```
-- /api/sub-districts/?province=bangkok&district=chatcuckat
+- :white_check_mark: /api/sub-districts/?province=สุพรรณบุรี&district=โพธิ์พระยา
 ```JSON
-   sub_districts:[
-    {name:"แก้งเหนือ"},
-    {name:"เขมราฐ"}
-   ]
+   "sub_districts": [
+      {
+        "sub_district_th": "Mueang Saphan Buri                                                                                  "
+      }
+    ]
 ```
 - /api/sub-districts/?province=bangkok&district=chatcukat&rice=rd15
 ```JSON
