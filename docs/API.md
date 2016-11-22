@@ -179,22 +179,57 @@
   ]
 ```
 ## Districts
-- /api/districts
+- :white_check_mark: /api/districts
 ```JSON
-  districts:[
-    {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
-    {name:"chatuchak"},
-  ]
+
+"districts": [
+{
+"district_th": "สิรินธร                                                                                             "
+},
+{
+"district_th": "ขอนแตก                                                                                              "
+},
+{
+"district_th": "ม่วงสามสิบ                                                                                          "
+},
+{
+"district_th": "บางพลับ                                                                                             "
+},
+{
+"district_th": "ศรีเมืองใหม่                                                                                        "
+},
+{
+"district_th": "ทมอ                                                                                                 "
+},
+{
+"district_th": "ระแงง                                                                                               "
+}
+]
+
 ```
-- /api/districts?province=bangkok
+- :white_check_mark: /api/districts?province=bangkok
 ```JSON
-  districts:[
-    {name:"chatuchak"},
-    {name:"chatuchakhatuchak"},
-    {name:"chatuchak"},
-  ]
+ 
+"districts": [
+{
+"district_th": "ท่าพี่เลี้ยง                                                                                        "
+},
+{
+"district_th": "เขาพระ                                                                                              "
+},
+{
+"district_th": "บางพลับ                                                                                             "
+},
+{
+"district_th": "ทัพหลวง                                                                                             "
+},
+{
+"district_th": "วังน้ำซับ                                                                                           "
+},
+{
+"district_th": "ดอนมะเกลือ                                                                                          "
+}
+]
 ```
 - /api/districts?rice=rd1
 ```JSON
