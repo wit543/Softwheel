@@ -247,12 +247,19 @@
 ```
   
 ## Sub Districts
-- /api/sub-districts/
+- :white_check_mark: /api/sub-districts/
 ```JSON
-   sub_districts:[
-    {name:"แก้งเหนือ"},
-    {name:"เขมราฐ"}
-   ]
+"sub_districts": [
+{
+"sub_district_th": "Kap Choeng                                                                                          "
+},
+{
+"sub_district_th": "ขามใหญ่                                                                                             "
+},
+{
+"sub_district_th": "ม่วงสามสิบ                                                                                          "
+}
+]
 ```
 - /api/sub-districts/?province=bangkok
 ```JSON
