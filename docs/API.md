@@ -153,13 +153,22 @@
 ## Provinces
 - /api/provinces
 ```JSON
-  provinces:[
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
-    {name:"bangkok"},
-  ]
+{
+"provinces": [
+{
+"province_th": "สุพรรณบุรี                                                                                          "
+},
+{
+"province_th": "เชียงใหม่                                                                                           "
+},
+{
+"province_th": "สุรินทร์                                                                                            "
+},
+{
+"province_th": "อุบลราชธานี                                                                                         "
+}
+]
+}
 ```
 - /api/province?rice=rd1
 ```JSON
