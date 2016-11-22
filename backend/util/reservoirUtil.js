@@ -70,6 +70,7 @@
                         lat,lng,
                         1000
                     ))
+                    console.log()
                     callback(point['$'])
 
         }

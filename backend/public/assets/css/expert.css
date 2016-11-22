@@ -16,16 +16,8 @@ body, html {
 }
 
 .body-container {
-  height: 100%;
-  width: 100%;
   background-image: url('../images/bg.jpg');
-}
-
-.transparent {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0,.2);
-  padding: 160px 0;
+  background-size: cover;
 }
 
 .group {
@@ -90,4 +82,12 @@ body, html {
 
 .-margin-left {
   margin: 0 0 0 40px;
+}
+
+.pattern{
+	background:rgba(0,0,0,.5) url(../images/pattern.png);
+	padding-top:100px;
+  height: 100%;
+  width: 100%;
+  padding: 160px 0;
 }
