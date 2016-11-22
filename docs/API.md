@@ -70,84 +70,80 @@
 ```JSON
   "error": "doesn't exist"
 ```
-- /api/rices/?province=bangkok&district=chatuchak&sub_district=bangken
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง&sub_district=ขี้เหล็ก](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87&sub_district=%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81)
 ```JSON
-    rices:[
-       {
-        "name_th":"กข-แม่โจ้2",
-        "name_en":"rd_maejo2",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข1",
-        "name_en":"rd1",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข10",
-        "name_en":"rd10",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข11",
-        "name_en":"rd11",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข12(หนองคาย80)",
-        "name_en":"nongkai80",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข13",
-        "name_en":"rd13",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข14",
-        "name_en":"rd14",
-        "photo_sensitive":true
-      }
+    "rices": [
+        {
+            "rice_species_th": "เหนียวสันป่าตอง                                                                                     "
+        },
+        {
+            "rice_species_th": "ปทุมธานี1                                                                                           "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        },
+        {
+            "rice_species_th": "กข6                                                                                                 "
+        }
     ]
 ```
-- /api/rices/?province=bangkok&district=chatuchak
+- :white_check_mark: [/api/rices/?province=เชียงใหม่&district=แม่แตง](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88&district=%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87)
 ```JSON
-      rices:[
-      {
-        "name_th":"กข-แม่โจ้2",
-        "name_en":"rd_maejo2",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข1",
-        "name_en":"rd1",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข10",
-        "name_en":"rd10",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข11",
-        "name_en":"rd11",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข12(หนองคาย80)",
-        "name_en":"nongkai80",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข13",
-        "name_en":"rd13",
-        "photo_sensitive":true
-      },
-      {
-        "name_th":"กข14",
-        "name_en":"rd14",
-        "photo_sensitive":true
-      }
+    "rices": [
+        {
+            "rice_species_th": "เหนียวสันป่าตอง                                                                                     "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ปทุมธานี1                                                                                           "
+        },
+        {
+            "rice_species_th": "กข4                                                                                                 "
+        },
+        {
+            "rice_species_th": "ข้าวหอมแดง                                                                                          "
+        },
+        {
+            "rice_species_th": "เจ้าฮ่อ                                                                                             "
+        },
+        {
+            "rice_species_th": "กข6                                                                                                 "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        }
+    ]
+
+```
+- :white_check_mark: [/api/rices/?province=เชียงใหม่](http://127.0.0.1:8888/api/rices/?province=%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88)
+
+```JSON
+  {
+    "rices": [
+        {
+            "rice_species_th": "ข้าวหลวงสันป่าตอง                                                                                   "
+        },
+        {
+            "rice_species_th": "ชัยนาท2                                                                                             "
+        },
+        {
+            "rice_species_th": "กข21                                                                                                "
+        },
+        {
+            "rice_species_th": "ปทุมธานี60                                                                                          "
+        },
+        {
+            "rice_species_th": "สันป่าตอง1                                                                                          "
+        },
+        {
+            "rice_species_th": "ขาวดอกมะลิ105                                                                                       "
+        }
+        ...
     ]
 ```
 ## Provinces
