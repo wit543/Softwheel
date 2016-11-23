@@ -9,6 +9,7 @@
         "marker-symbol": "",
         "province": "โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้",
         "description": "PROJNAME: โครงการฯอ่างเก็บน้ำบ้านแม่ตะไคร้<br> OWNER: สำนักชลประทานที่ 1/โครงการชลประทานเชียงใหม่<br> RIDCODE: 01<br> PROJTYPE: 02<br> PROVNAME: เชียงใหม่<br> AMPHOE: แม่ออน<br> TAMBON: ทาเหนือ<br> VILLAGE: แม่ตะไคร้<br> UTM_E: 532922<br> UTM_N: 2071030<br> UTMZONE: 47<br> MAPSHEET: 4846II<br> PRJAREAP: 0<br> IRRAREAP: 0<br> USEAREAP: 0<br> PROJAREA: 1351.96<br> IRRAREA: 851.85<br> A1AREA: 544.67<br> A2AREA: 88.56<br> A3AREA: 188.25<br> A7AREA: 30.38<br> A9AREA: 0<br> FRAREA: 150.57<br> WTAREA: 4.47<br> MLAREA: 125.75<br> UBAREA: 219.31<br> UIAREA: 0<br> CNAREA: 0<br> RDAREA: 0<br> LUYEAR: 2553<br> REMARK: พิกัดเดิม<br> PROJCODE: 01500102020011"
+        "district":"apple"
       },
       "geometry": {
         "type": "Point",
