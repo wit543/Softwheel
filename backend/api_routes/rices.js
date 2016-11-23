@@ -73,7 +73,7 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                util.database.query("select * from rices",function (data) {
+                util.database.query("select distinct(rice_species_th) from (select * from rices_by_location_napun UNION ALL select * from rices_by_location_napee) as foo ",function (data) {
                     rices = {};
                     rices['rices']=data;
                     return res.json(rices);
