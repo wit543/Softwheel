@@ -1,0 +1,44 @@
+<ul class="select-list" id="custom_selectbox_0-list" style="display: block;">
+  <li class="selectable">
+    <span>ทุกหมวด</span>
+  </li>
+  <li class="selectable main">
+    <span>มีสาระ</span>
+  </li>
+  <li class="selectable sub">
+    <span>ความรู้กลเม็ด,เทคนิค</span>
+  </li>
+  <li class="selectable main">
+    <span>ไลฟ์สไตล์</span>
+  </li>
+  <li class="selectable sub">
+    <span>สุขภาพความงาม</span>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <span>ทุกหมวด</span>
+  </li>
+  <li>
+    <span>มีสาระ</span>
+  </li>
+  <li>
+    <span>ความรู้กลเม็ด,เทคนิค</span>
+  </li>
+  <li>
+    <span>ไลฟ์สไตล์</span>
+  </li>
+  <li>
+    <span>สุขภาพความงาม</span>
+  </li>
+</ul>
+
+
+.select-list {
+  max-height: 370px;
+  overflow-y: auto;
+}
+selecttable {
+  padding: 0 10px;
+}

@@ -29,45 +29,45 @@
           </div>
           <div class = "group-container">
             <div class ="group">
-              <div class="label col-md-4">Rice Varaity</div>
-              <select id="rice-varaity" class="selector">
-                <option value="">Select Rice Varaity</option>
-              </select>
-            </div>
-            <div class ="group">
-              <div class="label col-md-4">Place</div>
-              <select id="provinces" class="selector" onchange="district_update()">
+              <div class="label col-xs-4 col-md-4">Place</div>
+              <select id="provinces" class="selector" onchange="provice_function()">
                 <option value="">Select Provice</option>
               </select>
             </div>
             <div class ="group">
-              <div class="col-md-4"></div>
-              <select id="districts" class="selector" onchange="sub_district_update()">
+              <div class="col-xs-4 col-md-4"></div>
+              <select id="districts" class="selector" onchange="sub_district_update()" disabled>
                 <option value="">Select District</option>
               </select>
             </div>
             <div class ="group">
-              <div class="col-md-4"></div>
-              <select id="sub-districts" class="selector">
+              <div class="col-xs-4 col-md-4"></div>
+              <select id="sub-districts" class="selector" onchange="rice_update()" disabled>
                 <option value="">Select Sub District</option>
               </select>
             </div>
             <div class ="group">
-              <div class="label col-md-4">Growing Method</div>
+              <div class="label col-xs-4 col-md-4">Rice Varaity</div>
+              <select id="rice-varaity" class="selector">
+                <option value="">Select Rice Varaity</option>
+              </select>
+            </div>
+
+            <div class ="group">
+              <div class="label col-xs-4 col-md-4">Growing Method</div>
               <select id="methods" class="selector">
                 <option value="0">Select Growing Method</option>
                 <option value="1">Indirect Seeding</option>
                 <option value="2">Broadcast Sowing</option>
-                <option value="3">Winter Period</option>
-
               </select>
+
             </div>
             <div class ="group">
-              <div class="label col-md-4">Date</div>
+              <div class="label col-xs-4 col-md-4">Date</div>
               <input type="text" id="datepicker">
             </div>
             <div class ="group">
-              <div class="col-md-4"></div>
+              <div class="col-xs-4 col-md-4"></div>
               <label class="radio-inline -radio-input"><input type="radio" name="optradio" id="planting">Panting</label>
               <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio" id="harvesting">Harvesting</label>
             </div>
