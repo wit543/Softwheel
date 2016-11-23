@@ -3,6 +3,7 @@ import urllib2
 import datetime
 import re
 from bs4 import BeautifulSoup
+import json
 
 january = {}
 february = {}
@@ -18,7 +19,7 @@ november = {}
 december = {}
 
 present_month = datetime.datetime.now().month
-DAY_LIST = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+DAY_LIST = ["1",'2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
 WEATHER_LIST = ['PartlyCloudy','Tstorm','Rain','ScatteredClouds','Clear','ChanceofRain','MostlyCloudy']
 RAIN_LIST = ['Tstorm','Rain']
 DATAGET = ['Actual:','Forecast:']
@@ -72,10 +73,9 @@ def is_number(s):
 def new_way_extract_data(soup,month):
     day = 1
     counter = 1
-
     for text in soup.find_all("td", {"class": "values precip"}):
         if counter % 2 != 0:
-            month[day] = re.findall(r"[-+]?\d*\.\d+|\d+", str(text))[1]
+            month[str(day)] = re.findall(r"[-+]?\d*\.\d+|\d+", str(text))[1]
             day += 1
         counter += 1
 
@@ -154,8 +154,10 @@ def suphanburi():
 
 def print_result():
     print "Month " + str(present_month) + " is : %s" % MONTH[present_month]
-    print "Month " + str(present_month - 1) + " is : %s" % MONTH[present_month - 1]
-    print "Month " + str(present_month - 2) + " is : %s" % MONTH[present_month - 2]
+    # print "Month " + str(present_month - 1) + " is : %s" % MONTH[present_month - 1]
+    # print "Month " + str(present_month - 2) + " is : %s" % MONTH[present_month - 2]
+    # print type(MONTH[present_month])
+    print json.loads(str(MONTH[present_month]).replace("'","\""))
 
 def choose_province(province) :
     if province == 'Chiangmai':
@@ -169,7 +171,7 @@ def choose_province(province) :
     print_result()
 
 
-choose_province('Surin')
+choose_province('Chiangmai')
 
 
 

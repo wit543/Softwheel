@@ -41,7 +41,7 @@ def get_api():
     prolog.consult('engine.pl')
     prolog.assertz('raining("Bangkok")')
     rule = "can_growing(P1, 'GROW1')."
-    query = 'trace, recommend("Bangkok","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
+    # query = ' recommend("Bangkok","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
     print query
     re_list = list(prolog.query(query,catcherrors=False))
     # re_list = list(prolog.query(query))
