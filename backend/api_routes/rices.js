@@ -16,7 +16,7 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                util.database.query("select * from rices where name_th='"+req.query.name+"'",function (data) {
+                util.database.query("select * from rices where name_th='"+req.query.name_th+"'",function (data) {
                     rices = {};
                     rices['rices']=data.rows;
                     if(data.length==0){
@@ -27,7 +27,7 @@
                 });
             }
             else if(req.query.name_th){
-                util.database.query("select * from rices where name_en='"+req.query.name+"'",function (data) {
+                util.database.query("select * from rices where name_en='"+req.query.name_en+"'",function (data) {
                     rices = {};
                     rices['rices']=data.rows;
                     if(data.length==0){
