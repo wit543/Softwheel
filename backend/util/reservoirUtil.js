@@ -70,8 +70,15 @@
                         lat,lng,
                         1000
                     ))
-                    console.log()
-                    callback(point['$'])
+                {
+                    console.log(point['$'])
+                    callback(true)
+                }
+                else{
+                    console.log(point['$'])
+                    callback(false)
+                }
+
 
         }
         is_in_side_circle(lat, lng, x, y, radius){
