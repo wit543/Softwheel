@@ -11,6 +11,8 @@ growing_duration("Jasmine105","indirect_seeding",130).
 green("Chiang_Mai",date(2016,5,1),date(2016,10,15)).
 history_rainning("TEST").
 forecast_rainning("TEST").
+rice("RD1").
+rice("RD5").
 
 can_growing(P1,"indirect_seeding"):-
    history_rainning(P1),
@@ -121,8 +123,16 @@ simple(P1,A1,T1,R1,G1,SEASON,STARTDAY,STARTMONTH,ENDDAY,ENDMONTH):-
   date_time_value(month,STARTDATE, STARTMONTH),
   date_time_value(day, ENDDATE, ENDDAY),
   date_time_value(month, ENDDATE, ENDMONTH).
+
+ex_recommend_place_rice(P1,A1,T1,R1,PDAY,PMONTH):-
+  is_in_season(P1,PDAY,PMONTH,SEASON),
+  grow_well(P1,A1,T1,R1,SEASON).
   
-recommend_rice_season(R1,IN_SEASON):-
+ex_recommend_rice_season(R1,P1,PDAY,PMONTH):-
+  rice(R1),
   photo_sensitive(R1);
+  is_in_season(P1,PDAY,PMONTH,SEASON),
+  rice(R1),
   not(photo_sensitive(R1)),
-  IN_SEASON == "IN_SEASON".
+  SEASON == "IN_SEASON".
+  
