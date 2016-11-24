@@ -26,7 +26,7 @@
                         return res.json(data[0]);
                 });
             }
-            else if(req.query.name_th){
+            else if(req.query.name_en){
                 util.database.query("select * from rices where name_en='"+req.query.name_en+"'",function (data) {
                     rices = {};
                     rices['rices']=data.rows;
