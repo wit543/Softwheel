@@ -5,11 +5,16 @@
 (function () {
     'use static';
     module.exports = (function (router,util) {
-        //////////////////////////////////////////////////////////////////////////
-        // @todo  complete all the parameter handling for getting a method      //
-        //////////////////////////////////////////////////////////////////////////
-        router.get("/smart",function (req,res) {
-            if (req.query.province ){
+        router.get("/expert",function (req,res) {
+            console.log(req.query)
+            if (req.query.province
+                &&req.query.district
+                &&req.query.sub_district
+                &&req.query.rice
+                &&req.query.method
+                &&req.query.date
+                &&req.query.month
+                &&req.query.year){
                 util.database.query("select changwat_en from map_province where changwat_th ='"+req.query.province+"'",
                     function(p){
                         let province=p[0]['changwat_en'].trim()
