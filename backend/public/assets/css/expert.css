@@ -1,0 +1,97 @@
+body, html {
+    height: 100%;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 100;
+  text-align: left;
+  padding : .2em 30px .2em 0;
+}
+
+.group-container {
+  width: 550px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.body-container {
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+}
+
+.group {
+  margin-bottom: 30px;
+}
+
+.topic {
+  background-color: #fff;
+}
+
+.selector {
+  height: 34px;
+  width: 320px;
+  background-color: rgba(255,255,255,.5);
+  border: 0;
+}
+
+.-inline {
+  display: inline-block;;
+}
+
+.-text-aligh-center {
+  text-align: center;
+}
+
+.submit-button {
+  height: 45px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255,255,255,.3);
+  color: white;
+  font-size: 19px;
+  font-weight: 200;
+}
+
+.submit-button:hover {
+  background-color: rgba(255,255,255,.2);
+}
+.nav-container{
+  position: fixed;
+  right: 50px;
+  top: 30px;
+  color: white;
+  font-size: 26px;
+  font-weight: 100;
+}
+
+.-mode {
+  margin-left: 50px;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.-mode:hover {
+  background-color: rgba(255,255,255,.2);
+}
+
+.-radio-input {
+  color: white;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.-margin-left {
+  margin: 0 0 0 40px;
+}
+
+.pattern{
+	background:rgba(0,0,0,.5) url(../images/pattern.png);
+	padding-top:100px;
+  height: 100%;
+  width: 100%;
+  padding: 160px 0;
+}

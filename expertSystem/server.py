@@ -43,7 +43,7 @@ def get_api():
     rule = "can_growing(P1, 'GROW1')."
     # query = ' recommend("Bangkok","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
     print query
-    re_list = list(prolog.query(query,catcherrors=False))
+    re_list = list(prolog.query(query))
     # re_list = list(prolog.query(query))
     # return "hello"
     print re_list

@@ -5,43 +5,132 @@
 (function () {
     'use static';
     module.exports = (function (router,util) {
-        //////////////////////////////////////////////////////////////////////////
-        // @todo  complete all the parameter handling for getting a method      //
-        //////////////////////////////////////////////////////////////////////////
-        router.get("/smart",function (req,res) {
-            let province=req.query.province;
-            let district = req.query.district;
-            let sub_district = req.query.sub_district;
-            let rice = req.query.rice;
-            let method = req.query.method;
-            let date = req.query.date;
-            let month = req.query.month;
-            let year = req.query.year;
-            if (req.query.method ){
-                console.log("recommend(\""+req.query.province+"\",\"" +
-                    req.query.rice+"\",\""
-                    +req.query.rice+"\",\"" +
+        router.get("/expert",function (req,res) {
+            console.log(req.query)
+            if (req.query.province
+                &&req.query.district
+                &&req.query.sub_district
+                &&req.query.rice
+                &&req.query.method
+                &&req.query.date
+                &&req.query.month
+                &&req.query.year){
+                console.log(req.query.select)
+                util.database.query("select changwat_en from map_province where changwat_th ='"+req.query.province+"'",
+                    function(p){
+                        let province=p[0]['changwat_en'].trim()
+                        util.database.query("select amphoe_en from map_district where amphoe_th ='"+req.query.district+"'",
+                            function(d){
+                                let district=d[0]['amphoe_en'].trim()
+                                util.database.query("select tambol_en from map_sub_district where tambol_th ='"+req.query.sub_district+"'",
+                                    function(s){
+                                        let sub_district=s[0]['tambol_en'].trim()
+                                        util.database.query("select name_en from map_rices where name_th ='"+req.query.rice+"'",
+                                            function(r){
+                                                console.log(r)
+                                                let toQuery = [
+                                                    "ex_recommendP_place_rice",
+                                                    "ex_recommendP_rice_season",
+                                                    "ex_recommendP_place_growingmethod",
+                                                    "ex_recommendP_harvesting_date",
+                                                    "harvest_date",
+                                                    "0000000"
+                                                ]
+                                                let error_msg=[
+                                                    "ข้าวทีปลูกไม่เหมาะกับสถานที่",
+                                                    "ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง",
+                                                    "พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก",
+                                                    "ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                ]
+                                                let result ={};
+                                                let queryed =toQuery.length;
+                                                let rice = r[0]['name_en'].trim()
+                                                let method = req.query.method;
+                                                let date = req.query.date;
+                                                let month = req.query.month;
+                                                let year = req.query.year;
+                                                let query = "(\""+province.split(' ').join('+')+"\",\"" +
+                                                    district.split(' ').join('+')+"\",\""+
+                                                    sub_district.split(' ').join('+')+"\",\"" +
+                                                    rice+"\",\"" +
+                                                    method+"\","+
+                                                    date+","+
+                                                    month+","+
+                                                    year+
+                                                    ").";
+                                                console.log(query);
+                                                // util.database.query("select province_en from ")
+                                                // util.database.query("select * from map_rices where name_th = "+req.query.rice,function (data) {
+                                                //     var rice = data
+                                                // })
 
-                    req.query.rice+"\",\"" +
-                    req.query.method+"\","+
-                    req.query.date+","+
-                    req.query.month+","+
-                    ").");
-                // util.database.query("select province_en from ")
-                util.database.query("slect * from map_rices where name_th = "+req.query.rice,function (data) {
-                    var rice = data
-                })
-                return util.expert_system.query("recommend(\""+req.query.province+"\",\""+req.query.rice+"\",\""+req.query.method+"\","+req.query.date+","+req.query.month+",DAY,MONTH,YEAR).",function (result) {
-                    console.log(result.length)
-                    return res.json(result);
+                                                if(req.query.select=='planting')
+                                                    util.expert_system.query("recommendP"+query,function (rec) {
+                                                        if(rec.length==0){
+                                                            util.expert_system.query("ex_recommendP_place_rice"+query,function (rp) {
+                                                                if(rp.length==0)result["ex_recommendP_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
+                                                                util.expert_system.query("ex_recommendP_rice_season"+query,function (rr) {
+                                                                    if(rr.length==0)result["ex_recommendP_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
+                                                                    util.expert_system.query("ex_recommendP_place_growingmethod"+query,function (rg) {
+                                                                        if(rr.length==0)result["ex_recommendP_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                        util.expert_system.query("ex_recommendP_harvesting_date"+query,function (rh) {
+                                                                            if(rr.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                            util.expert_system.query("harvest_date("+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
+                                                                                result["harvest_date"]=hd
+                                                                                return res.json(result)
+                                                                            });
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                        }
+                                                        else{
+                                                            util.expert_system.query("harvest_date"+query,function (result) {
+                                                                return res.json(result);
+                                                            });
+                                                        }
+                                                    });
+                                                else
+                                                    util.expert_system.query("recommendH"+query,function (rec) {
+                                                        if(rec.length==0){
+                                                            util.expert_system.query("ex_recommendH_place_rice"+query,function (rp) {
+                                                                if(rp.length==0)result["ex_recommendH_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
+                                                                util.expert_system.query("ex_recommendH_place_rice_season"+query,function (rr) {
+                                                                    if(rr.length==0)result["ex_recommendH_place_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
+                                                                    util.expert_system.query("ex_recommendH_place_growingmethod"+query,function (rg) {
+                                                                        if(rr.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                        util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
+                                                                            if(rr.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                            util.expert_system.query("planting_date("+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
+                                                                                result["harvest_date"]=hd
+                                                                                return res.json(result)
+                                                                            });
+                                                                        });
+                                                                    });
+                                                                });
+                                                            });
+                                                        }
+                                                        else{
+                                                            util.expert_system.query("harvest_date"+query,function (result) {
+                                                                return res.json(result);
+                                                            });
+                                                        }
+                                                    });
+                                            });
+                                    });
+                            });
+                    });
+
+            }
+            else{
+                return res.json({
+                    districts:[
+                        {name:"แก้งเหนือ"},
+                        {name:"เขมราฐ"}
+                    ]
                 });
             }
-            return res.json({
-                districts:[
-                    {name:"แก้งเหนือ"},
-                    {name:"เขมราฐ"}
-                ]
-            });
+
         });
     });
 })();
