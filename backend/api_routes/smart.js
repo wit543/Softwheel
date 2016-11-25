@@ -9,39 +9,60 @@
         // @todo  complete all the parameter handling for getting a method      //
         //////////////////////////////////////////////////////////////////////////
         router.get("/smart",function (req,res) {
-            let province=req.query.province;
-            let district = req.query.district;
-            let sub_district = req.query.sub_district;
-            let rice = req.query.rice;
-            let method = req.query.method;
-            let date = req.query.date;
-            let month = req.query.month;
-            let year = req.query.year;
-            if (req.query.method ){
-                console.log("recommend(\""+req.query.province+"\",\"" +
-                    req.query.rice+"\",\""
-                    +req.query.rice+"\",\"" +
+            if (req.query.province ){
+                util.database.query("select changwat_en from map_province where changwat_th ='"+req.query.province+"'",
+                    function(p){
+                        let province=p[0]['changwat_en'].trim()
+                        util.database.query("select amphoe_en from map_district where amphoe_th ='"+req.query.district+"'",
+                            function(d){
+                                let district=d[0]['amphoe_en'].trim()
+                                util.database.query("select tambol_en from map_sub_district where tambol_th ='"+req.query.sub_district+"'",
+                                    function(s){
+                                        let sub_district=s[0]['tambol_en'].trim()
+                                        util.database.query("select name_en from map_rices where name_th ='"+req.query.rice+"'",
+                                            function(r){
+                                                console.log(r)
+                                                let rice = r[0]['name_en'].trim()
+                                                let method = req.query.method;
+                                                let date = req.query.date;
+                                                let month = req.query.month;
+                                                let year = req.query.year;
 
-                    req.query.rice+"\",\"" +
-                    req.query.method+"\","+
-                    req.query.date+","+
-                    req.query.month+","+
-                    ").");
-                // util.database.query("select province_en from ")
-                util.database.query("slect * from map_rices where name_th = "+req.query.rice,function (data) {
-                    var rice = data
-                })
-                return util.expert_system.query("recommend(\""+req.query.province+"\",\""+req.query.rice+"\",\""+req.query.method+"\","+req.query.date+","+req.query.month+",DAY,MONTH,YEAR).",function (result) {
-                    console.log(result.length)
-                    return res.json(result);
+                                                let query = "recommendP(\""+province.split(' ').join('+')+"\",\"" +
+                                                    district.split(' ').join('+')+"\",\""+
+                                                    sub_district.split(' ').join('+')+"\",\"" +
+                                                    rice+"\",\"" +
+                                                    method+"\","+
+                                                    date+","+
+                                                    month+","+
+                                                    year+
+                                                    ").";
+                                                console.log(query);
+                                                // util.database.query("select province_en from ")
+                                                // util.database.query("select * from map_rices where name_th = "+req.query.rice,function (data) {
+                                                //     var rice = data
+                                                // })
+                                                util.expert_system.query(
+                                                    query
+                                                    ,function (result) {
+                                                        console.log(result)
+                                                        return res.json(result);
+                                                    });
+                                            });
+                                    });
+                            });
+                    });
+
+            }
+            else{
+                return res.json({
+                    districts:[
+                        {name:"แก้งเหนือ"},
+                        {name:"เขมราฐ"}
+                    ]
                 });
             }
-            return res.json({
-                districts:[
-                    {name:"แก้งเหนือ"},
-                    {name:"เขมราฐ"}
-                ]
-            });
+
         });
     });
 })();

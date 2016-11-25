@@ -141,6 +141,6 @@ function go() {
     var path = "http://127.0.0.1:8888/api/smart/?province="+$('#provinces').val().toString().trim()+"&district="+$('#districts').val().toString().trim()+"&sub_district="+$('#sub-districts').val().toString().trim()+"&method="+$('#methods').val().toString().trim()+"&month="+$('#datepicker').val().toString().trim().split('/')[0]+"&date="+$('#datepicker').val().toString().trim().split('/')[1]+"&select="+query+"&rice="+$('#rice-varaity').val().toString().trim();
     console.log(path);
     $.getJSON(path, function( data ) {
-        console.log("data: "+date);
+        console.log(data);
     });
 }
