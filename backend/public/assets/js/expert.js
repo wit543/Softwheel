@@ -136,7 +136,7 @@ function rice_update(){
 
 function go() {
     var query = "harvesting";
-    if ($('#planting'))
+    if ($('#planting').is(':checked'))
         query = "planting";
     var path = "http://127.0.0.1:8888/api/expert/?province="+$('#provinces').val().toString().trim()+"&district="+$('#districts').val().toString().trim()+"&sub_district="+$('#sub-districts').val().toString().trim()+"&method="+$('#methods').val().toString().trim()+"&month="+$('#datepicker').val().toString().trim().split('/')[0]+"&date="+$('#datepicker').val().toString().trim().split('/')[1]+"&year="+$('#datepicker').val().toString().trim().split('/')[2 ]+"&select="+query+"&rice="+$('#rice-varaity').val().toString().trim();
     console.log(path);
