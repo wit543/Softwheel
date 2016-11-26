@@ -90,5 +90,15 @@
                     return res.json(rices);
                 });
         })
+         router.get("/reservoir",function (req,res) {
+            util.reservoir.query( 99.09620761871338,18.915949029506088 ,function(result){
+                console.log(result);
+                return res.send(result);
+            })
+             util.reservoir.query( 18.915949029506088 ,99.09620761871338,function(result){
+                console.log(result);
+                // return res.send(result);
+            })
+         })
     });
 })();

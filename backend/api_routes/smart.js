@@ -76,7 +76,9 @@
                                                                         util.expert_system.query("ex_recommendP_harvesting_date"+query,function (rh) {
                                                                             if(rr.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_harvest_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
-                                                                                result["harvest_date"]=hd
+                                                                                result["harvest_date"]=hd[0]
+                                                                                result["status"]=false
+                                                                                console.log(result)
                                                                                 return res.json(result)
                                                                             });
                                                                         });
@@ -85,7 +87,7 @@
                                                             });
                                                         }
                                                         else{
-                                                            util.expert_system.query("harvest_date"+query,function (result) {
+                                                            util.expert_system.query("planting_date"+query,function (result) {
                                                                 return res.json(result);
                                                             });
                                                         }
@@ -102,7 +104,9 @@
                                                                         util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
                                                                             if(rr.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
-                                                                                result["harvest_date"]=hd
+                                                                                result["harvest_date"]=hd[0]
+                                                                                result["status"]=true
+                                                                                console.log(result)
                                                                                 return res.json(result)
                                                                             });
                                                                         });

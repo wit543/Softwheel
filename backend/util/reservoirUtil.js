@@ -8,11 +8,10 @@
             this.gju = geojsonUtil;
             let parseString =xml2js.parseString;
             this.http = http;
-            this.list = [
+            this.listChangMai = [
                 "โครงการอ่างเก็บน้ำสันหนอง",
                 "โครงการอ่างเก็บน้ำห้วยมะนาว",
                 "โครงการอ่างเก็บน้ำบ้านแม่ตะไคร้",
-
                 "โครงการอ่างเก็บน้ำห้วยแม่ออน",
                 "โครงการอ่างเก็บน้ำห้วยฮัก",
                 "โครงการอ่างเก็บน้ำห้วยเกี๋ยง",
@@ -22,7 +21,7 @@
                 "โครงการอ่างเก็บน้ำห้วยเดื่อ"
             ];
             let reservoir_geojson = [];
-            this.list.forEach(function (data) {
+            this.listChangMai.forEach(function (data) {
                 reservoir_geojson.push(require('../public/reservoir/เชียงใหม่/'+data))
             })
             this.reservoir_geojson = reservoir_geojson;
@@ -58,15 +57,20 @@
                 })
             }).end();
         }
-        query(lat,long,callback){
+        query(lat,lng,callback){
+            console.log(this.reservoir_geojson)
            for(let geojson in this.reservoir_geojson)
-               if(this.gju.pointInPolygon({"type":"Point","coordinates":[lat,long]},
-                       geojson[0]["features"][0]["geometry"]))
-                   callback(geojson[0]['properties'])
+            for(let shape in this.reservoir_geojson[geojson]["features"]){
+                if(this.reservoir_geojson[geojson]["features"][shape]['geometry']["type"]=="Polygon")
+                    // console.log("in")
+                    if(this.gju.pointInPolygon({"type":"Point","coordinates":[lat,lng]},
+                       this.reservoir_geojson[geojson]["features"][shape]["geometry"]))
+                        callback(true)
+            }
             for(let point in this.current['farm']['marker'])
                 if(this.is_in_side_circle(
-                        point['$']['lat'],
-                        point['$']['lng'],
+                        this.current['farm']['marker'][point]['$']['lat'],
+                        this.current['farm']['marker'][point]['$']['lng'],
                         lat,lng,
                         1000
                     ))
@@ -74,10 +78,8 @@
                     console.log(point['$'])
                     callback(true)
                 }
-                else{
-                    console.log(point['$'])
-                    callback(false)
-                }
+            callback(this.reservoir_geojson)
+                
 
 
         }
