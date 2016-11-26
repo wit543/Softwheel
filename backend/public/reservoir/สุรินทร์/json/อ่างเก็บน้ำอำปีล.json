@@ -10,15 +10,15 @@
             "province": "สุรินทร์",
             "district": "เมือง",
             "sub_district": "เทนมีย์",
-            "description": "",
+            "description": ""
           },
           "geometry": {
             "type": "Point",
             "coordinates": [
                 103.550664532,
-                14.7619526884,
+                14.7619526884
             ]
-          },
+          }
         },
         {
             "type": "Feature",
@@ -30,7 +30,7 @@
               "province": "สุรินทร์",
               "district": "เมือง",
               "sub_district": "เทนมีย์",
-              "description": "",
+              "description": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -1458,7 +1458,7 @@
                         ]
                     ]
                 ]
-            },
+            }
         }
     ]
 }
