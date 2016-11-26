@@ -135,15 +135,26 @@
         router.get("/beginner",function (req,res) {
             if(req.query.lat&&req.query.lng)
                 util.google_map.get_location_latlng(req.query.lat,req.query.lng,function (result) {
-                    console.log(result.results)
+                    // console.log(result.results)
                     // return res.json(result.results[0].address_components)
                     var re={}
-                    for(let i in res.json(result.results[0].address_components))
-                        if(result.results[0].address_components[i].types == "sublocality_level_2")
-                            result["sub_district"]=result.results[0].address_components[i].short_name
-                    for(let i in res.json(result.results[0].address_components))
-                        if (result.results[0].address_components[i].types == "sublocality_level_2")
-                            result["sub_district"]=result.results[0].address_components[i].short_name
+                    for(let i in result.results[0].address_components)
+                        for(let j in result.results[0].address_components[i].types)
+                            if (result.results[0].address_components[i].types[j] == ";rtht"||
+                                result.results[0].address_components[i].types[j] == "administrative_area_level_1")
+                                re["province"]=result.results[0].address_components[i].long_name.replace("Chang Wat ","").toLowerCase().trim()
+                            else if (result.results[0].address_components[i].types[j] == "sublocality_level_1"||
+                                result.results[0].address_components[i].types[j] == "administrative_area_level_2")
+                                re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim()
+                            else if (result.results[0].address_components[i].types[j] == "locality"||
+                                result.results[0].address_components[i].types[j] == "lca")
+                                re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim()
+                    let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
+                    fee =fee.split(' ').join('+')
+                    console.log(fee)
+                    util.expert_system.query(fee,function (data) {
+                            return res.json(data)
+                        })
                 })
             else{
                 return res.json({})
