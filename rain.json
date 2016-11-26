@@ -1,0 +1,58 @@
+{
+    "Chiangmai" : [
+        {"1" : false},
+        {"2" : false},
+        {"3" : false},
+        {"4" : false},
+        {"5" : true},
+        {"6" : true},
+        {"7" : true},
+        {"8" : true},
+        {"9" : true},
+        {"10" : true},
+        {"11" : false},
+        {"12" : false}
+    ],
+    "Surin" : [
+        {"1" : false},
+        {"2" : false},
+        {"3" : false},
+        {"4" : false},
+        {"5" : true},
+        {"6" : true},
+        {"7" : true},
+        {"8" : true},
+        {"9" : true},
+        {"10" : true},
+        {"11" : false},
+        {"12" : false} 
+    ],
+    "Ubon" : [
+        {"1" : false},
+        {"2" : false},
+        {"3" : false},
+        {"4" : false},
+        {"5" : true},
+        {"6" : true},
+        {"7" : true},
+        {"8" : true},
+        {"9" : true},
+        {"10" : true},
+        {"11" : false},
+        {"12" : false}
+    ],
+    "Supan" : [
+        {"1" : false},
+        {"2" : false},
+        {"3" : false},
+        {"4" : false},
+        {"5" : true},
+        {"6" : true},
+        {"7" : true},
+        {"8" : true},
+        {"9" : true},
+        {"10" : true},
+        {"11" : false},
+        {"12" : false}
+    ]
+}
