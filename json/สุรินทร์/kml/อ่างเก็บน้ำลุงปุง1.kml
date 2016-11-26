@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document id="rid8">
+<name>RID8</name>
+<visibility>1</visibility>
+<Style id="polyStyle">
+<PolyStyle>
+<color>66ffd900</color>
+<colorMode>normal</colorMode>
+<fill>1</fill>
+<outline>1</outline>
+</PolyStyle>
+</Style>
+<Placemark>
+<name>พื้นที่ชลประทาน</name>
+<visibility>1</visibility>
+<styleUrl>polyStyle</styleUrl>
+<Polygon>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<outerBoundaryIs>
+<LinearRing>
+<coordinates>
+103.683471538,15.276191085,0 
+103.682167551,15.2754906638,0 
+103.677005376,15.2844737278,0 
+103.677143905,15.2910093259,0 
+103.677586031,15.2916663468,0 
+103.678035515,15.291973029,0 
+103.679173182,15.2914832895,0 
+103.679607148,15.2918322261,0 
+103.680819238,15.2918151957,0 
+103.680826144,15.2934558359,0 
+103.682694449,15.2933945918,0 
+103.683502317,15.2933993464,0 
+103.683965867,15.2922812509,0 
+103.68413455,15.2906658205,0 
+103.684063736,15.2897431647,0 
+103.684965155,15.2891385488,0 
+103.685597829,15.2884452201,0 
+103.684315235,15.2871261469,0 
+103.683501606,15.2840809486,0 
+103.683992259,15.2816976842,0 
+103.685270072,15.2802427114,0 
+103.686671117,15.2780956987,0 
+103.683471538,15.276191085,0 
+</coordinates>
+</LinearRing>
+</outerBoundaryIs>
+</Polygon>
+</Placemark>
+</Document>
+</kml>
