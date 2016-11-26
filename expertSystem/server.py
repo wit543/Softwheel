@@ -36,18 +36,25 @@ def get_schema():
 @app.route('/api/', methods=['GET'])
 @cross_origin()
 def get_api():
-    query = request.args.get('query')
     prolog = Prolog()
     prolog.consult('engine.pl')
-    prolog.assertz('raining("Bangkok")')
-    rule = "can_growing(P1, 'GROW1')."
-    # query = ' recommend("Bangkok","RD1","GROW1",10,4,DAY,MONTH,YEAR).'
-    print query
-    re_list = list(prolog.query(query))
-    # re_list = list(prolog.query(query))
-    # return "hello"
-    print re_list
-    return jsonify(re_list)
+    if request.args.get('query'):
+        query = request.args.get('query')
+
+        print query
+        re_list = list(prolog.query(query))
+        # re_list = list(prolog.query(query))
+        # return "hello"
+        print re_list
+        return jsonify(re_list)
+    elif request.args.get('assert'):
+        query = request.args.get('assert')
+        prolog.assertz(query,catcherrors=True)
+        # return jsonify({"status":"success"})
+        return "success"
+    else:
+        return "fail"
+
 
 @app.route('/engine/', methods=['GET'])
 @cross_origin()

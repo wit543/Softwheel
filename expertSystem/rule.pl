@@ -1,5 +1,8 @@
 - module(rule, []).
 
+history_rainning("Test").
+forecast_rainning("Test").
+
 can_growing(P1,"indirect_seeding"):-
    history_rainning(P1),
    not(forecast_rainning(P1)).
@@ -36,6 +39,22 @@ harvest_date(R1,G1,PD1,HDAY, HMONTH, HYEAR):-
   date_time_value(year,HDATE, HYEAR).
 
 planting_date(R1,G1,HD1,PDAY,PMONTH,PYEAR):-
+  growing_duration(R1,G1,DURATION),
+  minus_date(HD1,DURATION, PDATE),
+  date_time_value(day,PDATE, PDAY),
+  date_time_value(month,PDATE, PMONTH),
+  date_time_value(year,PDATE, PYEAR).
+
+ex_harvest_date(R1,G1,PDAY,PMONTH,PYEAR,HDAY, HMONTH, HYEAR):-
+  PD1 = date(PYEAR,PMONTH,PDAY,0,0,0,0,-,-),
+  growing_duration(R1,G1,DURATION),
+  add_date(PD1,DURATION, HDATE),
+  date_time_value(day,HDATE, HDAY),
+  date_time_value(month,HDATE, HMONTH),
+  date_time_value(year,HDATE, HYEAR).
+
+ex_planting_date(R1,G1,HDAY, HMONTH, HYEAR,PDAY,PMONTH,PYEAR):-
+  HD1 = date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-),
   growing_duration(R1,G1,DURATION),
   minus_date(HD1,DURATION, PDATE),
   date_time_value(day,PDATE, PDAY),
