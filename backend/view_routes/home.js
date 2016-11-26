@@ -8,5 +8,11 @@
         router.get("/",function (req,res) {
             res.sendFile(path.join(__dirname+"/../public/expert.html"));
         })
+        router.get("/expert",function (req,res) {
+            res.sendFile(path.join(__dirname+"/../public/expert.html"));
+        })
+        router.get("/beginner",function (req,res) {
+            res.sendFile(path.join(__dirname+"/../public/begin.html"));
+        })
     });
 })();
