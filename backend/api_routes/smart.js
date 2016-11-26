@@ -132,5 +132,23 @@
             }
 
         });
+        router.get("/beginner",function (req,res) {
+            if(req.query.lat&&req.query.lng)
+                util.google_map.get_location_latlng(req.query.lat,req.query.lng,function (result) {
+                    console.log(result.results)
+                    // return res.json(result.results[0].address_components)
+                    var re={}
+                    for(let i in res.json(result.results[0].address_components))
+                        if(result.results[0].address_components[i].types == "sublocality_level_2")
+                            result["sub_district"]=result.results[0].address_components[i].short_name
+                    for(let i in res.json(result.results[0].address_components))
+                        if (result.results[0].address_components[i].types == "sublocality_level_2")
+                            result["sub_district"]=result.results[0].address_components[i].short_name
+                })
+            else{
+                return res.json({})
+            }
+
+        });
     });
 })();

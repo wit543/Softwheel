@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/begin.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
+  </head>
+
+
+  <body onload="initMap()">
+    <div id="map_canvas"></div>
+    <div class="containers">
+    <div>
+      <div class= "nav-container">
+        <div>
+          <button class="-mode">Expert</button>
+          <button class="-mode">Beginner</button>
+        </div>
+      </div>
+      <div class="modal fade bs-example-modal-sm" id="rice-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content blur" id="variety">
+            <!-- <button class="close" data-toggle="modal" data-target="rice-list"> x </button> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade bs-example-modal-sm" id="rice-detail" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content blur wide" id="detail">
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </body>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/begin.js"></script>
+
+  </body>
+  <!-- END BODY -->
+</html>
