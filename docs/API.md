@@ -371,6 +371,15 @@
   },
   status: false
 ```
+- :white_check_mark: /api/expert/province=เชียงใหม่&district=แม่&sub_district=ช่อแล&method=indirect_seeding&month=11&date=23&year=2016&select=planting&rice=ขาวดอกมะลิ105
+```JSON
+  harvest_date: {
+      HDAY: 26,
+      HMONTH: 3, 
+      HYEAR: 2017 
+  },
+  status: true
+```
 ## Beginner
 - /api/planting-date/
 ```JSON
