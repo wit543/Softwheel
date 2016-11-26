@@ -60,8 +60,14 @@
     }
   ]
 ```
-- :white_check_mark: /api/rices/?name=rd1
-```JSON
+- :white_check_mark: /api/rices/?name_th=กข1
+```JSON_
+  "name_th":"กข-แม่โจ้2",
+  "name_en":"rd_maejo2",
+  photo_sensitive:false
+```
+- :white_check_mark: /api/rices/?name_en=rd1
+```JSON_
   "name_th":"กข-แม่โจ้2",
   "name_en":"rd_maejo2",
   photo_sensitive:false
