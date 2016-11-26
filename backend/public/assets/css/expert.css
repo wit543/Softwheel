@@ -24,6 +24,10 @@ body, html {
   margin-bottom: 30px;
 }
 
+.topic {
+  background-color: #fff;
+}
+
 .selector {
   height: 34px;
   width: 320px;

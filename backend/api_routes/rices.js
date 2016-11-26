@@ -8,7 +8,7 @@
             //////////////////////////////////////////////////////////////////////////
             // @todo  complete all the parameter handling for getting a rice        //
             //////////////////////////////////////////////////////////////////////////
-            if(req.query.name){
+            if(req.query.name_th){
                 // pg.query("rices",function (ref) {
                 //     ref.orderByChild("name_th").equalTo(req.query.province).on('value',function (snapshot) {
                 //         return res.json(snapshot.val());
@@ -16,7 +16,18 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                util.database.query("select * from rices where name_en='"+req.query.name+"'",function (data) {
+                util.database.query("select * from rices where name_th='"+req.query.name_th+"'",function (data) {
+                    rices = {};
+                    rices['rices']=data.rows;
+                    if(data.length==0){
+                        return res.json({error:"doesn't exist"});
+                    }
+                    else
+                        return res.json(data[0]);
+                });
+            }
+            else if(req.query.name_en){
+                util.database.query("select * from rices where name_en='"+req.query.name_en+"'",function (data) {
                     rices = {};
                     rices['rices']=data.rows;
                     if(data.length==0){
@@ -73,7 +84,7 @@
                 //         console.log("The read failed: " + errorObject.code);
                 //     });
                 // });
-                util.database.query("select * from rices",function (data) {
+                util.database.query("select distinct(rice_species_th) from (select * from rices_by_location_napun UNION ALL select * from rices_by_location_napee) as foo ",function (data) {
                     rices = {};
                     rices['rices']=data;
                     return res.json(rices);
