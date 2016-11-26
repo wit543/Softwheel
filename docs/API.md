@@ -361,7 +361,16 @@
   },
   status: false
 ```
-
+- :white_check_mark: /api/expert/province=เชียงใหม่&district=แม่แตง&sub_district=ช่อแล&method=indirect_seeding&month=11&date=23&year=2016&select=planting&rice=ขาวดอกมะลิ105
+```JSON
+  ex_recommendP_place_rice: 'ข้าวทีปลูกไม่เหมาะกับสถานที่',
+  harvest_date: {
+      HDAY: 26,
+      HMONTH: 3, 
+      HYEAR: 2017 
+  },
+  status: false
+```
 ## Beginner
 - /api/planting-date/
 ```JSON
