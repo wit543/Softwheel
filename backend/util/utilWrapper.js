@@ -32,6 +32,7 @@
             this.expert_system = require('./expert_system')(http);
             this.google_map = require('./googleMapUtil')(http);
             this.reservoirUtil = require('./reservoirUtil')(geojson_utils,xml2js,http);
+            this.history_rainning = require('./rainningHistory')(http);
         }
     }
 

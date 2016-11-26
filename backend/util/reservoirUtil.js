@@ -23,7 +23,7 @@
             ];
             let reservoir_geojson = [];
             this.list.forEach(function (data) {
-                reservoir_geojson.push(require('../public/reservoir/'+data))
+                reservoir_geojson.push(require('../public/reservoir/เชียงใหม่/'+data))
             })
             this.reservoir_geojson = reservoir_geojson;
             // console.log(this.reservoir_geojson[0]["features"][0]["geometry"]);
