@@ -380,6 +380,38 @@
   },
   status: true
 ```
+- :white_check_mark: /api/expert/?province=เชียงใหม่&district=แม่แตง&sub_district=ช่อแล&method=indirect_seeding&month=11&date=02&year=2016&select=haverting&rice=ขาวดอกมะลิ105
+```JSON
+  ex_recommendP_place_rice: 'ข้าวทีปลูกไม่เหมาะกับสถานที่',
+  ex_recommendP_rice_season: 'ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง',
+  ex_recommendP_place_growingmethod: 'พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก',
+  ex_recommendP_harvesting_date: 'ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม',
+  harvest_date: {
+      HDAY: 7,
+      HMONTH: 3, 
+      HYEAR: 2017 
+  },
+  status: false
+```
+- :white_check_mark: /api/expert/province=เชียงใหม่&district=แม่แตง&sub_district=ช่อแล&method=indirect_seeding&month=11&date=23&year=2016&select=haverting&rice=ขาวดอกมะลิ105
+```JSON
+  ex_recommendP_place_rice: 'ข้าวทีปลูกไม่เหมาะกับสถานที่',
+  harvest_date: {
+      HDAY: 26,
+      HMONTH: 3, 
+      HYEAR: 2017 
+  },
+  status: false
+```
+- :white_check_mark: /api/expert/province=เชียงใหม่&district=แม่&sub_district=ช่อแล&method=indirect_seeding&month=11&date=23&year=2016&select=haverting&rice=ขาวดอกมะลิ105
+```JSON
+  harvest_date: {
+      HDAY: 26,
+      HMONTH: 3, 
+      HYEAR: 2017 
+  },
+  status: true
+```
 ## Beginner
 - /api/planting-date/
 ```JSON
