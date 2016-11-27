@@ -15,16 +15,25 @@
                 &&req.query.date
                 &&req.query.month
                 &&req.query.year){
-                console.log(req.query.select)
-                util.database.query("select changwat_en from map_province where changwat_th ='"+req.query.province+"'",
+                util.database.query("select distinct(province_en) from " +
+                    "(select rices_by_location_napun.province_en from rices_by_location_napun where rices_by_location_napun.province_th ='"+req.query.province+"'UNION ALL " +
+                    "select rices_by_location_napee.province_en from rices_by_location_napee where rices_by_location_napee.province_th ='"+req.query.province+"') as foo",
                     function(p){
-                        let province=p[0]['changwat_en'].trim()
-                        util.database.query("select amphoe_en from map_district where amphoe_th ='"+req.query.district+"'",
+                        console.log(p)
+                        let province=p[0]['province_en'].trim()
+                        util.database.query("select distinct(district_en) from " +
+                    "(select rices_by_location_napun.district_en from rices_by_location_napun where rices_by_location_napun.district_th ='"+req.query.district+"'UNION ALL " +
+                    "select rices_by_location_napee.district_en from rices_by_location_napee where rices_by_location_napee.district_th ='"+req.query.district+"') as foo",
                             function(d){
-                                let district=d[0]['amphoe_en'].trim()
-                                util.database.query("select tambol_en from map_sub_district where tambol_th ='"+req.query.sub_district+"'",
+                                let district=d[0]['district_en'].trim()
+                                util.database.query("select distinct(sub_district_en) from " +
+                    "(select rices_by_location_napun.sub_district_en from rices_by_location_napun where rices_by_location_napun.sub_district_th ='"+req.query.sub_district+"'UNION ALL " +
+                    "select rices_by_location_napee.sub_district_en from rices_by_location_napee where rices_by_location_napee.sub_district_th ='"+req.query.sub_district+"') as foo",
                                     function(s){
-                                        let sub_district=s[0]['tambol_en'].trim()
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        console.log(s)
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        let sub_district=s[0]['sub_district_en'].trim()
                                         util.database.query("select name_en from map_rices where name_th ='"+req.query.rice+"'",
                                             function(r){
                                                 console.log(r)
@@ -77,7 +86,6 @@
                                                                             if(rr.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_harvest_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
                                                                                 result["harvest_date"]=hd[0]
-                                                                                result["status"]=false
                                                                                 console.log(result)
                                                                                 return res.json(result)
                                                                             });
@@ -105,7 +113,6 @@
                                                                             if(rr.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
                                                                                 result["harvest_date"]=hd[0]
-                                                                                result["status"]=true
                                                                                 console.log(result)
                                                                                 return res.json(result)
                                                                             });
