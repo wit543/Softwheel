@@ -177,13 +177,13 @@
                         for(let j in result.results[0].address_components[i].types)
                             if (result.results[0].address_components[i].types[j] == ";rtht"||
                                 result.results[0].address_components[i].types[j] == "administrative_area_level_1")
-                                re["province"]=result.results[0].address_components[i].long_name.replace("Chang Wat ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["province"]=result.results[0].address_components[i].long_name.replace("Chang Wat ","").toLowerCase().trim().split(' ').join('_')
                             else if (result.results[0].address_components[i].types[j] == "sublocality_level_1"||
                                 result.results[0].address_components[i].types[j] == "administrative_area_level_2")
-                                re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim().split(' ').join('_')
                             else if (result.results[0].address_components[i].types[j] == "locality"||
                                 result.results[0].address_components[i].types[j] == "lca")
-                                re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().split(' ').join('_')
                     let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
                     fee =fee.split(' ').join('_')
                     console.log(fee)
