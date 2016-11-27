@@ -22,6 +22,7 @@
             ];
             let reservoir_geojson = [];
             this.listChangMai.forEach(function (data) {
+                console.log(data)
                 reservoir_geojson.push(require('../public/reservoir/เชียงใหม่/'+data))
             })
             this.reservoir_geojson = reservoir_geojson;
@@ -62,7 +63,7 @@
            for(let geojson in this.reservoir_geojson)
             for(let shape in this.reservoir_geojson[geojson]["features"]){
                 if(this.reservoir_geojson[geojson]["features"][shape]['geometry']["type"]=="Polygon")
-                    // console.log("in")
+                    console.log("in")
                     if(this.gju.pointInPolygon({"type":"Point","coordinates":[lat,lng]},
                        this.reservoir_geojson[geojson]["features"][shape]["geometry"]))
                         callback(true)
