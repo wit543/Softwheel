@@ -73,86 +73,99 @@
                                                 //     var rice = data
                                                 // })
                                                 util.history_rainning.assert(province.toLowerCase().split(' ').join('_'),function(){
-                                                if(req.query.select=='planting')
-                                                    util.expert_system.query("recommendP"+query,function (rec) {
-                                                        if(rec.length==0){
-                                                            util.expert_system.query("ex_recommendP_place_rice"+query,function (rp) {
-                                                                if(rp.length==0)result["ex_recommendP_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
-                                                                util.expert_system.query("ex_recommendP_rice_season"+query,function (rr) {
-                                                                    if(rr.length==0)result["ex_recommendP_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
-                                                                    util.expert_system.query("ex_recommendP_place_growingmethod"+query,function (rg) {
-                                                                        if(rr.length==0)result["ex_recommendP_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
-                                                                        util.expert_system.query("ex_recommendP_harvesting_date"+query,function (rh) {
-                                                                            if(rr.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
-                                                                            util.expert_system.query("ex_harvest_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
-                                                                                result["harvest_date"]=hd[0]
-                                                                                util.weather.query(province,function(w){
-                                                                                    if(!w["result"])
-                                                                                        result["weather"]=3
-                                                                                    else
-                                                                                        result["weather"]=w["result"]
-                                                                                console.log(result)
-                                                                                return res.json(result) 
+                                                    util.google_map.get_location_address(sub_district+","+district+","+province,function(latlng){
+                                                        let lat=(latlng['results'][0]['geometry']['location']['lat'])
+                                                        let lng=(latlng['results'][0]['geometry']['location']['lng'])
+                                                        util.reservoir.query(lat,lng,function(isInReservior){
+                                                            console.log("555555555555555555555555")
+                                                            console.log(isInReservior)
+                                                        if(req.query.select=='harvesting')
+                                                            util.expert_system.query("recommendP"+query,function (rec) {
+                                                                if(rec.length==0){
+                                                                    util.expert_system.query("ex_recommendP_place_rice"+query,function (rp) {
+                                                                        if(rp.length==0)result["ex_recommendP_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
+                                                                        util.expert_system.query("ex_recommendP_rice_season"+query,function (rr) {
+                                                                            if(rr.length==0)result["ex_recommendP_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
+                                                                            util.expert_system.query("ex_recommendP_place_growingmethod"+query,function (rg) {
+                                                                                console.log("----------------------")
+                                                                                console.log(rg)
+                                                                                console.log(rg.length==0)
+                                                                                console.log("----------------------")
+                                                                                if(rg.length==0)
+                                                                                    result["ex_recommendP_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                                util.expert_system.query("ex_recommendP_harvesting_date"+query,function (rh) {
+                                                                                    if(rh.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                                    util.expert_system.query("ex_harvest_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
+                                                                                        result["harvest_date"]=hd[0]
+                                                                                        util.weather.query(province,function(w){
+                                                                                            if(!w["result"])
+                                                                                                result["weather"]=3
+                                                                                            else
+                                                                                                result["weather"]=w["result"]
+                                                                                        console.log(result)
+                                                                                        return res.json(result) 
+                                                                                        });
+                                                                                    });
                                                                                 });
                                                                             });
                                                                         });
                                                                     });
-                                                                });
+                                                                }
+                                                                else{
+                                                                    util.expert_system.query("planting_date"+query,function (result) {
+                                                                         util.weather.query(province,function(w){
+                                                                            if(!w["result"])
+                                                                                result["weather"]=3
+                                                                            else
+                                                                                result["weather"]=w["result"]
+                                                                            return res.json(result);
+                                                                         });
+                                                                    });
+                                                                }
                                                             });
-                                                        }
-                                                        else{
-                                                            util.expert_system.query("planting_date"+query,function (result) {
-                                                                 util.weather.query(province,function(w){
-                                                                    if(!w["result"])
-                                                                        result["weather"]=3
-                                                                    else
-                                                                        result["weather"]=w["result"]
-                                                                    return res.json(result);
-                                                                 });
-                                                            });
-                                                        }
-                                                    });
-                                                else
-                                                    util.expert_system.query("recommendH"+query,function (rec) {
-                                                        if(rec.length==0){
-                                                            util.expert_system.query("ex_recommendH_place_rice"+query,function (rp) {
-                                                                if(rp.length==0)result["ex_recommendH_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
-                                                                util.expert_system.query("ex_recommendH_place_rice_season"+query,function (rr) {
-                                                                    if(rr.length==0)result["ex_recommendH_place_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
-                                                                    util.expert_system.query("ex_recommendH_place_growingmethod"+query,function (rg) {
-                                                                        if(rr.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
-                                                                        util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
-                                                                            if(rr.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
-                                                                            util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
-                                                                                result["harvest_date"]=hd[0]
-                                                                                 util.weather.query(province,function(w){
-                                                                                    if(!w["result"])
-                                                                                        result["weather"]=3
-                                                                                    else
-                                                                                        result["weather"]=w["result"]
-                                                                                    return res.json(result)
+                                                        else
+                                                            util.expert_system.query("recommendH"+query,function (rec) {
+                                                                if(rec.length==0){
+                                                                    util.expert_system.query("ex_recommendH_place_rice"+query,function (rp) {
+                                                                        if(rp.length==0)result["ex_recommendH_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
+                                                                        util.expert_system.query("ex_recommendH_place_rice_season"+query,function (rr) {
+                                                                            if(rr.length==0)result["ex_recommendH_place_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
+                                                                            util.expert_system.query("ex_recommendH_place_growingmethod"+query,function (rg) {
+                                                                                if(rg.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                                util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
+                                                                                    if(rh.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                                    util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
+                                                                                        result["harvest_date"]=hd[0]
+                                                                                         util.weather.query(province,function(w){
+                                                                                            if(!w["result"])
+                                                                                                result["weather"]=3
+                                                                                            else
+                                                                                                result["weather"]=w["result"]
+                                                                                            return res.json(result)
+                                                                                        });
+                                                                                    });
                                                                                 });
                                                                             });
                                                                         });
                                                                     });
-                                                                });
+                                                                }
+                                                                else{
+                                                                    util.expert_system.query("harvest_date"+query,function (result) {
+                                                                         util.weather.query(province,function(w){
+                                                                            if(!w["result"])
+                                                                                result["weather"]=3
+                                                                            else
+                                                                                result["weather"]=w["result"]
+                                                                            return res.json(result);
+                                                                        });
+                                                                    });
+                                                                }
                                                             });
-                                                        }
-                                                        else{
-                                                            util.expert_system.query("harvest_date"+query,function (result) {
-                                                                 util.weather.query(province,function(w){
-                                                                    if(!w["result"])
-                                                                        result["weather"]=3
-                                                                    else
-                                                                        result["weather"]=w["result"]
-                                                                    return res.json(result);
-                                                                });
-                                                            });
-                                                        }
+                                                        });
                                                     });
-                                                });
-                                            });
+                                        });
                                     });
+                                });
                             });
                     });
 
@@ -185,7 +198,7 @@
                                 result.results[0].address_components[i].types[j] == "lca")
                                 re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().split(' ').join('_')
                     let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
-                    fee =fee.split(' ').join('_')
+                    fee =fee.split('  ').join('_')
                     console.log(fee)
                     util.history_rainning.assert(re['province'],function(){
                         util.expert_system.query(fee,function (data) {

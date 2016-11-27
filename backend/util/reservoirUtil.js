@@ -63,10 +63,10 @@
            for(let geojson in this.reservoir_geojson)
             for(let shape in this.reservoir_geojson[geojson]["features"]){
                 if(this.reservoir_geojson[geojson]["features"][shape]['geometry']["type"]=="Polygon")
-                    console.log("in")
                     if(this.gju.pointInPolygon({"type":"Point","coordinates":[lat,lng]},
                        this.reservoir_geojson[geojson]["features"][shape]["geometry"]))
                         callback(true)
+                    return;
             }
             for(let point in this.current['farm']['marker'])
                 if(this.is_in_side_circle(
@@ -78,8 +78,9 @@
                 {
                     console.log(point['$'])
                     callback(true)
+                    return;
                 }
-            callback(this.reservoir_geojson)
+            callback(false)
                 
 
 
