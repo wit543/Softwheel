@@ -29,51 +29,51 @@
           </div>
           <div class = "group-container">
             <div class ="group">
-              <div class="label col-xs-4 col-md-4">Place</div>
+              <div class="label col-xs-4 col-md-4">สถานที่</div>
               <select id="provinces" class="selector" onchange="provice_function()">
-                <option value="">Select Provice</option>
+                <option value="">กรุณาเลือกจังหวัด</option>
               </select>
             </div>
             <div class ="group">
               <div class="col-xs-4 col-md-4"></div>
               <select id="districts" class="selector" onchange="sub_district_update()" disabled>
-                <option value="">Select District</option>
+                <option value="">กรุณาเลือกอำเภอ</option>
               </select>
             </div>
             <div class ="group">
               <div class="col-xs-4 col-md-4"></div>
               <select id="sub-districts" class="selector" onchange="rice_update()" disabled>
-                <option value="">Select Sub District</option>
+                <option value="">กรุณาเลือกตำบล</option>
               </select>
             </div>
             <div class ="group">
               <div class="label col-xs-4 col-md-4">Rice Varaity</div>
               <select id="rice-varaity" class="selector">
-                <option value="">Select Rice Varaity</option>
+                <option value="">กรุณาเลืกพันธุ์ข้าว</option>
               </select>
             </div>
 
             <div class ="group">
               <div class="label col-xs-4 col-md-4">Growing Method</div>
               <select id="methods" class="selector">
-                <option value="0">Select Growing Method</option>
-                <option value="indirect_seeding">Indirect Seeding</option>
-                <option value="broadcast_sowing">Broadcast Sowing</option>
+                <option value="0">กรุณาเลือกวิธีการปลูก</option>
+                <option value="indirect_seeding">ปักนาดำ</option>
+                <option value="broadcast_sowing">หว่านเมล็ด</option>
               </select>
 
             </div>
             <div class ="group">
-              <div class="label col-xs-4 col-md-4">Date</div>
+              <div class="label col-xs-4 col-md-4">วันที่</div>
               <input type="text" id="datepicker">
             </div>
             <div class ="group">
               <div class="col-xs-4 col-md-4"></div>
-              <label class="radio-inline -radio-input"><input type="radio" name="optradio" id="planting">Panting</label>
-              <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio" id="harvesting">Harvesting</label>
+              <label class="radio-inline -radio-input"><input type="radio" name="optradio" id="planting">เลือกวันเริ่มปลูก</label>
+              <label class="radio-inline -radio-input -margin-left"><input type="radio" name="optradio" id="harvesting">เลือกวันเก็บเกี่ยว</label>
             </div>
 
             <div class ="group -text-aligh-center">
-              <button class = "submit-button" onclick="go()">Submit</button>
+              <button class = "submit-button" onclick="go()">ตกลง</button>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <h4 class="modal-title" id="myModalLabel">Suggestion</h4>
+              <h4 class="modal-title" id="myModalLabel">คำแนะนำ</h4>
             </div>
             <div class="modal-body">
               <div id="container">
