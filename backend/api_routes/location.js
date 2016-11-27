@@ -21,6 +21,7 @@
                             else if (result.results[0].address_components[i].types[j] == "locality"||
                                 result.results[0].address_components[i].types[j] == "lca")
                                 re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim()
+                   util.database.query("select name_th from province where LOWER(name_en)= LOWER('"+re.province+"')",function(p){
                     //  util.database.query("select distinct(province_en) from " +
                     // "(select rices_by_location_napun.province_en from rices_by_location_napun where rices_by_location_napun.province_th ='"+re.province+"'UNION ALL " +
                     // "select rices_by_location_napee.province_en from rices_by_location_napee where rices_by_location_napee.province_th ='"+re.province+"') as foo",
@@ -34,8 +35,12 @@
                     // "(select rices_by_location_napun.sub_district_en from rices_by_location_napun where rices_by_location_napun.sub_district_th ='"+re.sub_district+"'UNION ALL " +
                     // "select rices_by_location_napee.sub_district_en from rices_by_location_napee where rices_by_location_napee.sub_district_th ='"+re.sub_district+"') as foo",
                     //                 function(s){
+                        console.log(p)
+                                        let pp = ""
+                                        if(p.length>0)
+                                            pp = p[0]['name_th']
                                          let out = {
-                                        province: re.province,
+                                        p:re.province,
                                         district: re.district,
                                         sub_district: re.sub_district,
                                         address:result.results[0].formatted_address
@@ -43,7 +48,7 @@
                                           return res.json(out)
                     //                 })
                     //         })
-                    // })
+                    })
                   
                     
                 })
