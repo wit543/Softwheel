@@ -1,4 +1,4 @@
-
+	
 :- load_files(green, [encoding(utf8)]).
 :- load_files(grow_well, [encoding(utf8)]).
 :- load_files(growing_duration, [encoding(utf8)]).
