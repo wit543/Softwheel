@@ -159,11 +159,11 @@ ex_recommendH_place_rice_season(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
   is_in_season(P1,PDAY,PMONTH,SEASON),
   recommend_rice_season(R1,SEASON).
 
-ex_recommendH_harvest_date(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
+ex_recommendH_harvesting_date(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
 
-ex_recommendH_harvest_dateR(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
+ex_recommendH_harvesting_dateR(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
 
-ex_recommendH_harvest_dateG(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
+ex_recommendH_harvesting_dateG(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).

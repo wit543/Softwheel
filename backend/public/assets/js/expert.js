@@ -8,7 +8,7 @@ var other = null;
 set_other()
 rice_update()
 
-$.getJSON( "http://128.199.192.241:8888/api/provinces/", function( data ) {
+$.getJSON( "http://127.0.0.1:8888/api/provinces/", function( data ) {
   for(var i = 0; i<data.provinces.length;i++){
     $('#provinces').append('<option value="'+
     data.provinces[i].province_th.trim()+
@@ -16,7 +16,7 @@ $.getJSON( "http://128.199.192.241:8888/api/provinces/", function( data ) {
   }
 });
 
-$.getJSON( "http://128.199.192.241:8888/api/rices/", function( data ) {
+$.getJSON( "http://127.0.0.1:8888/api/rices/", function( data ) {
   for(var i = 0; i<data.rices.length;i++){
     $('#rice-varaity').append('<option onclick=setVaraity('+data.rices[i].name_th+') value="'+
     data.rices[i].rice_species_th.trim()+
@@ -34,7 +34,7 @@ function remove_recommend(){
 
 function set_other() {
   var province = $('#provinces').val()
-  $.getJSON( "http://128.199.192.241:8888/api/rices/?province="+province, function( data ) {
+  $.getJSON( "http://127.0.0.1:8888/api/rices/?province="+province, function( data ) {
     other = data.rices
   });
 }
@@ -59,15 +59,15 @@ function district_update() {
   if(province == ''){
     districts_selector.empty()
     districts_selector.prop('disabled', true);
-    districts_selector.append('<option value="">Select District</option>')
+    districts_selector.append('<option value="">กรุณาเลือกอำเภอ</option>')
     sub_districts_selector.empty()
     sub_districts_selector.prop('disabled', true);
-    sub_districts_selector.append('<option value="">Select Sub District</option>')
+    sub_districts_selector.append('<option value="">กรุณาเลือกตำบล</option>')
     rice_update()
   }else{
-    $.getJSON( "http://128.199.192.241:8888/api/districts/?province="+province, function( data ) {
+    $.getJSON( "http://127.0.0.1:8888/api/districts/?province="+province, function( data ) {
       districts_selector.empty()
-      districts_selector.append('<option value="">Select District</option>')
+      districts_selector.append('<option value="">กรุณาเลือกอำเภอ</option>')
       for(var i = 0; i<data.districts.length;i++){
         districts_selector.append('<option value="'+
         data.districts[i].district_th.trim()+
@@ -77,7 +77,7 @@ function district_update() {
 
       sub_districts_selector.empty()
       sub_districts_selector.prop('disabled', true);
-      sub_districts_selector.append('<option value="">Select Sub District</option>')
+      sub_districts_selector.append('<option value="">กรุณาเลือกตำบล</option>')
       rice_update()
     });
   }
@@ -90,12 +90,12 @@ function sub_district_update() {
   if(district == ''){
     sub_districts_selector.empty()
     sub_districts_selector.prop('disabled', true);
-    sub_districts_selector.append('<option value="">Select District</option>')
+    sub_districts_selector.append('<option value="">กรุณาเลือกอำเภอ</option>')
     rice_update()
   }else{
-    $.getJSON( "http://128.199.192.241:8888/api/sub-districts/?province="+province+"&district="+district, function( data ) {
+    $.getJSON( "http://127.0.0.1:8888/api/sub-districts/?province="+province+"&district="+district, function( data ) {
       sub_districts_selector.empty()
-      sub_districts_selector.append('<option value="">Select Sub District</option>')
+      sub_districts_selector.append('<option value="">กรุณาเลือกตำบล</option>')
       for(var i = 0; i<data.sub_districts.length;i++){
         $('#sub-districts').append('<option value="'+
         data.sub_districts[i].sub_district_th.trim()+
@@ -113,20 +113,20 @@ function rice_update(){
   var district = $('#districts').val()
   var sub_district = $('#sub-districts').val()
 
-  $.getJSON( "http://128.199.192.241:8888/api/rices/?province="+province+"&district="+district+"&sub_district="+sub_district, function( data ) {
+  $.getJSON( "http://127.0.0.1:8888/api/rices/?province="+province+"&district="+district+"&sub_district="+sub_district, function( data ) {
 
     recommend = data.rices
     remove_recommend()
     rice_selector.empty()
-    rice_selector.append('<option value="">Select Rice Varaity</option>')
-    rice_selector.append('<option class="topic" value="" disabled>Recommend</option>')
+    rice_selector.append('<option value="">กรุณาเลือกพันธุ์ข้าว</option>')
+    rice_selector.append('<option class="topic" value="" disabled>คำแนะนำ</option>')
     for(var i = 0; i<recommend.length;i++){
       rice_selector.append('<option value="'+
       recommend[i].rice_species_th.trim()+
       '">'+recommend[i].rice_species_th.trim()+'</option>')
     }
     rice_selector.append('<option class="topic" value="" disabled></option>')
-    rice_selector.append('<option class="topic" value="" disabled>Other</option>')
+    rice_selector.append('<option class="topic" value="" disabled>อื่นๆ</option>')
     for(var i = 0; i<other.length;i++){
       rice_selector.append('<option value="'+
       other[i].rice_species_th.trim()+
@@ -145,7 +145,7 @@ function go() {
     console.log(data2)
     container.empty()
     if(data2.harvest_date!=undefined){
-      container.append('<span class="reconmend">Harvesting Date : </span> <span>'+ data2.harvest_date.HDAY+'/'+
+      container.append('<span class="reconmend">วันเก็บเกี่ยว : </span> <span>'+ data2.harvest_date.HDAY+'/'+
       data2.harvest_date.HMONTH+'/'+data2.harvest_date.HYEAR+'</span>')
     }
     modal.modal('show')
@@ -154,7 +154,7 @@ function go() {
 
         recommendPic = selectRecommendPic(data2.ex_recommendP_place_rice, data2.ex_recommendP_rice_season, data2.ex_recommendP_place_growingmethod, data2.ex_recommendP_harvesting_date)
         container.append(recommendPic)
-        container.append('<p class="reconmend">Recommendation</p>')
+        container.append('<p class="reconmend">คำแนะนำ</p>')
 
         var content = '<div class="rec-container">'
         if(data2.ex_recommendP_place_rice != undefined) {
@@ -178,7 +178,7 @@ function go() {
 
         recommendPic = selectRecommendPic(data2.ex_recommendH_place_rice, data2.ex_recommendH_rice_season, data2.ex_recommendH_place_growingmethod, data2.ex_recommendH_harvesting_date)
         container.append(recommendPic)
-        container.append('<p class="reconmend">Recommendation</p>')
+        container.append('<p class="reconmend">คำแนะนำ</p>')
 
         var content = '<div class="rec-container">'
         if(data2.ex_recommendH_place_rice != undefined) {
@@ -226,7 +226,7 @@ function go() {
   }
 
   function selectRecommendPic(pr, rs, gm, hd){
-    if(rs!=undefined&&gm!=undefined&&hd!=undefined)
+    if(rs!=undefined||gm!=undefined||hd!=undefined)
       return '<img src="assets/images/no.png">'
     return '<img src="assets/images/warn.png">'
   }
@@ -241,7 +241,7 @@ function go() {
   //     "&date="+$('#datepicker').val().toString().trim().split('/')[1]+"&year="+$('#datepicker').val().toString().trim().split('/')[2 ]+
   //     "&select="+query+"&rice="+$('#rice-varaity').val().toString().trim();
   //     // console.log(path);
-  //     $.getJSON("http://128.199.192.241:8888/api/expert/?province=เชียงใหม่&district=แม่แตง&sub_district=ช่อแล&method=indirect_seeding&month=11&date=02&year=2016&select=planting&rice=ขาวดอกมะลิ105", function( data ) {
+  //     $.getJSON("http://127.0.0.1:8888/api/expert/?province=เชียงใหม่&district=แม่แตง&sub_district=ช่อแล&method=indirect_seeding&month=11&date=02&year=2016&select=planting&rice=ขาวดอกมะลิ105", function( data ) {
   //         console.log(data);
   //     });
   // }

@@ -8,7 +8,7 @@
         constructor(http){
             this.rainning= require("../public/rain.json")
             this.http=http;
-            this.path="api/?assert=historyRainning(\"";
+            this.path="api/?assert=history_rainning(\"";
             this.options= {
                 host: 'localhost',
                 port: 5555,
