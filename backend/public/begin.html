@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBha5FKq1rA4pXXczuuWfSq3fQRFEcIR4g"></script>
   </head>
-
 
   <body onload="initMap()">
     <div id="map_canvas"></div>
@@ -24,6 +23,50 @@
           <button class="-mode">Beginner</button>
         </div>
       </div>
+
+      <div class="block blur" id="block">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">แนะนำ</a></li>
+          <li><a data-toggle="tab" href="#menu1">เลือกจังหวัด</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <p class="white">  เลือกตำแหน่งสถานที่ <br> ที่ต้องการเพาะปลูก หรือ <br> กดปุ่มด้านล่างเพื่อค้นหา </p>
+            <button class="location-button" onclick="getLocation()"> ตำแหน่งปัจจุบัน </button>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            <h2> </h2>
+            <div class ="group">
+              <div class="label col-xs-4 col-md-4"></div>
+              <select id="provinces" class="selector" onchange="provice_function()">
+                <option value="">Select Provice</option>
+              </select>
+            </div>
+            <div class ="group">
+              <div class="col-xs-4 col-md-4"></div>
+              <select id="districts" class="selector" onchange="sub_district_update()" disabled>
+                <option value="">Select District</option>
+              </select>
+            </div>
+            <div class ="group">
+              <div class="col-xs-4 col-md-4"></div>
+              <select id="sub-districts" class="selector" onchange="rice_update()" disabled>
+                <option value="">Select Sub District</option>
+              </select>
+            </div>
+            <div class ="group -text-aligh-center">
+              <button class = "submit-button" onclick="beginGo()">Submit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="white">  เลือกตำแหน่งสถานที่ <br> ที่ต้องการเพาะปลูก หรือ <br> กดปุ่มด้านล่างเพื่อค้นหา </p>
+        <button class="location-button" onclick="getLocation()"> ตำแหน่งปัจจุบัน </button> -->
+
+
+      </div>
+
       <div class="modal fade bs-example-modal-sm" id="rice-list" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-sm" role="document">
           <div class="modal-content blur" id="variety">
@@ -46,6 +89,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/begin.js"></script>
+    <script src="assets/js/expert.js"></script>
 
   </body>
   <!-- END BODY -->

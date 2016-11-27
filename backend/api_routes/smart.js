@@ -111,7 +111,7 @@
                                                                     });
                                                                 }
                                                                 else{
-                                                                    util.expert_system.query("planting_date"+query,function (result) {
+                                                                    util.expert_system.query("ex_planting_date"+query,function (result) {
                                                                          util.weather.query(province,function(w){
                                                                             if(!w["result"])
                                                                                 result["weather"]=3
@@ -132,8 +132,8 @@
                                                                             if(rr.length==0)result["ex_recommendH_place_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
                                                                             util.expert_system.query("ex_recommendH_place_growingmethod"+query,function (rg) {
                                                                                 if(rg.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
-                                                                                util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
-                                                                                    if(rh.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                                util.expert_system.query("ex_recommendH_harvesting_date"+query,function (rh) {
+                                                                                    if(rh.length==0)result["ex_recommendH_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                                     util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
                                                                                         result["harvest_date"]=hd[0]
                                                                                          util.weather.query(province,function(w){
@@ -195,12 +195,12 @@
                                 result.results[0].address_components[i].types[j] == "administrative_area_level_2")
                                 re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim().split(' ').join('_')
                             else if (result.results[0].address_components[i].types[j] == "locality"||
-                                result.results[0].address_components[i].types[j] == "lca")
+                                result.results[0].address_components[i].types[j] == "sublocality_level_1")
                                 re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().split(' ').join('_')
                     let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
                     fee =fee.split('  ').join('_')
                     console.log(fee)
-                    util.reservoir.query(lat,lng,re['province'],re['district'],re['sub_district'],function(isInReservior){
+                    util.reservoir.query(req.query.lat,req.query.lng,re['province'],re['district'],re['sub_district'],function(isInReservior){
                     util.history_rainning.assert(re['province'],function(){
                         util.expert_system.query(fee,function (data) {
                             return res.json(data)
