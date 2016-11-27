@@ -20,7 +20,7 @@ recommendP(P1,A1,T1, R1, G1, PDAY, PMONTH, PYEAR):-
   recommend_rice_season(R1,SEASON),
   PLANTINGDATE = date(PYEAR,PMONTH,PDAY,0,0,0,0,-,-),
   harvest_date(R1,G1,PLANTINGDATE,HDAY,HMONTH,HYEAR),
-  not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
+  is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).
 
 recommendH(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
   HARVESTINGDATE = date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-),
@@ -29,7 +29,7 @@ recommendH(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
   recommend_place_rice(P1,A1,T1,R1,SEASON),
   recommend_place_growingmethod(P1,A1,G1),
   recommend_rice_season(R1,SEASON),
-  not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
+  is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).
 
 harvest_date(R1,G1,PD1,HDAY, HMONTH, HYEAR):-
   growing_duration(R1,G1,DURATION),
@@ -74,12 +74,12 @@ recommend_rice_season(R1,IN_SEASON):-
   not(photo_sensitive(R1)),
   IN_SEASON == "in_season".
 
-is_green(P1, DATE):-
-    green(P1,STARTGREEN,ENDGREEN),
+is_green(P1,A1,T1, DATE):-
+    green(P1,A1,T1,STARTGREEN,ENDGREEN),
     between_date(STARTGREEN,ENDGREEN,DATE).
 
 is_red(P1, A1, T1, DATE):-
-    red(P1, STARTRED,ENDRED),
+    red(P1,A1,T1, STARTRED,ENDRED),
     between_date(STARTRED,ENDRED,DATE).
 
 earlier(DATE1, DATE2) :-
@@ -107,7 +107,7 @@ simple(P1,A1,T1,R1,G1,SEASON,STARTDAY,STARTMONTH,ENDDAY,ENDMONTH):-
   recommend_place_rice(P1,A1,T1,R1,SEASON),
   recommend_rice_season(R1,SEASON),
   recommend_place_growingmethod(P1,A1,G1),
-  green(P1,GSTARTDATE,GENDDATE),
+  green(P1,A1,T1,GSTARTDATE,GENDDATE),
   growing_duration(R1,G1, NUMDAYS),
   minus_date(GSTARTDATE, NUMDAYS , STARTDATE),
   minus_date(GENDDATE, NUMDAYS , ENDDATE),
@@ -131,6 +131,16 @@ ex_recommendP_harvesting_date(P1,A1,T1, R1, G1, PDAY, PMONTH, PYEAR):-
   harvest_date(R1,G1,PLANTINGDATE,HDAY,HMONTH,HYEAR),
   not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
 
+ex_recommendP_harvesting_dateR(P1,A1,T1, R1, G1, PDAY, PMONTH, PYEAR):-
+  PLANTINGDATE = date(PYEAR,PMONTH,PDAY,0,0,0,0,-,-),
+  harvest_date(R1,G1,PLANTINGDATE,HDAY,HMONTH,HYEAR),
+  not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
+
+ex_recommendP_harvesting_dateG(P1,A1,T1, R1, G1, PDAY, PMONTH, PYEAR):-
+  PLANTINGDATE = date(PYEAR,PMONTH,PDAY,0,0,0,0,-,-),
+  harvest_date(R1,G1,PLANTINGDATE,HDAY,HMONTH,HYEAR),
+  is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).
+
 ex_recommendH_place_rice(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
   HARVESTINGDATE = date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-),
   planting_date(R1,G1,HARVESTINGDATE,PDAY,PMONTH,PYEAR),
@@ -148,3 +158,9 @@ ex_recommendH_place_rice_season(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 
 ex_recommendH_harvest_date(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
+
+ex_recommendH_harvest_dateR(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
+not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
+
+ex_recommendH_harvest_dateG(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
+is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).
