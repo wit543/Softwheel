@@ -8,6 +8,40 @@ import regex
 import sys
 import os
 import json
+import urllib
+import urllib2
+
+API_ENDPOINT = 'http://api.openweathermap.org/data/2.5/forecast/daily'    
+API_KEY = '9968554484208803beadeccd025de00a'
+DAYS = 13
+THRESHOLD = 50
+
+def is_dangerous(province, date=0):
+    if date >= 7:
+        raise ValueError('The parameter [date] should less than 7')
+
+    params = {
+        'q': province,
+        'mode': 'json',
+        'cnt': DAYS,
+        'units': 'metric',
+        'APPID': API_KEY
+    }
+
+    url = API_ENDPOINT + '?' + urllib.urlencode(params)
+    res_json = json.load(urllib2.urlopen(url))
+    
+    forecast = res_json['list'][date:date + 7]
+
+    millimeter_sum = 0
+
+    for day in forecast:
+        millimeter_sum = millimeter_sum + float(day.get('rain', '0'))
+        # print day.get('rain', '0')
+
+    print millimeter_sum
+
+    return millimeter_sum >= THRESHOLD
 
 def trace(frame, event, arg):
     print "%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno)
@@ -22,6 +56,11 @@ def trace(frame, event, arg):
     print "%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno)
     return trace
 
+@app.route('/weather/', methods=['GET'])
+@cross_origin()
+def get_api():
+    return jsonify({"result":is_dangerous(request.args.get('province'), 0)})
+
 @app.route('/', methods=['GET'])
 @cross_origin()
 def get_schema():
@@ -35,7 +74,7 @@ def get_schema():
 
 @app.route('/api/', methods=['GET'])
 @cross_origin()
-def get_api():
+def get_weather():
     prolog = Prolog()
     prolog.consult('engine.pl')
     if request.args.get('query'):
