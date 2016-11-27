@@ -24,7 +24,8 @@
                    let out = {
                     province: re.province,
                     district: re.district,
-                    sub_district: re.sub_district
+                    sub_district: re.sub_district,
+                    address:result.results[0].formatted_address
                    }
                     return res.json(out)
                     
