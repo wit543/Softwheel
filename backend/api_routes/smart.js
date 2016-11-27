@@ -73,7 +73,7 @@
                                                 //     var rice = data
                                                 // })
                                                 util.history_rainning.assert(province.toLowerCase().split(' ').join('_'),function(){
-                                                if(req.query.select=='planting')
+                                                if(req.query.select=='harvesting')
                                                     util.expert_system.query("recommendP"+query,function (rec) {
                                                         if(rec.length==0){
                                                             util.expert_system.query("ex_recommendP_place_rice"+query,function (rp) {
@@ -81,9 +81,14 @@
                                                                 util.expert_system.query("ex_recommendP_rice_season"+query,function (rr) {
                                                                     if(rr.length==0)result["ex_recommendP_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
                                                                     util.expert_system.query("ex_recommendP_place_growingmethod"+query,function (rg) {
-                                                                        if(rr.length==0)result["ex_recommendP_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                        console.log("----------------------")
+                                                                        console.log(rg)
+                                                                        console.log(rg.length==0)
+                                                                        console.log("----------------------")
+                                                                        if(rg.length==0)
+                                                                            result["ex_recommendP_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
                                                                         util.expert_system.query("ex_recommendP_harvesting_date"+query,function (rh) {
-                                                                            if(rr.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                            if(rh.length==0)result["ex_recommendP_harvesting_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_harvest_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
                                                                                 result["harvest_date"]=hd[0]
                                                                                 util.weather.query(province,function(w){
@@ -120,9 +125,9 @@
                                                                 util.expert_system.query("ex_recommendH_place_rice_season"+query,function (rr) {
                                                                     if(rr.length==0)result["ex_recommendH_place_rice_season"]="ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง"
                                                                     util.expert_system.query("ex_recommendH_place_growingmethod"+query,function (rg) {
-                                                                        if(rr.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
+                                                                        if(rg.length==0)result["ex_recommendH_place_growingmethod"]="พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก"
                                                                         util.expert_system.query("ex_recommendH_harvest_date"+query,function (rh) {
-                                                                            if(rr.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
+                                                                            if(rh.length==0)result["ex_recommendH_harvest_date"]="ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม"
                                                                             util.expert_system.query("ex_planting_date(\""+rice+"\",\""+method+"\","+date+","+month+","+year+",HDAY,HMONTH,HYEAR).",function (hd) {
                                                                                 result["harvest_date"]=hd[0]
                                                                                  util.weather.query(province,function(w){
@@ -177,15 +182,15 @@
                         for(let j in result.results[0].address_components[i].types)
                             if (result.results[0].address_components[i].types[j] == ";rtht"||
                                 result.results[0].address_components[i].types[j] == "administrative_area_level_1")
-                                re["province"]=result.results[0].address_components[i].long_name.replace("Chang Wat ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["province"]=result.results[0].address_components[i].long_name.replace("Chang Wat ","").toLowerCase().trim().split(' ').join('_')
                             else if (result.results[0].address_components[i].types[j] == "sublocality_level_1"||
                                 result.results[0].address_components[i].types[j] == "administrative_area_level_2")
-                                re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["district"]=result.results[0].address_components[i].long_name.replace("Amphoe ","").toLowerCase().trim().split(' ').join('_')
                             else if (result.results[0].address_components[i].types[j] == "locality"||
                                 result.results[0].address_components[i].types[j] == "lca")
-                                re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().fee.split(' ').join('_')
+                                re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim().split(' ').join('_')
                     let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
-                    fee =fee.split(' ').join('_')
+                    fee =fee.split('  ').join('_')
                     console.log(fee)
                     util.history_rainning.assert(re['province'],function(){
                         util.expert_system.query(fee,function (data) {

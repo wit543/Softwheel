@@ -145,7 +145,6 @@ function go() {
     console.log(data2)
     container.empty()
     if(data2.harvest_date!=undefined){
-      container.append('<img src="assets/images/yes.png">')
       container.append('<span class="reconmend">Harvesting Date : </span> <span>'+ data2.harvest_date.HDAY+'/'+
       data2.harvest_date.HMONTH+'/'+data2.harvest_date.HYEAR+'</span>')
     }
@@ -173,7 +172,36 @@ function go() {
         content+='</div>'
         container.append(content)
       }
+
+    else if(data2.ex_recommendH_place_rice != undefined || data2.ex_recommendH_rice_season != undefined
+      || data2.ex_recommendH_place_growingmethod != undefined || data2.ex_recommendH_harvesting_date != undefined){
+
+        recommendPic = selectRecommendPic(data2.ex_recommendH_place_rice, data2.ex_recommendH_rice_season, data2.ex_recommendH_place_growingmethod, data2.ex_recommendH_harvesting_date)
+        container.append(recommendPic)
+        container.append('<p class="reconmend">Recommendation</p>')
+
+        var content = '<div class="rec-container">'
+        if(data2.ex_recommendH_place_rice != undefined) {
+          content += '<p> - '+ data2.ex_recommendH_place_rice+'</p>'
+        }
+        if(data2.ex_recommendH_rice_season != undefined) {
+          content += '<p> - '+ data2.ex_recommendH_rice_season+'</p>'
+        }
+        if(data2.ex_recommendH_place_growingmethod != undefined) {
+          content += '<p> - '+ data2.ex_recommendH_place_growingmethod+'</p>'
+        }
+        if(data2.ex_recommendH_harvesting_date != undefined) {
+          content += '<p> - '+ data2.ex_recommendH_harvesting_date+'</p>'
+        }
+        content+='</div>'
+        container.append(content)
+      }
+    else {
+        container.append('<img src="assets/images/yes.png">')
+    }
     });
+
+    
     // var data1 = { harvest_date: {
     //   HDAY: 26,
     //   HMONTH: 3,

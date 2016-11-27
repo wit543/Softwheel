@@ -7,6 +7,9 @@ can_growing(P1,"indirect_seeding"):-
    history_rainning(P1),
    not(forecast_rainning(P1)).
 
+can_growing(P1,"broadcast_sowing"):-
+  province(P1).
+
 is_in_season(P1,_, PMONTH, SEASON):-
  in_season(P1,START,END),
  between(START,END,PMONTH),
