@@ -425,87 +425,88 @@
 ```JSON
 [
   {
-    "A": "rd6", 
-    "B": "indirect_seeding", 
-    "C": "in_season", 
-    "D": 19, 
-    "E": 7, 
-    "F": 29, 
-    "G": 8
+    "ED": 29, 
+    "EM": 8, 
+    "METHOD": "indirect_seeding", 
+    "PEEORPUN": "in_season", 
+    "RICE": "rd6", 
+    "SD": 19, 
+    "SM": 7
   }, 
   {
-    "A": "rd6", 
-    "B": "broadcast_sowing", 
-    "C": "in_season", 
-    "D": 14, 
-    "E": 7, 
-    "F": 24, 
-    "G": 8
+    "ED": 24, 
+    "EM": 8, 
+    "METHOD": "broadcast_sowing", 
+    "PEEORPUN": "in_season", 
+    "RICE": "rd6", 
+    "SD": 14, 
+    "SM": 7
   }, 
   {
-    "A": "rd6", 
-    "B": "winter_period", 
-    "C": "in_season", 
-    "D": 29, 
-    "E": 6, 
-    "F": 9, 
-    "G": 8
+    "ED": 9, 
+    "EM": 8, 
+    "METHOD": "winter_period", 
+    "PEEORPUN": "in_season", 
+    "RICE": "rd6", 
+    "SD": 29, 
+    "SM": 6
   }, 
   {
-    "A": "jasmine105", 
-    "B": "indirect_seeding", 
-    "C": "in_season", 
-    "D": 19, 
-    "E": 6, 
-    "F": 30, 
-    "G": 7
+    "ED": 30, 
+    "EM": 7, 
+    "METHOD": "indirect_seeding", 
+    "PEEORPUN": "in_season", 
+    "RICE": "jasmine105", 
+    "SD": 19, 
+    "SM": 6
   }, 
   {
-    "A": "jasmine105", 
-    "B": "broadcast_sowing", 
-    "C": "in_season", 
-    "D": 14, 
-    "E": 6, 
-    "F": 25, 
-    "G": 7
+    "ED": 25, 
+    "EM": 7, 
+    "METHOD": "broadcast_sowing", 
+    "PEEORPUN": "in_season", 
+    "RICE": "jasmine105", 
+    "SD": 14, 
+    "SM": 6
   }, 
   {
-    "A": "jasmine105", 
-    "B": "winter_period", 
-    "C": "in_season", 
-    "D": 30, 
-    "E": 5, 
-    "F": 10, 
-    "G": 7
+    "ED": 10, 
+    "EM": 7, 
+    "METHOD": "winter_period", 
+    "PEEORPUN": "in_season", 
+    "RICE": "jasmine105", 
+    "SD": 30, 
+    "SM": 5
   }, 
   {
-    "A": "niawsan_pah_tawng", 
-    "B": "indirect_seeding", 
-    "C": "in_season", 
-    "D": 9, 
-    "E": 8, 
-    "F": 19, 
-    "G": 9
+    "ED": 19, 
+    "EM": 9, 
+    "METHOD": "indirect_seeding", 
+    "PEEORPUN": "in_season", 
+    "RICE": "niawsan_pah_tawng", 
+    "SD": 9, 
+    "SM": 8
   }, 
   {
-    "A": "niawsan_pah_tawng", 
-    "B": "broadcast_sowing", 
-    "C": "in_season", 
-    "D": 4, 
-    "E": 8, 
-    "F": 14, 
-    "G": 9
+    "ED": 14, 
+    "EM": 9, 
+    "METHOD": "broadcast_sowing", 
+    "PEEORPUN": "in_season", 
+    "RICE": "niawsan_pah_tawng", 
+    "SD": 4, 
+    "SM": 8
   }, 
   {
-    "A": "niawsan_pah_tawng", 
-    "B": "winter_period", 
-    "C": "in_season", 
-    "D": 20, 
-    "E": 7, 
-    "F": 30, 
-    "G": 8
+    "ED": 30, 
+    "EM": 8, 
+    "METHOD": "winter_period", 
+    "PEEORPUN": "in_season", 
+    "RICE": "niawsan_pah_tawng", 
+    "SD": 20, 
+    "SM": 7
   }
 ]
+
 
 ```
 ## Season
