@@ -421,6 +421,93 @@
 ```JSON
   date:15/6/15
 ```
+- :white_check_mark: /api/beginner/?lat=41.5465465&lng=12.6546541
+```JSON
+[
+  {
+    "A": "rd6", 
+    "B": "indirect_seeding", 
+    "C": "in_season", 
+    "D": 19, 
+    "E": 7, 
+    "F": 29, 
+    "G": 8
+  }, 
+  {
+    "A": "rd6", 
+    "B": "broadcast_sowing", 
+    "C": "in_season", 
+    "D": 14, 
+    "E": 7, 
+    "F": 24, 
+    "G": 8
+  }, 
+  {
+    "A": "rd6", 
+    "B": "winter_period", 
+    "C": "in_season", 
+    "D": 29, 
+    "E": 6, 
+    "F": 9, 
+    "G": 8
+  }, 
+  {
+    "A": "jasmine105", 
+    "B": "indirect_seeding", 
+    "C": "in_season", 
+    "D": 19, 
+    "E": 6, 
+    "F": 30, 
+    "G": 7
+  }, 
+  {
+    "A": "jasmine105", 
+    "B": "broadcast_sowing", 
+    "C": "in_season", 
+    "D": 14, 
+    "E": 6, 
+    "F": 25, 
+    "G": 7
+  }, 
+  {
+    "A": "jasmine105", 
+    "B": "winter_period", 
+    "C": "in_season", 
+    "D": 30, 
+    "E": 5, 
+    "F": 10, 
+    "G": 7
+  }, 
+  {
+    "A": "niawsan_pah_tawng", 
+    "B": "indirect_seeding", 
+    "C": "in_season", 
+    "D": 9, 
+    "E": 8, 
+    "F": 19, 
+    "G": 9
+  }, 
+  {
+    "A": "niawsan_pah_tawng", 
+    "B": "broadcast_sowing", 
+    "C": "in_season", 
+    "D": 4, 
+    "E": 8, 
+    "F": 14, 
+    "G": 9
+  }, 
+  {
+    "A": "niawsan_pah_tawng", 
+    "B": "winter_period", 
+    "C": "in_season", 
+    "D": 20, 
+    "E": 7, 
+    "F": 30, 
+    "G": 8
+  }
+]
+
+```
 ## Season
 ## home
   ![home](./images/home.png)
