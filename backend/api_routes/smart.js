@@ -76,8 +76,7 @@
                                                     util.google_map.get_location_address(sub_district+","+district+","+province,function(latlng){
                                                         let lat=(latlng['results'][0]['geometry']['location']['lat'])
                                                         let lng=(latlng['results'][0]['geometry']['location']['lng'])
-                                                        util.reservoir.query(lat,lng,function(isInReservior){
-                                                            console.log("555555555555555555555555")
+                                                        util.reservoir.query(lat,lng,province,district,sub_district,function(isInReservior){
                                                             console.log(isInReservior)
                                                         if(req.query.select=='harvesting')
                                                             util.expert_system.query("recommendP"+query,function (rec) {
@@ -125,6 +124,7 @@
                                                             });
                                                         else
                                                             util.expert_system.query("recommendH"+query,function (rec) {
+                                                                console.log(rec)
                                                                 if(rec.length==0){
                                                                     util.expert_system.query("ex_recommendH_place_rice"+query,function (rp) {
                                                                         if(rp.length==0)result["ex_recommendH_place_rice"]="ข้าวทีปลูกไม่เหมาะกับสถานที่"
@@ -200,11 +200,13 @@
                     let fee = String("simple(\""+re.province+"\",\""+re.district+"\",\""+re.sub_district+"\",R1,G1,S1,SD,SM,ED,EM).")
                     fee =fee.split('  ').join('_')
                     console.log(fee)
+                    util.reservoir.query(lat,lng,re['province'],re['district'],re['sub_district'],function(isInReservior){
                     util.history_rainning.assert(re['province'],function(){
                         util.expert_system.query(fee,function (data) {
                             return res.json(data)
                         })
                     })
+                })
                     
                 })
             else{
