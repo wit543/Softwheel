@@ -21,13 +21,30 @@
                             else if (result.results[0].address_components[i].types[j] == "locality"||
                                 result.results[0].address_components[i].types[j] == "lca")
                                 re["sub_district"] = result.results[0].address_components[i].long_name.replace("Tambon ","").toLowerCase().trim()
-                   let out = {
-                    province: re.province,
-                    district: re.district,
-                    sub_district: re.sub_district,
-                    address:result.results[0].formatted_address
-                   }
-                    return res.json(out)
+                    //  util.database.query("select distinct(province_en) from " +
+                    // "(select rices_by_location_napun.province_en from rices_by_location_napun where rices_by_location_napun.province_th ='"+re.province+"'UNION ALL " +
+                    // "select rices_by_location_napee.province_en from rices_by_location_napee where rices_by_location_napee.province_th ='"+re.province+"') as foo",
+                    // function(p){
+                    //     console.log(p)
+                    //     util.database.query("select distinct(district_en) from " +
+                    // "(select rices_by_location_napun.district_en from rices_by_location_napun where rices_by_location_napun.district_th ='"+re.district+"'UNION ALL " +
+                    // "select rices_by_location_napee.district_en from rices_by_location_napee where rices_by_location_napee.district_th ='"+re.district+"') as foo",
+                    //         function(d){
+                    //             util.database.query("select distinct(sub_district_en) from " +
+                    // "(select rices_by_location_napun.sub_district_en from rices_by_location_napun where rices_by_location_napun.sub_district_th ='"+re.sub_district+"'UNION ALL " +
+                    // "select rices_by_location_napee.sub_district_en from rices_by_location_napee where rices_by_location_napee.sub_district_th ='"+re.sub_district+"') as foo",
+                    //                 function(s){
+                                         let out = {
+                                        province: re.province,
+                                        district: re.district,
+                                        sub_district: re.sub_district,
+                                        address:result.results[0].formatted_address
+                                       }
+                                          return res.json(out)
+                    //                 })
+                    //         })
+                    // })
+                  
                     
                 })
             else{
