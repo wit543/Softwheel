@@ -141,27 +141,10 @@ function go() {
         query = "planting";
     var path = "http://127.0.0.1:8888/api/expert/?province="+$('#provinces').val().toString().trim()+"&district="+$('#districts').val().toString().trim()+"&sub_district="+$('#sub-districts').val().toString().trim()+"&method="+$('#methods').val().toString().trim()+"&month="+$('#datepicker').val().toString().trim().split('/')[0]+"&date="+$('#datepicker').val().toString().trim().split('/')[1]+"&year="+$('#datepicker').val().toString().trim().split('/')[2 ]+"&select="+query+"&rice="+$('#rice-varaity').val().toString().trim();
     console.log(path);
-    $.getJSON(path, function( data ) {
-        console.log(data);
-    });
-    var data1 = { harvest_date: {
-      HDAY: 26,
-      HMONTH: 3,
-      HYEAR: 2017
-    },
-    status: true};
-
-    var data2 = {ex_recommendP_place_rice: 'ข้าวทีปลูกไม่เหมาะกับสถานที่',
-    ex_recommendP_rice_season: 'ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง',
-    ex_recommendP_place_growingmethod: 'พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก',
-    ex_recommendP_harvesting_date: 'ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม',
-    harvest_date: {
-        HDAY: 7,
-        HMONTH: 3,
-        HYEAR: 2017
-    },
-    status: false};
-    container.empty()
+    $.getJSON(path, function( data2 ) {
+      console.log(data2)
+           container.empty()
+           if(data2.harvest_date!=undefined)
     container.append('<span class="reconmend">Harvesting Date : </span> <span>'+ data2.harvest_date.HDAY+'/'+
     data2.harvest_date.HMONTH+'/'+data2.harvest_date.HYEAR+'</span>')
     modal.modal('show')
@@ -184,6 +167,25 @@ function go() {
         content+='</div>'
         container.append(content)
     }
+    });
+    // var data1 = { harvest_date: {
+    //   HDAY: 26,
+    //   HMONTH: 3,
+    //   HYEAR: 2017
+    // },
+    // status: true};
+
+    // var data2 = {ex_recommendP_place_rice: 'ข้าวทีปลูกไม่เหมาะกับสถานที่',
+    // ex_recommendP_rice_season: 'ข้าวที่ปลูกเป็นข้าวไม่ไวต่อแสงไม่แนะนำให้ปลูกในนาปรัง',
+    // ex_recommendP_place_growingmethod: 'พื้นที่ที่ปลูกไม่ได้เป็นพื้นที่ชลประทานและสภาพของฝนไม่เหมาะแก่การปลูก',
+    // ex_recommendP_harvesting_date: 'ช่วงเวลานี้ไม่ควรเก็บเกียวเพราะเป็นฤดูมรสุม',
+    // harvest_date: {
+    //     HDAY: 7,
+    //     HMONTH: 3,
+    //     HYEAR: 2017
+    // },
+    // status: false};
+
 
   // our code
 
