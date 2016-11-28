@@ -254,3 +254,6 @@ growing_duration("khaogawdiaw35","winter_period",143).
 growing_duration("cholung97","winter_period",142).
 growing_duration("khaimodrin3","winter_period",157).
 growing_duration("niawubon2","winter_period",153).
+
+growing_duration("rd7",_,150).
+growing_duration("san_pah_tawng",_,150).
