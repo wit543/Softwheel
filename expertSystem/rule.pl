@@ -167,3 +167,14 @@ not(is_red(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-))).
 
 ex_recommendH_harvesting_dateG(P1,A1,T1, R1, G1, HDAY, HMONTH, HYEAR):-
 is_green(P1,A1,T1,date(HYEAR,HMONTH,HDAY,0,0,0,0,-,-)).
+
+
+% compare util
+string_less_than_number(X,Y):- atom_number(X,Z),Z<Y.
+string_more_than_number(X,Y):- atom_number(X,Z),Z>Y.
+string_less_than_equal_number(X,Y):- atom_number(X,Z),Z=<Y.
+string_more_than_equal_number(X,Y):- atom_number(X,Z),Z>=Y.
+string_less_than_string(X,Y):-atom_number(X,I),atom_number(Y,J),I<J.
+string_more_than_string(X,Y):-atom_number(X,I),atom_number(Y,J),I>J.
+clear_list(List,NewList):-NewList = [].
+to_list(Y,X):-X=[Y].
