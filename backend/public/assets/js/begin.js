@@ -25,7 +25,7 @@ var openWeatherMapKey = "c8b737218d49bf94c3aad6a6f2bd9602";
 function selectProvince() {
   variety.html('<button class="close" data-toggle="modal" data-target="rice-list" onclick="closeModal()">' + 'x' + '</button>');
   variety.append(
-    '<h1 class=center>' + "province" + '</h1>'
+    '<h1 class=center>' + "พันธุ์ข้าวที่แนะนำ" + '</h1>'
   );
   showList();
 }
