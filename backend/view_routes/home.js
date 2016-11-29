@@ -8,10 +8,10 @@
         router.get("/",function (req,res) {
             res.sendFile(path.join(__dirname+"/../public/expert.html"));
         })
-        router.get("/expert",function (req,res) {
+        router.get("/custom",function (req,res) {
             res.sendFile(path.join(__dirname+"/../public/expert.html"));
         })
-        router.get("/beginner",function (req,res) {
+        router.get("/location",function (req,res) {
             res.sendFile(path.join(__dirname+"/../public/begin.html"));
         })
     });

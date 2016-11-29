@@ -6,8 +6,8 @@
     module.exports = (function (router,util) {
         router.get("/provinces",function (req,res) {
             if (req.query.province){
-                return res.json({
-                    name:"rd15"
+                util.weather.query("Ubon Ratchathan",function(data){
+                    return res.json(data)
                 })
             }
             else{
